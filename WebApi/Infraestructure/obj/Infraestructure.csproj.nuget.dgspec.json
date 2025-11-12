@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj": {}
+    "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj": {
+    "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj",
         "projectName": "Infraestructure",
-        "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj",
+        "projectPath": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\Infraestructure\\Infraestructure.csproj",
         "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

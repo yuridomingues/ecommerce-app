@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uDqqqeBvTx4=",
+  "dgSpecHash": "OFS7eIp1CTE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rezen\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.10\\microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
     "C:\\Users\\rezen\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
