@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\WebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rezen\\Source\\Repos\\ecommerce-app\\WebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
