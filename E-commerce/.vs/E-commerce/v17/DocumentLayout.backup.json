@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\infraestrutucture\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|solutionrelative:infraestrutucture\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\infraestrutucture\\databasecliente\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|solutionrelative:infraestrutucture\\databasecliente\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\interfaces\\idatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\idatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,41 +39,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Class1.cs",
-              "RelativeDocumentMoniker": "Infraestrutucture\\Class1.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Class1.cs",
-              "RelativeToolTip": "Infraestrutucture\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\DataBaseCliente\\DataBase.cs",
+              "RelativeDocumentMoniker": "Infraestrutucture\\DataBaseCliente\\DataBase.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\DataBaseCliente\\DataBase.cs",
+              "RelativeToolTip": "Infraestrutucture\\DataBaseCliente\\DataBase.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T21:40:17.459Z",
+              "WhenOpened": "2025-11-13T18:55:57.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Class1.cs",
-              "RelativeDocumentMoniker": "Domain\\Class1.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Class1.cs",
-              "RelativeToolTip": "Domain\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IDataBase.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\IDataBase.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IDataBase.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\IDataBase.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IDataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T21:39:36.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T18:54:01.047Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Class1.cs",
-              "RelativeDocumentMoniker": "Application\\Class1.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Class1.cs",
-              "RelativeToolTip": "Application\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\Cliente.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Cliente.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\Cliente.cs",
+              "RelativeToolTip": "Domain\\Entities\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T21:39:04.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T18:43:05.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-13T18:27:39.019Z"
             }
           ]
         }

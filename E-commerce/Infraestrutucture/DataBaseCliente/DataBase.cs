@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Domain.Interfaces;
+using Domain.Entities;
+using System.Runtime.CompilerServices;
+
+namespace Infraestrutucture.DataBaseCliente
+{
+    public class DataBase : IDataBase
+    {
+        private readonly List<Cliente> clientes = new();
+        private int ProximoId = 1;
+
+        public void CadastrarCliente(Cliente cliente)
+        {
+            cliente.DefinirId(ProximoId);
+            clientes.Add(cliente);
+            ProximoId++;
+        }
+
+        public void RemoverCliente(Cliente cliente)
+        {
+            clientes.Remove(cliente);
+        }
+        public List<Cliente> ListarClientes()
+        {
+            return clientes.ToList();
+        }
+        public void AlterarNome(Cliente cliente, string NovoNome)
+        {
+            cliente.AlterarNome(NovoNome);
+        }
+        public void AlterarEmail(Cliente cliente, string NovoEmail)
+        {
+            cliente.AlterarEmail(NovoEmail);
+        }
+        public void AlterarSenha(Cliente cliente, string NovaSenha)
+        {
+            cliente.AlterarSenha(NovaSenha);
+        }
+        public Cliente? BuscarCliente(string email)
+        {
+            return clientes.FirstOrDefault(c => c.Email == email);
+        }
+    }
+
+   
+}
