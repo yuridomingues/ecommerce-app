@@ -1,7 +1,7 @@
 namespace Infraestrutucture.Repository;
 
 using Domain;
-
+using Domain.Interface;
 using Infraestrutucture.DataBasePedido;
 
 
@@ -11,23 +11,23 @@ public class PedidoRepository
 
     private Pedido pedido;
 
-    private DataBasePedido dataBasePedido;
+    private IDataBasePedido dataBasePedido;
 
-    public PedidoRepository(DataBasePedido dataBasePedido, Pedido pedido)
+    public PedidoRepository(IDataBasePedido databasePedido, Pedido pedido)
     {
-        this.dataBasePedido = dataBasePedido;
+        this.dataBasePedido = databasePedido;
         this.pedido = pedido;
     }
 
 
-    public void CriarPedido()
+    public void CriarPedido(Pedido pedido)
     {
         pedido.DefinirId();
         dataBasePedido.CadastrarPedido(pedido);
     }
 
 
-    public void DefinirSubTotal()
+    public void DefinirSubTotal(Pedido pedido)
     {
         pedido.DefinirSubTotal();
     }

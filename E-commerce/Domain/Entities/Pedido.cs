@@ -1,5 +1,4 @@
 namespace Domain;
-using Infraestrutucture.DataBasePedido;
 
 public class Pedido
 {
@@ -10,7 +9,7 @@ public class Pedido
 
     public int ClienteId { get; private set; }
 
-    public Endereco EnderecoEntrega { get; private set; }
+    public Endereco Endereco { get; private set; }
 
     public List<ItemPedido> Itens { get; private set; }
 
@@ -21,11 +20,12 @@ public class Pedido
     public bool Status { get; private set; } // true = finalziado e false = aberto
 
 
-    public Pedido(int clienteId, Endereco enderecoEntrega)
+    public Pedido(int clienteId, Endereco endereco)
     {
         ClienteId = clienteId;
-        EnderecoEntrega = enderecoEntrega;
+        Endereco = endereco;
         Status = false;
+        Itens = new List<ItemPedido>();
     }
 
 
@@ -87,5 +87,11 @@ public class Pedido
     }
 
 
+    public void AlterarEndereco(Endereco endereco)
+    {
+
+        Endereco = endereco;
+
+    }
 
 }

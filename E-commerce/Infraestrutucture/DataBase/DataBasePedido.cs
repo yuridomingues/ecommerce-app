@@ -36,7 +36,7 @@ public class DataBasePedido : IDataBasePedido
 
     public void AlterarEndereco(Pedido pedidoParaAlterar, Endereco novoEnderco)
     {
-        pedidoParaAlterar.Endereco = novoEnderco;
+        pedidoParaAlterar.AlterarEndereco(novoEnderco);
     }
 
 
