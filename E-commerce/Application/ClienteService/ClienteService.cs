@@ -1,0 +1,37 @@
+﻿using Domain.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Application.Interfaces;
+using Application.Dtos;
+using AutoMapper;
+using Domain.Entities;
+
+namespace Application.ClienteService
+{
+    public class ClienteService : IClienteService
+    {
+        private readonly IClienteRepository  _repository;
+        private readonly IValidacoesService _validacoes;
+        private readonly IMapper _mapper;
+
+        public ClienteService(IClienteRepository repository, IValidacoesService validacoes, IMapper mapper)
+        {
+            _repository = repository;
+            _validacoes = validacoes;
+            _mapper = mapper;
+        }
+        public void CadastrarCliente(CadastroClienteDto dto)
+        {
+            _validacoes.ValidarNome(dto);
+            _validacoes.ValidarEmail(dto);
+            _validacoes.ValidarSenha(dto);
+
+            Cliente cliente = _mapper.Map<Cliente>(dto);
+
+            _repository.CadastrarCliente(cliente);
+        }
+    }
+}
