@@ -87,10 +87,10 @@ public class Pedido
     }
 
 
-    public void AlterarEndereco(Endereco endereco)
+    public void AlterarEndereco(Endereco novoEndereco)
     {
 
-        Endereco = endereco;
+        Endereco = novoEndereco;
 
     }
 

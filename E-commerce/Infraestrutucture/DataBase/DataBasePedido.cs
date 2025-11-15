@@ -39,7 +39,4 @@ public class DataBasePedido : IDataBasePedido
         pedidoParaAlterar.AlterarEndereco(novoEnderco);
     }
 
-
-
-
 }

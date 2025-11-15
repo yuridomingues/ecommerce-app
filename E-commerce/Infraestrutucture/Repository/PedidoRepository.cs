@@ -5,7 +5,7 @@ using Domain.Interface;
 using Infraestrutucture.DataBasePedido;
 
 
-public class PedidoRepository
+public class PedidoRepository : IPedidoRepository
 {
     private static int IdAtual = 1;
 
@@ -45,4 +45,36 @@ public class PedidoRepository
     }
 
 
+    public void ExcluirPedido(int id)
+    {
+        dataBasePedido.ExcluirPedido(id);
+    }
+
+
+    public void ListarPedidos()
+    {
+        dataBasePedido.ListarPedidos();
+    }
+
+
+    public void BuscarPedido(int id)
+    {
+        dataBasePedido.BuscarPedido(id);
+    }
+
+
+    public void AlterarEndereco(Endereco endereco)
+    {
+        pedido.AlterarEndereco(endereco);
+    }
+
 }
+
+
+
+
+
+
+
+
+//AlterarEndereco()
