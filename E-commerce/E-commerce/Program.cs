@@ -1,5 +1,11 @@
+using Application.ClienteService;
+using Application.Interfaces;
+using Application.Service;
 using Domain.Interfaces;
+using Infraestrutucture.ClienteRepository;
 using Infraestrutucture.DataBaseCliente;
+using Application.Mappings;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +15,10 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 builder.Services.AddSingleton<IDataBase, DataBase>();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IValidacoesService, ValidacoesService>();
+builder.Services.AddAutoMapper(cfg => { }, typeof(CadastroClienteProfile).Assembly);
 
 
 

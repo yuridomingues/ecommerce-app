@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Service
 {
-    public class ValidacoesCadastro : IValidacoesService
+    public class ValidacoesService : IValidacoesService
     {
         public void ValidarNome(CadastroClienteDto dto)
         {
@@ -53,7 +53,15 @@ namespace Application.Service
         }
         public void ValidarCpf(CadastroClienteDto dto)
         {
+            if (string.IsNullOrWhiteSpace(dto.Cpf))
+            {
+                throw new CpfVazio();
+            }
+            
+            if (dto.Cpf.Length != 11 || !dto.Cpf.All(char.IsDigit))
+                throw new CpfInvalido();
 
+           
         }
     }
 }

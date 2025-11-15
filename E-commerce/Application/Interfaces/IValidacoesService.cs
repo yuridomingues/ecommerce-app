@@ -12,6 +12,7 @@ namespace Application.Interfaces
         void ValidarNome(CadastroClienteDto dto);
         void ValidarEmail(CadastroClienteDto dto);
         void ValidarSenha(CadastroClienteDto dto);
+        void ValidarCpf(CadastroClienteDto dto);
 
 
 

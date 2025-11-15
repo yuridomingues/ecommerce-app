@@ -9,6 +9,6 @@ namespace Infraestrutucture.Exceptions
     public class ClienteExistente : Exception
     {
         public ClienteExistente()
-            : base("Já existe um usuário com esse login") { }
+            : base("Esse usuário já está cadastrado") { }
     }
 }

@@ -24,12 +24,22 @@ namespace Application.ClienteExceptions
     public class CadastroEmail : Exception
     {
         public CadastroEmail()
-            : base("digite um email válido") { }
+            : base("Digite um email válido") { }
     }
     public class SenhaInvalida : Exception
     {
         public SenhaInvalida()
             : base("Escolha uma senha mais segura. Use uma combinação de letras, números e símbolos.") { }
+    }
+    public class CpfInvalido : Exception
+    {
+        public CpfInvalido()
+            : base("Esse CPF é inválido") { }
+    }
+    public class CpfVazio : Exception
+    {
+        public CpfVazio()
+            : base("O CPF tem que ser preenchido") { }
     }
 
 

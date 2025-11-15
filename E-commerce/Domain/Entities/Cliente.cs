@@ -18,13 +18,15 @@ namespace Domain.Entities
 
         public string Cpf { get; private set; } 
 
-        List<Endereco> Enderecos { get; private set; } = new();
+    
 
-        public Cliente(string nome, string email, string senhahash, int id)
+
+        public Cliente(string nome, string email, string senhahash, string cpf)
         {
             Nome = nome;
             Email = email;
             SenhaHash = senhahash;
+            Cpf = cpf;
             
         }
         public void DefinirId(int id)

@@ -28,6 +28,7 @@ namespace Application.ClienteService
             _validacoes.ValidarNome(dto);
             _validacoes.ValidarEmail(dto);
             _validacoes.ValidarSenha(dto);
+            _validacoes.ValidarCpf(dto);
 
             Cliente cliente = _mapper.Map<Cliente>(dto);
 

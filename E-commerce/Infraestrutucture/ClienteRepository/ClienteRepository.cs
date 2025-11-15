@@ -23,12 +23,17 @@ namespace Infraestrutucture.ClienteRepository
         public void CadastrarCliente(Cliente cliente)
         {
             Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
+            Cliente? CpfCadastrado = _db.BuscarCpf(cliente.Cpf);
 
-            if (ClienteCadastrado == null)
+            if (ClienteCadastrado == null && CpfCadastrado == null)
             {
                 _db.CadastrarCliente(cliente);
             }
-            throw new ClienteExistente();
+            else
+            {
+                throw new ClienteExistente();
+
+            }
         }
     }
 }

@@ -45,6 +45,10 @@ namespace Infraestrutucture.DataBaseCliente
         {
             return clientes.FirstOrDefault(c => c.Email == email);
         }
+        public Cliente? BuscarCpf(string cpf)
+        {
+            return clientes.FirstOrDefault(c => c.Cpf == cpf);
+        }
     }
 
    

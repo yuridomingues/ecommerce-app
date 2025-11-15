@@ -1,5 +1,0 @@
-C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
-C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
-C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Domain\obj\Debug\net9.0\Domain.sourcelink.json

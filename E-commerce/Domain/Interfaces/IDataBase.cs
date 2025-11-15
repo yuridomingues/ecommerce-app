@@ -21,5 +21,7 @@ namespace Domain.Interfaces
 
         Cliente? BuscarCliente(string email);
 
+        Cliente? BuscarCpf(string cpf);
+
     }
 }
