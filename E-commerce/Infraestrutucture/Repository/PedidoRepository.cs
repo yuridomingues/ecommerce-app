@@ -7,7 +7,6 @@ using Infraestrutucture.DataBasePedido;
 
 public class PedidoRepository : IPedidoRepository
 {
-    private static int IdAtual = 1;
 
     private Pedido pedido;
 
@@ -20,9 +19,9 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void CriarPedido(Pedido pedido)
+    public void CriarPedido(Pedido pedido, int id)
     {
-        pedido.DefinirId();
+        pedido.DefinirId(id);
         dataBasePedido.CadastrarPedido(pedido);
     }
 
@@ -69,12 +68,3 @@ public class PedidoRepository : IPedidoRepository
     }
 
 }
-
-
-
-
-
-
-
-
-//AlterarEndereco()

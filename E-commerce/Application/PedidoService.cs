@@ -4,6 +4,8 @@ using Domain;
 
 public class PedidoService
 {
+
+    private static int IdAtual = 1;
     private readonly IPedidoRepository pedidoRepository;
 
     public PedidoService(IPedidoRepository pedidoRepository)
@@ -14,7 +16,8 @@ public class PedidoService
 
     public void CriarPedido(Pedido pedido)
     {
-        pedidoRepository.CriarPedido(pedido);
+        pedidoRepository.CriarPedido(pedido, IdAtual);
+        IdAtual++;
     }
 
 
@@ -31,6 +34,7 @@ public class PedidoService
 
     public void FinalizarPedido(Pedido pedido)
     {
+        DefinirSubTotal(pedido);
         pedidoRepository.FinalizarPedido(pedido);
     }
 

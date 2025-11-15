@@ -1,9 +1,7 @@
 namespace Domain;
 
 public class Pedido
-{
-
-    public static int IdAtual = 1; 
+{ 
 
     public int Id { get; private set; }
 
@@ -29,16 +27,15 @@ public class Pedido
     }
 
 
-    public void DefinirId()
+    public void DefinirId(int id)
     {
 
-        Id = IdAtual;
-        IdAtual++;
+        Id = id;
 
     }
 
 
-    public void DefinirSubTotal()
+    public decimal DefinirSubTotal()
     {
 
         decimal subTotal = 0;
@@ -53,13 +50,14 @@ public class Pedido
         if (subTotal <= 0)
         {
 
-            Console.WriteLine("Valor inválido"); // Criar Exception
+            throw new Exception("Erro | SubTotal inválido");
 
         }
         else
         {
 
             SubTotal = subTotal;
+            return subTotal;
 
         }
 
