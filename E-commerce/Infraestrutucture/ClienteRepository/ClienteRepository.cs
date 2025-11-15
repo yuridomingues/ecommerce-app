@@ -35,5 +35,10 @@ namespace Infraestrutucture.ClienteRepository
 
             }
         }
+
+        public List<Cliente> ListarClientes()
+        {
+            return _db.ListarClientes();
+        }
     }
 }

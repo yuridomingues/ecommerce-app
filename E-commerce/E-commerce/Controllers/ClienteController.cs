@@ -30,5 +30,19 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("Listar")]
+
+        public ActionResult ListarClientes()
+        {
+            try
+            {
+               
+                return Ok(_service.ListarClientes());
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

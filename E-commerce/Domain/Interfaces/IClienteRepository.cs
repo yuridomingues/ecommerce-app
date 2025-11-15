@@ -10,5 +10,6 @@ namespace Domain.Interfaces
     public interface IClienteRepository
     {
         void CadastrarCliente(Cliente cliente);
+        List<Cliente> ListarClientes();
     }
 }

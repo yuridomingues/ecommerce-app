@@ -12,13 +12,13 @@ namespace Infraestrutucture.DataBaseCliente
     public class DataBase : IDataBase
     {
         private readonly List<Cliente> clientes = new();
-        private int ProximoId = 1;
+        
 
         public void CadastrarCliente(Cliente cliente)
         {
-            cliente.DefinirId(ProximoId);
+            cliente.DefinirId();
             clientes.Add(cliente);
-            ProximoId++;
+           
         }
 
         public void RemoverCliente(Cliente cliente)

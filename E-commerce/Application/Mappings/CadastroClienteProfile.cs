@@ -13,13 +13,8 @@ namespace Application.Mappings
     {
         public CadastroClienteProfile()
         {
-            CreateMap<CadastroClienteDto, Cliente>()
-    .ConstructUsing(dto => new Cliente(
-        dto.Nome,
-        dto.Email,
-        dto.SenhaHash,
-        dto.Cpf 
-    ));
+            CreateMap<CadastroClienteDto, Cliente>();
+
         }
     }
 }

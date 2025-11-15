@@ -8,7 +8,7 @@ namespace Domain.Entities
 {
     public class Cliente
     {
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         public string Nome { get; private set; } 
 
@@ -18,20 +18,11 @@ namespace Domain.Entities
 
         public string Cpf { get; private set; } 
 
-    
+   
 
-
-        public Cliente(string nome, string email, string senhahash, string cpf)
+        public void DefinirId()
         {
-            Nome = nome;
-            Email = email;
-            SenhaHash = senhahash;
-            Cpf = cpf;
-            
-        }
-        public void DefinirId(int id)
-        {
-            Id = id;
+            this.Id = Guid.NewGuid();
         }
         public void AlterarNome(string NovoNome)
         {

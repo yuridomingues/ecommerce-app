@@ -34,5 +34,10 @@ namespace Application.ClienteService
 
             _repository.CadastrarCliente(cliente);
         }
+        public List<ListarClientesDTO> ListarClientes()
+        {
+            List<Cliente> clientes = _repository.ListarClientes();
+            return _mapper.Map<List<ListarClientesDTO>>(clientes);
+        }
     }
 }

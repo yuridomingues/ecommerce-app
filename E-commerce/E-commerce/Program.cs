@@ -23,6 +23,7 @@ builder.Services.AddAutoMapper(cfg => { }, typeof(CadastroClienteProfile).Assemb
 
 
 
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
