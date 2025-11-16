@@ -45,5 +45,13 @@ namespace Application.ClienteService
 
             _repository.RemoverCliente(cliente);
         }
+        public void AlterarNome(NovoNomeClienteDTO dto)
+        {
+            _validacoes.ValidarNovoNome(dto);
+
+            Cliente cliente = _mapper.Map<Cliente>(dto);
+
+            _repository.AlterarNome(cliente, dto.NovoNome);
+        }
     }
 }

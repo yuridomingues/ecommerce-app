@@ -46,7 +46,7 @@ namespace E_commerce.Controllers
         }
         [HttpDelete("Excluir")]
 
-        public ActionResult RemoverCliente(RemoverClienteDTO dto)
+        public ActionResult RemoverCliente([FromBody] RemoverClienteDTO dto)
         {
             try
             {
@@ -56,6 +56,19 @@ namespace E_commerce.Controllers
             catch(Exception ex)
             {
                 return NotFound(ex.Message);
+            }
+        }
+        [HttpPut("AlterarNome")]
+        public ActionResult AlterarNome([FromBody] NovoNomeClienteDTO dto)
+        {
+            try
+            {
+                _service.AlterarNome(dto);
+                return Ok("Nome alterado com sucesso");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }

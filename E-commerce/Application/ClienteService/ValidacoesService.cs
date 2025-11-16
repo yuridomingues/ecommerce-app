@@ -63,5 +63,18 @@ namespace Application.Service
 
            
         }
+        public void ValidarNovoNome(NovoNomeClienteDTO dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.NovoNome))
+            {
+                throw new NomeValido();
+            }
+            if (!dto.NovoNome.All(c => char.IsLetter(c) || c == ' '))
+
+            {
+                throw new NomeLetra();
+            }
+          
+        }
     }
 }

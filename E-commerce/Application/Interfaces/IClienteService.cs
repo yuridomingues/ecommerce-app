@@ -16,5 +16,7 @@ namespace Application.Interfaces
         List<ListarClientesDTO> ListarClientes();
 
         void RemoverCliente(RemoverClienteDTO dto);
+
+        void AlterarNome(NovoNomeClienteDTO dto);
     }
 }

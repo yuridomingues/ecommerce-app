@@ -54,5 +54,33 @@ namespace Infraestrutucture.ClienteRepository
                 throw new ClienteNaoExiste();
             }
         }
+        public void AlterarNome(Cliente cliente, string Novonome)
+        {
+            Cliente? ClienteCadastrado = _db.BuscarCpf(cliente.Cpf);
+
+            if (ClienteCadastrado != null)
+            {
+                _db.AlterarNome(ClienteCadastrado, Novonome);
+            }
+            else
+            {
+                throw new ClienteNaoExiste();
+            }
+
+        }
+        public void AlterarSenha(Cliente cliente, string NovaSenha)
+        {
+            Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
+
+            if (ClienteCadastrado != null)
+            {
+                _db.AlterarSenha(ClienteCadastrado, NovaSenha);
+            }
+            else
+            {
+                throw new ClienteNaoExiste();
+            }
+
+        }
     }
 }

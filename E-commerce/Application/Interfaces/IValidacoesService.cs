@@ -14,6 +14,8 @@ namespace Application.Interfaces
         void ValidarSenha(CadastroClienteDto dto);
         void ValidarCpf(CadastroClienteDto dto);
 
+        void ValidarNovoNome(NovoNomeClienteDTO dto);
+
 
 
     }

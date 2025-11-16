@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.ClienteExceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,11 +27,21 @@ namespace Domain.Entities
         }
         public void AlterarNome(string NovoNome)
         {
-            Nome = NovoNome;
+            if (NovoNome == Nome)
+            {
+                throw new NomesIguais();
+            }
+            else
+            {
+                Nome = NovoNome;
+
+            }
         }
         public void AlterarEmail(string NovoEmail)
         {
+           
             Email = NovoEmail;
+
         }
         public void AlterarSenha(string NovaSenha)
         {
