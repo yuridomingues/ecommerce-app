@@ -39,5 +39,11 @@ namespace Application.ClienteService
             List<Cliente> clientes = _repository.ListarClientes();
             return _mapper.Map<List<ListarClientesDTO>>(clientes);
         }
+        public void RemoverCliente(RemoverClienteDTO dto)
+        {
+            Cliente cliente = _mapper.Map<Cliente>(dto);
+
+            _repository.RemoverCliente(cliente);
+        }
     }
 }

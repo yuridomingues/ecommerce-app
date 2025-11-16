@@ -44,5 +44,19 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpDelete("Excluir")]
+
+        public ActionResult RemoverCliente(RemoverClienteDTO dto)
+        {
+            try
+            {
+                _service.RemoverCliente(dto);
+                return Ok("Cliente excluído com sucesso");
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

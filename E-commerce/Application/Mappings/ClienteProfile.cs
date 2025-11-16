@@ -1,5 +1,4 @@
-﻿using Application.Dtos;
-using Domain.Entities;
+﻿using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +9,17 @@ using Application.Dtos;
 
 namespace Application.Mappings
 {
-    public class ListarClienteProfile : Profile
+    public class ClienteProfile : Profile
     {
-        public ListarClienteProfile()
+        public ClienteProfile()
         {
+            CreateMap<CadastroClienteDto, Cliente>();
             CreateMap<Cliente, ListarClientesDTO>();
+            CreateMap<RemoverClienteDTO, Cliente>();
+
+
+
 
         }
-
-
     }
 }

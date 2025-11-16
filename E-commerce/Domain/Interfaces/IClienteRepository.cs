@@ -11,5 +11,7 @@ namespace Domain.Interfaces
     {
         void CadastrarCliente(Cliente cliente);
         List<Cliente> ListarClientes();
+
+        void RemoverCliente(Cliente cliente);
     }
 }

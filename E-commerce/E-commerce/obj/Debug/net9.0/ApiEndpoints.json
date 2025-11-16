@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "RemoverCliente",
+    "RelativePath": "api/Cliente/Excluir",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dtos.RemoverClienteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "ListarClientes",
     "RelativePath": "api/Cliente/Listar",
     "HttpMethod": "GET",

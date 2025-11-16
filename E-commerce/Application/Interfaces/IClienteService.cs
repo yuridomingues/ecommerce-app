@@ -14,5 +14,7 @@ namespace Application.Interfaces
         void CadastrarCliente(CadastroClienteDto dto);
 
         List<ListarClientesDTO> ListarClientes();
+
+        void RemoverCliente(RemoverClienteDTO dto);
     }
 }

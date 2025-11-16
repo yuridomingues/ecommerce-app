@@ -40,5 +40,19 @@ namespace Infraestrutucture.ClienteRepository
         {
             return _db.ListarClientes();
         }
+
+        public void RemoverCliente(Cliente cliente)
+        {
+            Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
+
+            if (ClienteCadastrado != null)
+            {
+                _db.RemoverCliente(ClienteCadastrado);
+            }
+            else
+            {
+                throw new ClienteNaoExiste();
+            }
+        }
     }
 }

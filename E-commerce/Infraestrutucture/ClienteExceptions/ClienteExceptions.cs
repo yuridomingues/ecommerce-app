@@ -11,4 +11,10 @@ namespace Infraestrutucture.Exceptions
         public ClienteExistente()
             : base("Esse usuário já está cadastrado") { }
     }
+    public class ClienteNaoExiste : Exception 
+    {
+        public ClienteNaoExiste()
+            : base("Usuário não encontrado") { }
+    }
+
 }

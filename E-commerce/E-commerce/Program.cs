@@ -18,7 +18,7 @@ builder.Services.AddSingleton<IDataBase, DataBase>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IValidacoesService, ValidacoesService>();
-builder.Services.AddAutoMapper(cfg => { }, typeof(CadastroClienteProfile).Assembly);
+builder.Services.AddAutoMapper(cfg => { }, typeof(ClienteProfile).Assembly);
 
 
 
