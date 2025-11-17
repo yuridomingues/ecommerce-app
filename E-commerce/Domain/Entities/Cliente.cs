@@ -39,7 +39,11 @@ namespace Domain.Entities
         }
         public void AlterarEmail(string NovoEmail)
         {
-           
+            if (NovoEmail == Email)
+            {
+                throw new EmailsIguais();
+            }
+
             Email = NovoEmail;
 
         }

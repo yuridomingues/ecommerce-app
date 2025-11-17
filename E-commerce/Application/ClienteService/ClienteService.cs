@@ -61,5 +61,14 @@ namespace Application.ClienteService
 
             _repository.AlterarSenha(cliente, dto.NovaSenhaHash);
         }
+
+        public void AlterarEmail(AlterarEmailDTO dto)
+        {
+            _validacoes.ValidarNovoEmail(dto);
+
+            Cliente? cliente = _mapper.Map<Cliente>(dto);
+
+            _repository.AlterarEmail(cliente, dto.NovoEmail);
+        }
     }
 }

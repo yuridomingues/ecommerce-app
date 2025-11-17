@@ -16,5 +16,10 @@ namespace Infraestrutucture.Exceptions
         public ClienteNaoExiste()
             : base("Usuário não encontrado") { }
     }
+    public class SenhaIncorreta : Exception
+    {
+        public SenhaIncorreta()
+            : base("Senha incorreta, tente novamente") { }
+    }
 
 }

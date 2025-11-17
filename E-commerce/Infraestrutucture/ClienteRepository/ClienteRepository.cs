@@ -82,5 +82,28 @@ namespace Infraestrutucture.ClienteRepository
             }
 
         }
+
+        public void AlterarEmail(Cliente cliente, string NovoEmail)
+        {
+            Cliente? ClienteCadastrado = (_db.BuscarCliente(cliente.Email));
+
+            if (ClienteCadastrado == null)
+            {
+                throw new ClienteNaoExiste();
+
+            }
+
+            
+             if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            {
+                throw new SenhaIncorreta();
+            }
+            else
+            {
+                _db.AlterarEmail(ClienteCadastrado, NovoEmail);
+            }
+
+
+        }
     }
 }

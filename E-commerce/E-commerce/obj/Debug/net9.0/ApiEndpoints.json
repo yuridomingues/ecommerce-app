@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "AlterarEmail",
+    "RelativePath": "api/Cliente/AlterarEmail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dtos.AlterarEmailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AlterarNome",
     "RelativePath": "api/Cliente/AlterarNome",
     "HttpMethod": "PUT",

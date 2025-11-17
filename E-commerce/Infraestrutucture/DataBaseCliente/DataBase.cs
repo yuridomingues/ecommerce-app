@@ -49,6 +49,7 @@ namespace Infraestrutucture.DataBaseCliente
         {
             return clientes.FirstOrDefault(c => c.Cpf == cpf);
         }
+       
     }
 
    

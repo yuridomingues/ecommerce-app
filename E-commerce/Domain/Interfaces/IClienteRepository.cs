@@ -18,6 +18,6 @@ namespace Domain.Interfaces
 
         void AlterarSenha(Cliente cliente, string NovaSenha);
 
-        
+        void AlterarEmail(Cliente cliente, string NovoEmail);
     }
 }

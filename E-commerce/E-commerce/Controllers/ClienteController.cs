@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application.Interfaces;
 using Application.ClienteService;
 using Application.Dtos;
+using System.Diagnostics;
 
 namespace E_commerce.Controllers
 {
@@ -81,6 +82,19 @@ namespace E_commerce.Controllers
                 return Ok("Senha alterada com sucesso");
             }
             catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("AlterarEmail")]
+        public ActionResult AlterarEmail([FromBody] AlterarEmailDTO dto)
+        {
+            try
+            {
+                _service.AlterarEmail(dto);
+                return Ok("Email Alterado com sucesso");
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

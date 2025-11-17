@@ -18,6 +18,8 @@ namespace Application.Mappings
             CreateMap<RemoverClienteDTO, Cliente>();
             CreateMap<NovoNomeClienteDTO, Cliente>();
             CreateMap<AlterarSenhaDTO, Cliente>();
+            CreateMap<AlterarEmailDTO, Cliente>();
+
 
 
 

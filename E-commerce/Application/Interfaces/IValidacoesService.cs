@@ -18,6 +18,8 @@ namespace Application.Interfaces
 
         void ValidarNovaSenha(AlterarSenhaDTO dto);
 
+        void ValidarNovoEmail(AlterarEmailDTO dto);
+
 
 
     }

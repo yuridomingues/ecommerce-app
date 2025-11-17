@@ -95,5 +95,21 @@ namespace Application.Service
                 throw new SenhasDiferentes();
             }
         }
+
+        public void ValidarNovoEmail(AlterarEmailDTO dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Email))
+            {
+                throw new EmailVazio();
+            }
+            try
+            {
+                MailAddress mail = new MailAddress(dto.Email);
+            }
+            catch (FormatException)
+            {
+                throw new CadastroEmail();
+            }
+        }
     }
 }
