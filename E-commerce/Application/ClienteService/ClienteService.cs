@@ -53,5 +53,13 @@ namespace Application.ClienteService
 
             _repository.AlterarNome(cliente, dto.NovoNome);
         }
+        public void AlterarSenha(AlterarSenhaDTO dto)
+        {
+            _validacoes.ValidarNovaSenha(dto);
+
+            Cliente cliente = _mapper.Map<Cliente>(dto);
+
+            _repository.AlterarSenha(cliente, dto.NovaSenhaHash);
+        }
     }
 }

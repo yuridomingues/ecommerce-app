@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "AlterarSenha",
+    "RelativePath": "api/Cliente/AlterarSenha",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dtos.AlterarSenhaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "CadastrarCliente",
     "RelativePath": "api/Cliente/Cadastrar",
     "HttpMethod": "POST",

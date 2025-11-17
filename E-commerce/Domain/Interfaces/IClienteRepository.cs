@@ -17,5 +17,7 @@ namespace Domain.Interfaces
         void AlterarNome(Cliente cliente, string Novonome);
 
         void AlterarSenha(Cliente cliente, string NovaSenha);
+
+        
     }
 }

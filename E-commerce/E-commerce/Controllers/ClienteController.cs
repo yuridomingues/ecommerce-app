@@ -71,5 +71,19 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPut("AlterarSenha")]
+
+        public ActionResult AlterarSenha([FromBody] AlterarSenhaDTO dto)
+        {
+            try
+            {
+                _service.AlterarSenha(dto);
+                return Ok("Senha alterada com sucesso");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

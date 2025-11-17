@@ -14,6 +14,8 @@ namespace Application.Dtos
 
         public string SenhaHash { get;  set; } = string.Empty;
 
+        public string ConfirmarSenhaHash { get; set; } = string.Empty;
+
         public string Cpf { get;  set; } = string.Empty;
     }
 }

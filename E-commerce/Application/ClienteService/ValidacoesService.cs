@@ -50,6 +50,10 @@ namespace Application.Service
             {
                 throw new SenhaInvalida();
             }
+            if (dto.SenhaHash != dto.ConfirmarSenhaHash)
+            {
+                throw new SenhasDiferentes();
+            }
         }
         public void ValidarCpf(CadastroClienteDto dto)
         {
@@ -75,6 +79,21 @@ namespace Application.Service
                 throw new NomeLetra();
             }
           
+        }
+        public void ValidarNovaSenha(AlterarSenhaDTO dto)
+        {
+            if (dto.NovaSenhaHash.Length < 8 ||
+              !dto.NovaSenhaHash.Any(char.IsLetter) ||
+              !dto.NovaSenhaHash.Any(char.IsDigit) ||
+              !dto.NovaSenhaHash.Any(c => !char.IsLetterOrDigit(c))
+              )
+            {
+                throw new SenhaInvalida();
+            }
+            if (dto.NovaSenhaHash != dto.ConfirmarNovaSenha)
+            {
+                throw new SenhasDiferentes();
+            }
         }
     }
 }

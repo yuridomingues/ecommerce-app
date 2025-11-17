@@ -45,6 +45,7 @@ namespace Domain.Entities
         }
         public void AlterarSenha(string NovaSenha)
         {
+           
             SenhaHash = NovaSenha;
         }
         

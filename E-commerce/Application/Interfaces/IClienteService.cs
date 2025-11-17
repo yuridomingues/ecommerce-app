@@ -18,5 +18,6 @@ namespace Application.Interfaces
         void RemoverCliente(RemoverClienteDTO dto);
 
         void AlterarNome(NovoNomeClienteDTO dto);
+        void AlterarSenha(AlterarSenhaDTO dto);
     }
 }

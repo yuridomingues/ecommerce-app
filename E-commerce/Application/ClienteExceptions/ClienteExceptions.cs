@@ -42,5 +42,11 @@ namespace Application.ClienteExceptions
             : base("O CPF tem que ser preenchido") { }
     }
 
+    public class SenhasDiferentes : Exception
+    {
+        public SenhasDiferentes()
+            : base("As senhas precisam ser iguais. ") { }
+    }
+
 
 }

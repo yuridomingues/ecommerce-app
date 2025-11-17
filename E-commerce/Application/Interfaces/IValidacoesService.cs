@@ -16,6 +16,8 @@ namespace Application.Interfaces
 
         void ValidarNovoNome(NovoNomeClienteDTO dto);
 
+        void ValidarNovaSenha(AlterarSenhaDTO dto);
+
 
 
     }

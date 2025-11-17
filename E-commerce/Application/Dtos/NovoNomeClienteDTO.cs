@@ -10,6 +10,7 @@ namespace Application.Dtos
     {
         public string Cpf { get; set; } = string.Empty;
 
+        public string Senha { get; set; } = string.Empty;
         public string NovoNome { get; set; } = string.Empty;
 
     }
