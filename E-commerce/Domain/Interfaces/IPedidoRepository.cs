@@ -2,9 +2,9 @@ namespace Domain.Interface;
 
 public interface IPedidoRepository
 {
-    public void CriarPedido(Pedido pedido, int id);
+    public void CriarPedido(Pedido pedido);
 
-     public void DefinirSubTotal(Pedido pedido);
+     public void DefinirSubTotal(int Id);
 
     public void AdicionarItem(ItemPedido item);
 
@@ -12,10 +12,10 @@ public interface IPedidoRepository
 
     public void ExcluirPedido(int id);
     
-    public void ListarPedidos();
+    public List<Pedido> ListarPedidos();
 
-    public void BuscarPedido(int id);
+    public Pedido BuscarPedido(int id);
     
-    public void AlterarEndereco(Endereco endereco);
+    public void AlterarEndereco(Endereco endereco, Pedido pedido);
 
 }

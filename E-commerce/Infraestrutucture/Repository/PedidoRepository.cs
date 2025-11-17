@@ -12,6 +12,8 @@ public class PedidoRepository : IPedidoRepository
 
     private IDataBasePedido dataBasePedido;
 
+    private static int IdAtual = 1;
+
     public PedidoRepository(IDataBasePedido databasePedido, Pedido pedido)
     {
         this.dataBasePedido = databasePedido;
@@ -19,15 +21,18 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void CriarPedido(Pedido pedido, int id)
+    public void CriarPedido(Pedido pedido)
     {
-        pedido.DefinirId(id);
+        pedido.DefinirId(IdAtual);
+        IdAtual++;
         dataBasePedido.CadastrarPedido(pedido);
     }
 
 
-    public void DefinirSubTotal(Pedido pedido)
+    public void DefinirSubTotal(int id)
     {
+
+        Pedido pedido = BuscarPedido(id);
         pedido.DefinirSubTotal();
     }
 
@@ -50,19 +55,19 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void ListarPedidos()
+    public List<Pedido> ListarPedidos()
     {
-        dataBasePedido.ListarPedidos();
+        return dataBasePedido.ListarPedidos();
     }
 
 
-    public void BuscarPedido(int id)
+    public Pedido BuscarPedido(int id)
     {
-        dataBasePedido.BuscarPedido(id);
+        return dataBasePedido.BuscarPedido(id);
     }
 
 
-    public void AlterarEndereco(Endereco endereco)
+    public void AlterarEndereco(Endereco endereco, Pedido pedido)
     {
         pedido.AlterarEndereco(endereco);
     }

@@ -4,8 +4,7 @@ using Domain;
 
 public class PedidoService
 {
-
-    private static int IdAtual = 1;
+    
     private readonly IPedidoRepository pedidoRepository;
 
     public PedidoService(IPedidoRepository pedidoRepository)
@@ -16,14 +15,13 @@ public class PedidoService
 
     public void CriarPedido(Pedido pedido)
     {
-        pedidoRepository.CriarPedido(pedido, IdAtual);
-        IdAtual++;
+        pedidoRepository.CriarPedido(pedido);
     }
 
 
-    public void DefinirSubTotal(Pedido pedido)
+    public void DefinirSubTotal(int id)
     {
-        pedidoRepository.DefinirSubTotal(pedido);
+        pedidoRepository.DefinirSubTotal(id);
     }
 
     public void AdicionarItem(ItemPedido item)
@@ -32,9 +30,12 @@ public class PedidoService
     }
 
 
-    public void FinalizarPedido(Pedido pedido)
+    public void FinalizarPedido(int id)
     {
-        DefinirSubTotal(pedido);
+        DefinirSubTotal(id);
+
+        Pedido pedido = BuscarPedido(id);
+
         pedidoRepository.FinalizarPedido(pedido);
     }
 
@@ -45,21 +46,21 @@ public class PedidoService
     }
 
 
-    public void ListarPedidos()
+    public List<Pedido> ListarPedidos()
     {
-        pedidoRepository.ListarPedidos();
+        return pedidoRepository.ListarPedidos();
     }
 
 
-    public void BuscarPedido(int id)
+    public Pedido BuscarPedido(int id)
     {
-        pedidoRepository.BuscarPedido(id);
+        return pedidoRepository.BuscarPedido(id);
     }
 
 
-    public void AlterarEndereco(Endereco endereco)
+    public void AlterarEndereco(Endereco endereco, Pedido pedido)
     {
-        pedidoRepository.AlterarEndereco(endereco);
+        pedidoRepository.AlterarEndereco(endereco, pedido);
     }
 
 
