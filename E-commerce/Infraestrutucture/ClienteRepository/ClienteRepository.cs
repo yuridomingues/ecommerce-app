@@ -45,26 +45,36 @@ namespace Infraestrutucture.ClienteRepository
         {
             Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
 
-            if (ClienteCadastrado != null)
+            if (ClienteCadastrado == null)
             {
-                _db.RemoverCliente(ClienteCadastrado);
+                throw new ClienteNaoExiste();
+            }
+            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            {
+                throw new SenhaIncorreta();
             }
             else
             {
-                throw new ClienteNaoExiste();
+                _db.RemoverCliente(ClienteCadastrado);
+
             }
         }
         public void AlterarNome(Cliente cliente, string Novonome)
         {
             Cliente? ClienteCadastrado = _db.BuscarCpf(cliente.Cpf);
 
-            if (ClienteCadastrado != null)
+            if (ClienteCadastrado == null)
             {
-                _db.AlterarNome(ClienteCadastrado, Novonome);
+                throw new ClienteNaoExiste();
+            }
+            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            {
+                throw new SenhaIncorreta();
             }
             else
             {
-                throw new ClienteNaoExiste();
+                _db.AlterarNome(ClienteCadastrado, Novonome);
+
             }
 
         }
@@ -72,13 +82,19 @@ namespace Infraestrutucture.ClienteRepository
         {
             Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
 
-            if (ClienteCadastrado != null)
+            if (ClienteCadastrado == null)
             {
-                _db.AlterarSenha(ClienteCadastrado, NovaSenha);
+                throw new ClienteNaoExiste();
+
+            }
+            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            {
+                throw new SenhaIncorreta();
             }
             else
             {
-                throw new ClienteNaoExiste();
+                _db.AlterarSenha(ClienteCadastrado, NovaSenha);
+
             }
 
         }
