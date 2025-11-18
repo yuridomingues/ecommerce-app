@@ -70,5 +70,19 @@ namespace Application.ClienteService
 
             _repository.AlterarEmail(cliente, dto.NovoEmail);
         }
+
+        public BuscarClienteSaidaDTO? BuscarClienteEspecifico(BuscarClienteEntradaDTO dto)
+        {
+            Cliente clienteentrada = _mapper.Map<Cliente>(dto);
+
+
+            Cliente clienteencontrado = _repository.BuscarClienteEspecifico(clienteentrada);
+
+            BuscarClienteSaidaDTO clientesaidaDTO = _mapper.Map<BuscarClienteSaidaDTO>(clienteencontrado);
+
+
+            return clientesaidaDTO;
+
+        } 
     }
 }

@@ -21,5 +21,7 @@ namespace Application.Interfaces
         void AlterarSenha(AlterarSenhaDTO dto);
 
         void AlterarEmail(AlterarEmailDTO dto);
+
+        BuscarClienteSaidaDTO BuscarClienteEspecifico(BuscarClienteEntradaDTO dto);
     }
 }

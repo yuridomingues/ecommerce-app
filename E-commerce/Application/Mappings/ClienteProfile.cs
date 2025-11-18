@@ -19,11 +19,8 @@ namespace Application.Mappings
             CreateMap<NovoNomeClienteDTO, Cliente>();
             CreateMap<AlterarSenhaDTO, Cliente>();
             CreateMap<AlterarEmailDTO, Cliente>();
-
-
-
-
-
+            CreateMap<BuscarClienteEntradaDTO, Cliente>();
+            CreateMap<Cliente, BuscarClienteSaidaDTO>();
 
 
         }

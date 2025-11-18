@@ -24,5 +24,6 @@ namespace Domain.Interfaces
         Cliente? BuscarCpf(string cpf);
 
 
+
     }
 }

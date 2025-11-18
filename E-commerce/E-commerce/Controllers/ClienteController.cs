@@ -99,5 +99,19 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("BuscarUmCliente")]
+
+        public ActionResult BuscarClienteEspecifico([FromBody] BuscarClienteEntradaDTO dto)
+        {
+            try
+            {
+               return Ok (_service.BuscarClienteEspecifico(dto));
+                
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

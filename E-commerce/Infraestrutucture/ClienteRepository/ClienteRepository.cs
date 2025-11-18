@@ -101,7 +101,7 @@ namespace Infraestrutucture.ClienteRepository
 
         public void AlterarEmail(Cliente cliente, string NovoEmail)
         {
-            Cliente? ClienteCadastrado = (_db.BuscarCliente(cliente.Email));
+            Cliente? ClienteCadastrado = ( _db.BuscarCliente(cliente.Email));
 
             if (ClienteCadastrado == null)
             {
@@ -118,6 +118,24 @@ namespace Infraestrutucture.ClienteRepository
             {
                 _db.AlterarEmail(ClienteCadastrado, NovoEmail);
             }
+
+
+        }
+
+        public Cliente? BuscarClienteEspecifico(Cliente cliente)
+        {
+            Cliente? ClienteCadastrado = (_db.BuscarCpf(cliente.Cpf));
+
+            if (ClienteCadastrado == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
+                return ClienteCadastrado;
+
+            }
+
 
 
         }

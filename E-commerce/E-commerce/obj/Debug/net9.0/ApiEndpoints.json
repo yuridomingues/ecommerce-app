@@ -49,6 +49,22 @@
   },
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "BuscarClienteEspecifico",
+    "RelativePath": "api/Cliente/BuscarUmCliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dtos.BuscarClienteEntradaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "CadastrarCliente",
     "RelativePath": "api/Cliente/Cadastrar",
     "HttpMethod": "POST",
