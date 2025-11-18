@@ -24,9 +24,9 @@ public class PedidoService
         pedidoRepository.DefinirSubTotal(id);
     }
 
-    public void AdicionarItem(ItemPedido item)
+    public void AdicionarItem(ItemPedido item, Pedido pedido)
     {
-        pedidoRepository.AdicionarItem(item);
+        pedidoRepository.AdicionarItem(item, pedido);
     }
 
 

@@ -21,7 +21,7 @@ public class PedidoController: ControllerBase
     public ActionResult CriarPedido([FromBody] Pedido novoPedido)
     {
         pedidoService.CriarPedido(novoPedido);
-        return Ok();
+        return Ok(novoPedido);
     } 
 
 
@@ -46,11 +46,18 @@ public class PedidoController: ControllerBase
     }
 
 
-    [HttpPost("adicinarItem")]
-    public ActionResult AdicionarItem([FromBody] ItemPedido novoItem)
+    [HttpPost("adicinarItem/{id}")]
+    public ActionResult AdicionarItem([FromBody] ItemPedido novoItem, [FromHeader] int id)
     {
-        pedidoService.AdicionarItem(novoItem);
-        return Ok();
+        Pedido pedido = pedidoService.BuscarPedido(id);
+
+        if(pedido == null)
+        {
+            return NotFound("Pedido inexistente");
+        }
+
+        pedidoService.AdicionarItem(novoItem, pedido);
+        return Ok(pedido);
     }
 
 

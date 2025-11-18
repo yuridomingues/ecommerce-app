@@ -6,7 +6,7 @@ public interface IPedidoRepository
 
      public void DefinirSubTotal(int Id);
 
-    public void AdicionarItem(ItemPedido item);
+    public void AdicionarItem(ItemPedido item, Pedido pedido);
 
     public void FinalizarPedido(Pedido pedido);
 

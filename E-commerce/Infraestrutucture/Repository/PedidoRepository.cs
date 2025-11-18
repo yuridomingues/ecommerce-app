@@ -8,16 +8,13 @@ using Infraestrutucture.DataBasePedido;
 public class PedidoRepository : IPedidoRepository
 {
 
-    private Pedido pedido;
-
     private IDataBasePedido dataBasePedido;
 
     private static int IdAtual = 1;
 
-    public PedidoRepository(IDataBasePedido databasePedido, Pedido pedido)
+    public PedidoRepository(IDataBasePedido databasePedido)
     {
         this.dataBasePedido = databasePedido;
-        this.pedido = pedido;
     }
 
 
@@ -37,15 +34,15 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void AdicionarItem(ItemPedido item)
+    public void AdicionarItem(ItemPedido item, Pedido pedido)
     {
-        pedido.AdicionarItem(item);
+        pedido.AdicionarItem(item);   
     }
 
 
     public void FinalizarPedido(Pedido pedido)
     {
-        pedido.FinalizarPedido(pedido);
+        pedido.FinalizarPedido();
     }
 
 

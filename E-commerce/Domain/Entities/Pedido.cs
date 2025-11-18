@@ -3,19 +3,26 @@ namespace Domain;
 public class Pedido
 { 
 
-    public int Id { get; private set; }
+    public Pedido()
+    {
+        
+    } 
 
-    public int ClienteId { get; private set; }
 
-    public Endereco Endereco { get; private set; }
 
-    public List<ItemPedido> Itens { get; private set; }
+    public int Id { get; set; }
 
-    public decimal ValorFrete { get; private set; } = 15;
+    public int ClienteId { get; set; }
 
-    public decimal SubTotal { get; private set; }
+    public Endereco? Endereco { get; set; }
 
-    public bool Status { get; private set; } // true = finalziado e false = aberto
+    public List<ItemPedido> Itens { get; set; }
+
+    public decimal ValorFrete { get; set; } = 15;
+
+    public decimal SubTotal { get; set; }
+
+    public bool Status { get; set; } // true = finalziado e false = aberto
 
 
     public Pedido(int clienteId, Endereco endereco)
@@ -72,7 +79,7 @@ public class Pedido
     }
 
 
-    public void FinalizarPedido(Pedido pedido)
+    public void FinalizarPedido()
     {
         
         if(Itens.Count <= 0)
@@ -80,7 +87,7 @@ public class Pedido
             throw new Exception("Não é possível finalizar um pedido sem itens.");
         }
 
-        pedido.Status = true;
+        Status = true;
 
     }
 
