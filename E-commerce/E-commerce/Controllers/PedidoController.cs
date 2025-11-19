@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Application;
 using Domain;
+using Domain.DTOs;
 
 namespace E_commerce.Controllers;
     
@@ -18,61 +19,46 @@ public class PedidoController: ControllerBase
     }
 
     [HttpPost("criarPedido")]
-    public ActionResult CriarPedido([FromBody] Pedido novoPedido)
+    public ActionResult CriarPedido([FromBody] PedidoDTO novoPedido)
     {
         pedidoService.CriarPedido(novoPedido);
         return Ok(novoPedido);
     } 
 
 
-    [HttpPut("finalizarPedido/{id}")]
-    public ActionResult FinalizarPedido(int id)
+    [HttpPut("finalizarPedido")]
+    public ActionResult FinalizarPedido([FromBody]PedidoDTO pedidoFinalizado)
     {
-        if (pedidoService.BuscarPedido(id) == null)
+        if (pedidoService.BuscarPedido(pedidoFinalizado.Id) == null)
         {
-            return NotFound();
+            return NotFound("Este pedido não existe");
 
         }
-        else if(pedidoService.BuscarPedido(id).Status == true)
+        else if(pedidoService.BuscarPedido(pedidoFinalizado.Id).Status == true)
         {
             return BadRequest("Pedido já finalizado");
         }
         else
         {
-            pedidoService.FinalizarPedido(id);
-            return Ok();
+            pedidoService.FinalizarPedido(pedidoFinalizado);
+            return Ok("Pedido entregue.");
         }
 
     }
 
 
-    [HttpPost("adicinarItem/{id}")]
-    public ActionResult AdicionarItem([FromBody] ItemPedido novoItem, [FromHeader] int id)
+    [HttpDelete("excluirPedido")]
+    public ActionResult ExcluirPedido([FromBody] PedidoDTO pedidoExcluido)
     {
-        Pedido pedido = pedidoService.BuscarPedido(id);
-
-        if(pedido == null)
+        if (pedidoService.BuscarPedido(pedidoExcluido.Id) == null)
         {
-            return NotFound("Pedido inexistente");
-        }
-
-        pedidoService.AdicionarItem(novoItem, pedido);
-        return Ok(pedido);
-    }
-
-
-    [HttpDelete("excluirPedido/{id}")]
-    public ActionResult ExcluirPedido(int id)
-    {
-        if (pedidoService.BuscarPedido(id) == null)
-        {
-            return NotFound();
+            return NotFound("Este pedido não existe");
 
         }
         else
         {
-            pedidoService.ExcluirPedido(id);
-            return Ok();
+            pedidoService.ExcluirPedido(pedidoExcluido);
+            return Ok("Pedido excluído com sucesso");
         }
 
     }
@@ -86,7 +72,7 @@ public class PedidoController: ControllerBase
 
 
     [HttpPut("alterarEndereco/{id}")]
-    public ActionResult AlterarEndereco([FromBody] Endereco novoEndereco, int id)
+    public ActionResult AlterarEndereco([FromBody] EnderecoDTO novoEndereco, int id)
     {
         
         if (pedidoService.BuscarPedido(id) == null)
@@ -104,9 +90,7 @@ public class PedidoController: ControllerBase
         else
         {
 
-            Pedido pedido = pedidoService.BuscarPedido(id);
-
-            pedidoService.AlterarEndereco(novoEndereco, pedido);
+            pedidoService.AlterarEndereco(novoEndereco, id);
             return Ok();
 
         }

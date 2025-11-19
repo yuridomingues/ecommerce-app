@@ -1,54 +1,53 @@
 namespace Application;
 using Domain.Interface;
 using Domain;
+using Domain.DTOs;
+using AutoMapper;
 
 public class PedidoService
 {
     
     private readonly IPedidoRepository pedidoRepository;
+    private readonly IMapper mapper;
 
-    public PedidoService(IPedidoRepository pedidoRepository)
+    public PedidoService(IPedidoRepository pedidoRepository, IMapper mapper)
     {
         this.pedidoRepository = pedidoRepository;
+        this.mapper = mapper;
     }
 
 
-    public void CriarPedido(Pedido pedido)
+    public void CriarPedido(PedidoDTO novoPedido)
     {
+        var pedido = mapper.Map<Pedido>(novoPedido);
+
         pedidoRepository.CriarPedido(pedido);
     }
 
 
-    public void DefinirSubTotal(int id)
+    public void FinalizarPedido(PedidoDTO pedidoFinalizado)
     {
-        pedidoRepository.DefinirSubTotal(id);
-    }
 
-    public void AdicionarItem(ItemPedido item, Pedido pedido)
-    {
-        pedidoRepository.AdicionarItem(item, pedido);
-    }
-
-
-    public void FinalizarPedido(int id)
-    {
-        DefinirSubTotal(id);
-
-        Pedido pedido = BuscarPedido(id);
+        var pedido = mapper.Map<Pedido>(pedidoFinalizado);
 
         pedidoRepository.FinalizarPedido(pedido);
     }
 
 
-    public void ExcluirPedido(int id)
+    public void ExcluirPedido(PedidoDTO pedidoExcluido)
     {
-        pedidoRepository.ExcluirPedido(id);
+
+        var pedido = mapper.Map<Pedido>(pedidoExcluido);
+
+        pedidoRepository.ExcluirPedido(pedidoExcluido.Id);
     }
 
 
-    public List<Pedido> ListarPedidos()
+    public List<PedidoDTO> ListarPedidos()
     {
-        return pedidoRepository.ListarPedidos();
+        var pedidos = pedidoRepository.ListarPedidos();
+
+        return mapper.Map<List<PedidoDTO>>(pedidos);
     }
 
 
@@ -58,9 +57,12 @@ public class PedidoService
     }
 
 
-    public void AlterarEndereco(Endereco endereco, Pedido pedido)
+    public void AlterarEndereco(EnderecoDTO novoEndereco, int id)
     {
-        pedidoRepository.AlterarEndereco(endereco, pedido);
+
+        var endereco = mapper.Map<Endereco>(novoEndereco);
+
+        pedidoRepository.AlterarEndereco(endereco, id);
     }
 
 

@@ -26,23 +26,10 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void DefinirSubTotal(int id)
-    {
-
-        Pedido pedido = BuscarPedido(id);
-        pedido.DefinirSubTotal();
-    }
-
-
-    public void AdicionarItem(ItemPedido item, Pedido pedido)
-    {
-        pedido.AdicionarItem(item);   
-    }
-
-
     public void FinalizarPedido(Pedido pedido)
     {
-        pedido.FinalizarPedido();
+        Pedido pedidoExistente = BuscarPedido(pedido.Id);
+        pedidoExistente.FinalizarPedido();
     }
 
 
@@ -64,8 +51,10 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void AlterarEndereco(Endereco endereco, Pedido pedido)
+    public void AlterarEndereco(Endereco endereco, int id)
     {
+        Pedido pedido = BuscarPedido(id);
+
         pedido.AlterarEndereco(endereco);
     }
 

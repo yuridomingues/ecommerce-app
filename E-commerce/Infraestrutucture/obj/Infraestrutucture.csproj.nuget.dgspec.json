@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {}
+    "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {}
   },
   "projects": {
     "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
@@ -45,6 +45,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -65,14 +71,14 @@
         }
       }
     },
-    "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
+    "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+        "projectUniqueName": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
         "projectName": "Infraestrutucture",
-        "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+        "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
         "packagesPath": "C:\\Users\\dudsl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
+        "outputPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dudsl\\AppData\\Roaming\\NuGet\\NuGet.Config",

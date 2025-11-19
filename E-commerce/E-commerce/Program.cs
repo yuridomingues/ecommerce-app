@@ -11,6 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Configuração do AutoMapper
+builder.Services.AddAutoMapper(cfg => {
+    cfg.AddProfile<Domain.AutoMappers.AutoMapperPedido>();
+    cfg.AddProfile<Domain.AutoMappers.AutoMapperEndereco>();
+});
+
 builder.Services.AddScoped<PedidoService>();
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
 builder.Services.AddSingleton<IDataBasePedido, DataBasePedido>(); 

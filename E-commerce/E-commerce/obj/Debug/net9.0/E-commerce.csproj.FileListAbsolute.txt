@@ -37,3 +37,8 @@ C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\obj\Debug\ne
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\obj\Debug\net9.0\ref\E-commerce.dll
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Infraestrutucture.dll
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Infraestrutucture.pdb
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\E-commerce\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll

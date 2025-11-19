@@ -18,7 +18,7 @@ public class Pedido
 
     public List<ItemPedido> Itens { get; set; }
 
-    public decimal ValorFrete { get; set; } = 15;
+    public decimal ValorFrete { get; set; }
 
     public decimal SubTotal { get; set; }
 
@@ -39,43 +39,6 @@ public class Pedido
 
         Id = id;
 
-    }
-
-
-    public decimal DefinirSubTotal()
-    {
-
-        decimal subTotal = 0;
-
-
-        for (int i = 0; i < Itens.Count; i++)
-        {
-            subTotal += Itens[i].PrecoUnitario * Itens[i].Quantidade;
-        }
-
-
-        if (subTotal <= 0)
-        {
-
-            throw new Exception("Erro | SubTotal inválido");
-
-        }
-        else
-        {
-
-            SubTotal = subTotal;
-            return subTotal;
-
-        }
-
-    }
-
-
-    public void AdicionarItem(ItemPedido item)
-    {
-
-        Itens.Add(item);
-    
     }
 
 
