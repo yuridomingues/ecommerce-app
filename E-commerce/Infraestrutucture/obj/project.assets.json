@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "Domain/1.0.0": {
+      "ClienteDomain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/ClienteDomain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/ClienteDomain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Domain/1.0.0": {
+    "ClienteDomain/1.0.0": {
       "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
+      "path": "../Domain/ClienteDomain.csproj",
+      "msbuildProject": "../Domain/ClienteDomain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Domain >= 1.0.0"
+      "ClienteDomain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
-      "projectName": "Infraestrutucture",
-      "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+      "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj",
+      "projectName": "ClienteInfraestrutucture",
+      "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj",
       "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
       "projectStyle": "PackageReference",
@@ -58,8 +58,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\ClienteDomain.csproj": {
+              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\ClienteDomain.csproj"
             }
           }
         }

@@ -178,8 +178,8 @@
               "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
-                "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj"
+              "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj": {
+                "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj"
               }
             }
           }
@@ -232,12 +232,12 @@
         }
       }
     },
-    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
+    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
-        "projectName": "Infraestrutucture",
-        "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+        "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj",
+        "projectName": "ClienteInfraestrutucture",
+        "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj",
         "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
         "projectStyle": "PackageReference",

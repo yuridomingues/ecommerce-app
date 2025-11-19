@@ -1,15 +1,25 @@
 [
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
-    "Method": "AlterarEmail",
-    "RelativePath": "api/Cliente/AlterarEmail",
-    "HttpMethod": "PUT",
+    "Method": "ListarClientes",
+    "RelativePath": "api/Cliente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "RemoverCliente",
+    "RelativePath": "api/Cliente",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Application.Dtos.AlterarEmailDTO",
+        "Type": "Application.Dtos.RemoverClienteDTO",
         "IsRequired": true
       }
     ],
@@ -18,7 +28,7 @@
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AlterarNome",
-    "RelativePath": "api/Cliente/AlterarNome",
+    "RelativePath": "api/Cliente",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -34,7 +44,7 @@
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AlterarSenha",
-    "RelativePath": "api/Cliente/AlterarSenha",
+    "RelativePath": "api/Cliente",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -49,9 +59,25 @@
   },
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "AlterarEmail",
+    "RelativePath": "api/Cliente",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dtos.AlterarEmailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "BuscarClienteEspecifico",
-    "RelativePath": "api/Cliente/BuscarUmCliente",
-    "HttpMethod": "POST",
+    "RelativePath": "api/Cliente/BuscarCliente",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -77,32 +103,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_commerce.Controllers.ClienteController",
-    "Method": "RemoverCliente",
-    "RelativePath": "api/Cliente/Excluir",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Application.Dtos.RemoverClienteDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_commerce.Controllers.ClienteController",
-    "Method": "ListarClientes",
-    "RelativePath": "api/Cliente/Listar",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

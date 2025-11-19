@@ -15,7 +15,7 @@ namespace Domain.Entities
 
         public string Email { get; private set; } 
 
-        public string SenhaHash { get; private set; } 
+        public string Senha { get; private set; } 
 
         public string Cpf { get; private set; } 
 
@@ -50,7 +50,7 @@ namespace Domain.Entities
         public void AlterarSenha(string NovaSenha)
         {
            
-            SenhaHash = NovaSenha;
+            Senha = NovaSenha;
         }
         
 

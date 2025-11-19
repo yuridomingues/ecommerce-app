@@ -13,9 +13,9 @@ namespace Infraestrutucture.ClienteRepository
 {
     public class ClienteRepository : IClienteRepository
     {
-        private readonly IDataBase _db;
+        private readonly IClienteDataBase _db;
 
-        public ClienteRepository(IDataBase db)
+        public ClienteRepository(IClienteDataBase db)
         {
             _db = db;
         }
@@ -49,7 +49,7 @@ namespace Infraestrutucture.ClienteRepository
             {
                 throw new ClienteNaoExiste();
             }
-            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            if (ClienteCadastrado.Senha != cliente.Senha)
             {
                 throw new SenhaIncorreta();
             }
@@ -67,7 +67,7 @@ namespace Infraestrutucture.ClienteRepository
             {
                 throw new ClienteNaoExiste();
             }
-            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            if (ClienteCadastrado.Senha != cliente.Senha)
             {
                 throw new SenhaIncorreta();
             }
@@ -87,7 +87,7 @@ namespace Infraestrutucture.ClienteRepository
                 throw new ClienteNaoExiste();
 
             }
-            if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+            if (ClienteCadastrado.Senha != cliente.Senha)
             {
                 throw new SenhaIncorreta();
             }
@@ -110,7 +110,7 @@ namespace Infraestrutucture.ClienteRepository
             }
 
             
-             if (ClienteCadastrado.SenhaHash != cliente.SenhaHash)
+             if (ClienteCadastrado.Senha != cliente.Senha)
             {
                 throw new SenhaIncorreta();
             }

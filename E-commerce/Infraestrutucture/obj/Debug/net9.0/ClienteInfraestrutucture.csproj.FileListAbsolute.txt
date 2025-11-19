@@ -1,0 +1,16 @@
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\bin\Debug\net9.0\ClienteInfraestrutucture.deps.json
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\bin\Debug\net9.0\ClienteInfraestrutucture.dll
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\bin\Debug\net9.0\ClienteInfraestrutucture.pdb
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\bin\Debug\net9.0\ClienteDomain.dll
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\bin\Debug\net9.0\ClienteDomain.pdb
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.csproj.AssemblyReference.cache
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.AssemblyInfoInputs.cache
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.AssemblyInfo.cs
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.csproj.CoreCompileInputs.cache
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.sourcelink.json
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteI.D24B75CA.Up2Date
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.dll
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\refint\ClienteInfraestrutucture.dll
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ClienteInfraestrutucture.pdb
+C:\Users\rezen\source\repos\ecommerce-app\E-commerce\Infraestrutucture\obj\Debug\net9.0\ref\ClienteInfraestrutucture.dll

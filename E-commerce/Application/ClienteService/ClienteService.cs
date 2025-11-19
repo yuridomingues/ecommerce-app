@@ -59,7 +59,7 @@ namespace Application.ClienteService
 
             Cliente cliente = _mapper.Map<Cliente>(dto);
 
-            _repository.AlterarSenha(cliente, dto.NovaSenhaHash);
+            _repository.AlterarSenha(cliente, dto.NovaSenha);
         }
 
         public void AlterarEmail(AlterarEmailDTO dto)

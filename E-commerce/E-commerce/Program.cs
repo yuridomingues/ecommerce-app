@@ -14,10 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
-builder.Services.AddSingleton<IDataBase, DataBase>();
+builder.Services.AddSingleton<IClienteDataBase, ClienteDataBase>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
-builder.Services.AddScoped<IValidacoesService, ValidacoesService>();
+builder.Services.AddScoped<IValidacoesService, ValidacoesClienteService>();
 builder.Services.AddAutoMapper(cfg => { }, typeof(ClienteProfile).Assembly);
 
 

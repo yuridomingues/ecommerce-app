@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36603.0 d17.14
+VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerce", "E-commerce\E-commerce.csproj", "{7730CF65-6DF9-4FC6-ABD4-134BAC5F5CA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteE-commerce", "E-commerce\ClienteE-commerce.csproj", "{7730CF65-6DF9-4FC6-ABD4-134BAC5F5CA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteApplication", "Application\ClienteApplication.csproj", "{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D3AD4ECD-1804-4F65-A321-0CF10B407E87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteDomain", "Domain\ClienteDomain.csproj", "{D3AD4ECD-1804-4F65-A321-0CF10B407E87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutucture", "Infraestrutucture\Infraestrutucture.csproj", "{6258B003-927D-481C-8C29-D4997D61D28F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteInfraestrutucture", "Infraestrutucture\ClienteInfraestrutucture.csproj", "{6258B003-927D-481C-8C29-D4997D61D28F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -185,41 +185,41 @@
           }
         }
       },
-      "Application/1.0.0": {
+      "ClienteApplication/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "AutoMapper": "15.1.0",
-          "Domain": "1.0.0"
+          "ClienteDomain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Application.dll": {}
+          "bin/placeholder/ClienteApplication.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Application.dll": {}
+          "bin/placeholder/ClienteApplication.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "ClienteDomain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/ClienteDomain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/ClienteDomain.dll": {}
         }
       },
-      "Infraestrutucture/1.0.0": {
+      "ClienteInfraestrutucture/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Domain": "1.0.0"
+          "ClienteDomain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Infraestrutucture.dll": {}
+          "bin/placeholder/ClienteInfraestrutucture.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Infraestrutucture.dll": {}
+          "bin/placeholder/ClienteInfraestrutucture.dll": {}
         }
       }
     }
@@ -554,28 +554,28 @@
         "microsoft.openapi.nuspec"
       ]
     },
-    "Application/1.0.0": {
+    "ClienteApplication/1.0.0": {
       "type": "project",
-      "path": "../Application/Application.csproj",
-      "msbuildProject": "../Application/Application.csproj"
+      "path": "../Application/ClienteApplication.csproj",
+      "msbuildProject": "../Application/ClienteApplication.csproj"
     },
-    "Domain/1.0.0": {
+    "ClienteDomain/1.0.0": {
       "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
+      "path": "../Domain/ClienteDomain.csproj",
+      "msbuildProject": "../Domain/ClienteDomain.csproj"
     },
-    "Infraestrutucture/1.0.0": {
+    "ClienteInfraestrutucture/1.0.0": {
       "type": "project",
-      "path": "../Infraestrutucture/Infraestrutucture.csproj",
-      "msbuildProject": "../Infraestrutucture/Infraestrutucture.csproj"
+      "path": "../Infraestrutucture/ClienteInfraestrutucture.csproj",
+      "msbuildProject": "../Infraestrutucture/ClienteInfraestrutucture.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Application >= 1.0.0",
       "AutoMapper >= 15.1.0",
-      "Domain >= 1.0.0",
-      "Infraestrutucture >= 1.0.0",
+      "ClienteApplication >= 1.0.0",
+      "ClienteDomain >= 1.0.0",
+      "ClienteInfraestrutucture >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.10"
     ]
   },
@@ -586,9 +586,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
-      "projectName": "E-commerce",
-      "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
+      "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\ClienteE-commerce.csproj",
+      "projectName": "ClienteE-commerce",
+      "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\ClienteE-commerce.csproj",
       "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\obj\\",
       "projectStyle": "PackageReference",
@@ -611,14 +611,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\Application.csproj"
+            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\ClienteApplication.csproj": {
+              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\ClienteApplication.csproj"
             },
-            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\ClienteDomain.csproj": {
+              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\ClienteDomain.csproj"
             },
-            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
-              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj"
+            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj": {
+              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\ClienteInfraestrutucture.csproj"
             }
           }
         }
