@@ -14,3 +14,5 @@ C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\obj\Debug\n
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\obj\Debug\net9.0\ref\Application.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\bin\Debug\net9.0\Infraestrutucture.dll
+C:\Users\dudsl\Documents\GitHub\ecommerce-app\E-commerce\Application\bin\Debug\net9.0\Infraestrutucture.pdb

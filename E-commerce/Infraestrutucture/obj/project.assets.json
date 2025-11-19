@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+      "projectUniqueName": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
       "projectName": "Infraestrutucture",
-      "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+      "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
       "packagesPath": "C:\\Users\\dudsl\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
+      "outputPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dudsl\\AppData\\Roaming\\NuGet\\NuGet.Config",

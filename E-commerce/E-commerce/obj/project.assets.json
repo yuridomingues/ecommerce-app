@@ -189,7 +189,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "Infraestrutucture": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -610,8 +611,8 @@
             "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Application\\Application.csproj"
             },
-            "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
-              "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj"
+            "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
+              "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj"
             }
           }
         }

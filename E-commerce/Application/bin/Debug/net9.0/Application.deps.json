@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v9.0": {
       "Application/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "Infraestrutucture": "1.0.0"
         },
         "runtime": {
           "Application.dll": {}
@@ -67,6 +68,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Infraestrutucture/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Infraestrutucture.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -112,6 +124,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infraestrutucture/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
