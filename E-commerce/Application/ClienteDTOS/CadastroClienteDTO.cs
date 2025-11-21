@@ -17,5 +17,7 @@ namespace Application.Dtos
         public string ConfirmarSenha { get; set; } = string.Empty;
 
         public string Cpf { get;  set; } = string.Empty;
+
+        
     }
 }

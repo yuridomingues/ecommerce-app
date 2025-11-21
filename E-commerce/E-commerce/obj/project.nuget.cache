@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c4bqm1GsGTY=",
+  "dgSpecHash": "f4j/+azxxLE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\ClienteE-commerce.csproj",
+  "projectFilePath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rezen\\.nuget\\packages\\automapper\\15.1.0\\automapper.15.1.0.nupkg.sha512",
     "C:\\Users\\rezen\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.10\\microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",

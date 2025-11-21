@@ -23,6 +23,8 @@ namespace Domain.Interfaces
 
         Cliente? BuscarCpf(string cpf);
 
+        Cliente? BuscarId(Guid id);
+
 
 
     }

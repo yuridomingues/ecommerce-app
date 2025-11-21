@@ -135,9 +135,13 @@ namespace Infraestrutucture.ClienteRepository
                 return ClienteCadastrado;
 
             }
+        }   
 
-
-
+        public Cliente? BuscarId(Guid id)
+        {
+            return _db.BuscarId(id);
         }
+
+       
     }
 }

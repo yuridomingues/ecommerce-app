@@ -17,9 +17,14 @@ namespace Domain.Entities
 
         public string Senha { get; private set; } 
 
-        public string Cpf { get; private set; } 
+        public string Cpf { get; private set; }
 
-   
+
+        private readonly List<Endereco> _enderecos = new();
+
+        public IReadOnlyList<Endereco> Enderecos => _enderecos;
+
+
 
         public void DefinirId()
         {
@@ -52,9 +57,61 @@ namespace Domain.Entities
            
             Senha = NovaSenha;
         }
-        
 
-        
+        public void CadastrarEndereco(Endereco endereco)
+        {
+            Endereco? enderecoexiste = BuscarPorId(endereco.Id);
+
+            if (enderecoexiste == null)
+            {
+                _enderecos.Add(endereco);
+
+            }
+            else
+            {
+                throw new EnderecoJaExiste();
+            }
+        }
+
+        public void RemoverEndereco(Endereco endereco)
+        {
+            _enderecos.Remove(endereco);
+        }
+
+        public void AtualizarEndereco(
+        Guid enderecoId,
+        string novaRua,
+        int novoNumero,
+        string novoBairro,
+        string novaCidade,
+        string novoCep,
+        string novoEstado
+        )
+        {
+            Endereco? endereco = _enderecos.FirstOrDefault(e => e.Id == enderecoId);
+
+            if (endereco == null)
+            {
+                throw new ClienteSemEndereco();
+            }
+            endereco.AtualizarEndereco(
+            novaRua,
+            novoNumero,
+            novoBairro,
+            novaCidade,
+            novoCep,
+            novoEstado);
+
+        }
+
+        public Endereco? BuscarPorId(Guid Id)
+        {
+            return _enderecos.FirstOrDefault(i => i.Id == Id);
+        }
+
+
+
+
 
     }
 }

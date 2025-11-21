@@ -9,12 +9,29 @@ namespace Domain.ClienteExceptions
     public class NomesIguais : Exception
     {
         public NomesIguais()
-            : base("O novo nome tem que ser diferente do antigo") { }            
-            
+            : base("O novo nome tem que ser diferente do antigo") { }
+
     }
     public class EmailsIguais : Exception
     {
         public EmailsIguais()
             : base("O novo Email tem que ser diferente do antigo") { }
     }
+
+    public class ClienteSemEndereco : Exception
+    {
+        public ClienteSemEndereco()
+            : base("Não existe um Endereco com este ID") { }
+    }
+
+    public class EnderecoJaExiste : Exception
+    {
+        public EnderecoJaExiste()
+            : base("Esse endereço já está cadastrado") { }
+    }
+
 }
+
+
+
+

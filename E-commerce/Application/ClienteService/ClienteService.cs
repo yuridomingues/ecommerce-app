@@ -29,10 +29,12 @@ namespace Application.ClienteService
             _validacoes.ValidarEmail(dto);
             _validacoes.ValidarSenha(dto);
             _validacoes.ValidarCpf(dto);
+            
 
             Cliente cliente = _mapper.Map<Cliente>(dto);
 
             _repository.CadastrarCliente(cliente);
+            
         }
         public List<ListarClientesDTO> ListarClientes()
         {

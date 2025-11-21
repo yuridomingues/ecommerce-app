@@ -21,5 +21,9 @@ namespace Domain.Interfaces
         void AlterarEmail(Cliente cliente, string NovoEmail);
 
         Cliente? BuscarClienteEspecifico(Cliente cliente);
+
+        Cliente? BuscarId(Guid id);
+
+
     }
 }

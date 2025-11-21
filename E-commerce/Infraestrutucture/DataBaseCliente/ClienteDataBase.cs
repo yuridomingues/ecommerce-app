@@ -12,12 +12,17 @@ namespace Infraestrutucture.DataBaseCliente
     public class ClienteDataBase : IClienteDataBase
     {
         private readonly List<Cliente> clientes = new();
-        
+
+     
+
+
 
         public void CadastrarCliente(Cliente cliente)
         {
             cliente.DefinirId();
+            
             clientes.Add(cliente);
+
            
         }
 
@@ -49,6 +54,11 @@ namespace Infraestrutucture.DataBaseCliente
         {
             return clientes.FirstOrDefault(c => c.Cpf == cpf);
         }
+        public Cliente? BuscarId(Guid id)
+        {
+            return clientes.FirstOrDefault(i => i.Id == id);
+        }
+        
 
  
        
