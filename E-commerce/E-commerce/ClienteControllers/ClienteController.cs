@@ -4,6 +4,9 @@ using Application.Interfaces;
 using Application.ClienteService;
 using Application.Dtos;
 using System.Diagnostics;
+using Application.EnderecoDTO;
+using Application.EnderecoService;
+using Application.EnderecoInterfaces;
 
 namespace E_commerce.Controllers
 {
@@ -12,10 +15,12 @@ namespace E_commerce.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteService _service;
+        private readonly IEnderecoService _Eservice;
 
-        public ClienteController(IClienteService service)
+        public ClienteController(IClienteService service, IEnderecoService _ENservice)
         {
             _service = service;
+            _Eservice = _ENservice;
         }
 
         [HttpPost("Cadastrar")]
@@ -99,7 +104,7 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("BuscarCliente")]
+        [HttpPost("BuscarCliente")]
 
         public ActionResult BuscarClienteEspecifico([FromBody] BuscarClienteEntradaDTO dto)
         {
@@ -109,6 +114,21 @@ namespace E_commerce.Controllers
                 
             }
             catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        [HttpPost("{clienteid}/AdicionarEndereço")]
+        
+        public ActionResult AdicionarEndereco(Guid clienteid, [FromBody] CadastrarEnderecoDTO dto)
+        {
+            try
+            {
+                _Eservice.CadastrarEndereco(dto, clienteid);
+                return Ok("Endereço adicionado ao cliente com sucesso");
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

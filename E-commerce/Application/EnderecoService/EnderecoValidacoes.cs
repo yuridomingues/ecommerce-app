@@ -18,7 +18,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-           if (dto.Rua.All(char.IsLetter))
+           if (dto.Rua.All(char.IsDigit))
             {
                 throw new EnderecoInvalido();
             }
@@ -39,7 +39,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Bairro.All(char.IsLetter))
+            if (dto.Bairro.All(char.IsDigit))
             {
                 throw new EnderecoInvalido();
             }
@@ -51,7 +51,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Cidade.All(char.IsLetter))
+            if (dto.Cidade.All(char.IsDigit))
             {
                 throw new EnderecoInvalido();
             }
@@ -63,7 +63,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.CEP.All(char.IsDigit))
+            if (dto.CEP.All(char.IsLetter))
             {
                 throw new EnderecoInvalido();
             }
@@ -79,7 +79,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Estado.All(char.IsLetter))
+            if (dto.Estado.All(char.IsDigit))
             {
                 throw new EnderecoInvalido();
             }

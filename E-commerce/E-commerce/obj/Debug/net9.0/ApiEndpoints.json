@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "AdicionarEndereco",
+    "RelativePath": "api/Cliente/{clienteid}/AdicionarEndere\u00E7o",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Application.EnderecoDTO.CadastrarEnderecoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AlterarEmail",
     "RelativePath": "api/Cliente/AlterarEmail",
     "HttpMethod": "PUT",
@@ -51,7 +72,7 @@
     "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "BuscarClienteEspecifico",
     "RelativePath": "api/Cliente/BuscarCliente",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -48,5 +48,12 @@ namespace Application.ClienteExceptions
             : base("As senhas precisam ser iguais. ") { }
     }
 
+    public class ClienteNaoExiste : Exception 
+    {
+        public ClienteNaoExiste()
+            : base("Esse cliente não existe") { }
+    }
+
+
 
 }

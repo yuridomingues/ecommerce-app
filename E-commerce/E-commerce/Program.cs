@@ -8,7 +8,6 @@ using Application.Mappings;
 using Microsoft.Extensions.DependencyInjection;
 using Application.EnderecoMappings;
 using Application.EnderecoService;
-using Infraestrutucture.EnderecoRepository;
 using Application.EnderecoInterfaces;
 
 
@@ -26,7 +25,6 @@ builder.Services.AddScoped<IValidacoesService, ValidacoesClienteService>();
 builder.Services.AddAutoMapper(cfg => { }, typeof(ClienteProfile).Assembly);
 builder.Services.AddAutoMapper(cfg => { }, typeof(EnderecoProfile).Assembly);
 
-builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 builder.Services.AddScoped<IEnderecoService, EnderecoService>();
 builder.Services.AddScoped<IEnderecoValidacoes, EnderecoValidacoes>();
 
