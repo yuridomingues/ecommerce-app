@@ -15,7 +15,7 @@ public class EnderecoRepository : IEnderecoRepository
     }
     
     
-    public void AtualizarEndereco(Endereco novoEndereco, int id)
+    public void AtualizarEndereco(Endereco novoEndereco, Guid id)
     {
         Endereco endereco = BuscarEndereco(id);
 
@@ -24,7 +24,7 @@ public class EnderecoRepository : IEnderecoRepository
     }
 
 
-    public Endereco BuscarEndereco(int id)
+    public Endereco BuscarEndereco(Guid id)
     {
         return dataBaseEndereco.BuscarEndereco(id);
     }

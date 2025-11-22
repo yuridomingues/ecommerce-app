@@ -3,11 +3,11 @@ namespace Domain;
 public class ItemPedido
 {
     
-     public int Id { get; private set; }
+     public Guid Id { get; private set; }
 
-    public int PedidoId { get; private set; }
+    public Guid PedidoId { get; private set; }
 
-    public int ProdutoId { get; private set; }  
+    public Guid ProdutoId { get; private set; }  
 
     public string? NomeProduto { get; private set; }
 
@@ -15,7 +15,7 @@ public class ItemPedido
 
     public decimal PrecoUnitario { get; private set; }
 
-    public ItemPedido(int produtoId, string? nomeProduto, int quantidade, decimal precoUnitario)
+    public ItemPedido(Guid produtoId, string? nomeProduto, int quantidade, decimal precoUnitario)
     {
 
         if(quantidade <= 0)
@@ -27,6 +27,7 @@ public class ItemPedido
         NomeProduto = nomeProduto;
         Quantidade = quantidade;
         PrecoUnitario = precoUnitario;
+        Id = Guid.NewGuid();
 
     }
     

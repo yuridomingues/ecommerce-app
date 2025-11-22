@@ -14,7 +14,7 @@ public class DataBasePedido : IDataBasePedido
     }
 
 
-    public void ExcluirPedido(int id)
+    public void ExcluirPedido(Guid id)
     {
         Pedido pedido = BuscarPedido(id);
 
@@ -28,7 +28,7 @@ public class DataBasePedido : IDataBasePedido
     }
 
 
-    public Pedido BuscarPedido(int id)
+    public Pedido BuscarPedido(Guid id)
     {
         return listaPedidos.FirstOrDefault(p => p.Id == id);
     }

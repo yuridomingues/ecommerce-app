@@ -10,8 +10,6 @@ public class PedidoRepository : IPedidoRepository
 
     private IDataBasePedido dataBasePedido;
 
-    private static int IdAtual = 1;
-
     public PedidoRepository(IDataBasePedido databasePedido)
     {
         this.dataBasePedido = databasePedido;
@@ -20,8 +18,7 @@ public class PedidoRepository : IPedidoRepository
 
     public void CriarPedido(Pedido pedido)
     {
-        pedido.DefinirId(IdAtual);
-        IdAtual++;
+        pedido.DefinirId();
         dataBasePedido.CadastrarPedido(pedido);
     }
 
@@ -33,7 +30,7 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public void ExcluirPedido(int id)
+    public void ExcluirPedido(Guid id)
     {
         dataBasePedido.ExcluirPedido(id);
     }
@@ -45,13 +42,13 @@ public class PedidoRepository : IPedidoRepository
     }
 
 
-    public Pedido BuscarPedido(int id)
+    public Pedido BuscarPedido(Guid id)
     {
         return dataBasePedido.BuscarPedido(id);
     }
 
 
-    public void AlterarEndereco(Endereco endereco, int id)
+    public void AlterarEndereco(Endereco endereco, Guid id)
     {
         Pedido pedido = BuscarPedido(id);
 

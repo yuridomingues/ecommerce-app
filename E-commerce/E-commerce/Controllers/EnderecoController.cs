@@ -17,7 +17,7 @@ public class EnderecoController : ControllerBase
     }
 
     [HttpPut("atualizarEndereco/{id}")]
-    public ActionResult AtualizarEndereco([FromBody] EnderecoDTO novoEndereco, int id)
+    public ActionResult AtualizarEndereco([FromBody] EnderecoDTO novoEndereco, Guid id)
     {
         if (enderecoService.BuscarEndereco(id) == null)
         {

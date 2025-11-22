@@ -8,7 +8,7 @@ public class DataBaseEndereco : IDataBaseEndereco
     
     public List<Endereco> ListaEnderecos { get; set; } = new List<Endereco>();
 
-    public Endereco BuscarEndereco(int id)
+    public Endereco BuscarEndereco(Guid id)
     {
         return ListaEnderecos.FirstOrDefault(e => e.Id == id);
     }

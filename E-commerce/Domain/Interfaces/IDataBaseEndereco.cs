@@ -2,5 +2,5 @@ namespace Domain.Interfaces;
 
 public interface IDataBaseEndereco
 {
-    public Endereco BuscarEndereco(int id);
+    public Endereco BuscarEndereco(Guid id);
 }

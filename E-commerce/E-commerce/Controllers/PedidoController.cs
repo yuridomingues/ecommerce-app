@@ -72,7 +72,7 @@ public class PedidoController: ControllerBase
 
 
     [HttpPut("alterarEndereco/{id}")]
-    public ActionResult AlterarEndereco([FromBody] EnderecoDTO novoEndereco, int id)
+    public ActionResult AlterarEndereco([FromBody] EnderecoDTO novoEndereco, Guid id)
     {
         
         if (pedidoService.BuscarPedido(id) == null)

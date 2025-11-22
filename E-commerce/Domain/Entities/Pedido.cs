@@ -1,18 +1,11 @@
 namespace Domain;
 
 public class Pedido
-{ 
+{  
 
-    public Pedido()
-    {
-        
-    } 
+    public Guid Id { get; set; }
 
-
-
-    public int Id { get; set; }
-
-    public int ClienteId { get; set; }
+    public Guid ClienteId { get; set; }
 
     public Endereco? Endereco { get; set; }
 
@@ -25,7 +18,7 @@ public class Pedido
     public bool Status { get; set; } // true = finalziado e false = aberto
 
 
-    public Pedido(int clienteId, Endereco endereco)
+    public Pedido(Guid clienteId, Endereco endereco, Guid id)
     {
         ClienteId = clienteId;
         Endereco = endereco;
@@ -33,11 +26,20 @@ public class Pedido
         Itens = new List<ItemPedido>();
     }
 
-
-    public void DefinirId(int id)
+    public Pedido()
     {
+        
+    }
 
-        Id = id;
+
+    public void DefinirId()
+    {
+        if (Id != Guid.Empty)
+        {
+            throw new Exception("Id já definido.");
+        }
+
+        Id = Guid.NewGuid();
 
     }
 

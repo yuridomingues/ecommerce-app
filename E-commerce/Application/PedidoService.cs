@@ -51,14 +51,26 @@ public class PedidoService
     }
 
 
-    public Pedido BuscarPedido(int id)
+    public PedidoDTO BuscarPedido(Guid id)
     {
-        return pedidoRepository.BuscarPedido(id);
+        if (id == Guid.Empty)
+        {
+            throw new Exception("Id inválido");
+        }
+
+        var pedido = pedidoRepository.BuscarPedido(id);
+
+        return mapper.Map<PedidoDTO>(pedido); 
     }
 
 
-    public void AlterarEndereco(EnderecoDTO novoEndereco, int id)
+    public void AlterarEndereco(EnderecoDTO novoEndereco, Guid id)
     {
+
+        if (id == Guid.Empty)
+        {
+            throw new Exception("Id inválido");
+        }
 
         var endereco = mapper.Map<Endereco>(novoEndereco);
 

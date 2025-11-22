@@ -17,13 +17,23 @@ public class EnderecoService
     }
 
 
-    public Endereco BuscarEndereco(int id)
+    public Endereco BuscarEndereco(Guid id)
     {
+        if (id == Guid.Empty)
+        {
+            throw new ArgumentException("Id não pode ser vazio");
+        }
+
         return enderecoRepository.BuscarEndereco(id);
     }
 
-    public void AtualizarEndereco(EnderecoDTO novoEndereco, int id)
+    public void AtualizarEndereco(EnderecoDTO novoEndereco, Guid id)
     {
+
+        if (novoEndereco == null)
+        {
+            throw new ArgumentException("Endereco não pode ser vazio");
+        }
 
         var endereco = mapper.Map<Endereco>(novoEndereco);
 

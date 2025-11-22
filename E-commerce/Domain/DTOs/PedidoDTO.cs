@@ -2,9 +2,9 @@ namespace Domain.DTOs;
 
 public class PedidoDTO
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
-    public int ClienteId { get; set; }
+    public Guid ClienteId { get; set; }
 
     public Endereco? Endereco { get; set; }
 

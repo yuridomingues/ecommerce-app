@@ -3,7 +3,7 @@ namespace Domain;
 public class Endereco
 {
 
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     public string? Rua { get; set; }
 
@@ -16,6 +16,18 @@ public class Endereco
     public string? CEP { get; set; }
     
     public string? Estado { get; set; }
+
+    
+    public Endereco(string rua, string numero, string bairro, string cidade, string cep, string estado)
+    {
+        Rua = rua;
+        Numero = numero;
+        Bairro = bairro;
+        Cidade = cidade;
+        CEP = cep;
+        Estado = estado;
+        Id = Guid.NewGuid();
+    }
 
 
     public void AtualizarEndereco(Endereco novoEndereco)
