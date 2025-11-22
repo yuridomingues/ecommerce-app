@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.EnderecoDTO;
 
 namespace Application.Dtos
 {
@@ -17,16 +18,6 @@ namespace Application.Dtos
 
         public string Cpf { get; set; } = string.Empty;
 
-        public string? Rua { get; private set; }
-
-        public int Numero { get; private set; }
-
-        public string? Bairro { get; private set; }
-
-        public string? Cidade { get; private set; }
-
-        public string? CEP { get; private set; }
-
-        public string? Estado { get; private set; }
+        public List<CadastrarEnderecoDTO> Enderecos { get; set; } = new();
     }
 }

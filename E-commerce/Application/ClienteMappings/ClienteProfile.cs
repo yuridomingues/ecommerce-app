@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Application.Dtos;
+using Application.EnderecoDTO;
 
 namespace Application.Mappings
 {
@@ -21,6 +22,10 @@ namespace Application.Mappings
             CreateMap<AlterarEmailDTO, Cliente>();
             CreateMap<BuscarClienteEntradaDTO, Cliente>();
             CreateMap<Cliente, BuscarClienteSaidaDTO>();
+            CreateMap<Cliente, BuscarClienteSaidaDTO>()
+    .ForMember(dest => dest.Enderecos, opt => opt.MapFrom(src => src.Enderecos));
+
+            CreateMap<Endereco, CadastrarEnderecoDTO>();
 
 
         }

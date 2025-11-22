@@ -60,9 +60,15 @@ namespace Domain.Entities
 
         public void CadastrarEndereco(Endereco endereco)
         {
-            Endereco? enderecoexiste = BuscarPorId(endereco.Id);
-
-            if (enderecoexiste == null)
+            bool enderecoExiste = _enderecos.Any(e =>
+        e.Rua == endereco.Rua &&
+        e.Numero == endereco.Numero &&
+        e.Bairro == endereco.Bairro &&
+        e.Cidade == endereco.Cidade &&
+        e.CEP == endereco.CEP &&
+        e.Estado == endereco.Estado);
+            
+            if (!enderecoExiste)
             {
                 _enderecos.Add(endereco);
 

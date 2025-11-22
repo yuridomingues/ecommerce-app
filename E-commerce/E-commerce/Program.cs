@@ -1,14 +1,16 @@
 using Application.ClienteService;
+using Application.Dtos;
+using Application.EnderecoInterfaces;
+using Application.EnderecoMappings;
+using Application.EnderecoService;
 using Application.Interfaces;
+using Application.Mappings;
 using Application.Service;
+using Domain.Entities;
 using Domain.Interfaces;
 using Infraestrutucture.ClienteRepository;
 using Infraestrutucture.DataBaseCliente;
-using Application.Mappings;
 using Microsoft.Extensions.DependencyInjection;
-using Application.EnderecoMappings;
-using Application.EnderecoService;
-using Application.EnderecoInterfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,9 @@ builder.Services.AddAutoMapper(cfg => { }, typeof(EnderecoProfile).Assembly);
 
 builder.Services.AddScoped<IEnderecoService, EnderecoService>();
 builder.Services.AddScoped<IEnderecoValidacoes, EnderecoValidacoes>();
+
+
+
 
 
 
