@@ -54,6 +54,12 @@ namespace Application.ClienteExceptions
             : base("Esse cliente não existe") { }
     }
 
+    public class SenhaIncorreta : Exception 
+    { 
+        public SenhaIncorreta()
+            : base("Senha Incorreta") { }
+    }
+
 
 
 }

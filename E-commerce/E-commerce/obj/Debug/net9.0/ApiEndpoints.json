@@ -22,6 +22,27 @@
   },
   {
     "ContainingType": "E_commerce.Controllers.ClienteController",
+    "Method": "RemoverEndereco",
+    "RelativePath": "api/Cliente/{clienteid}/RemoverEndereco",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Application.EnderecoDTO.RemoverEnderecoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AlterarEmail",
     "RelativePath": "api/Cliente/AlterarEmail",
     "HttpMethod": "PUT",

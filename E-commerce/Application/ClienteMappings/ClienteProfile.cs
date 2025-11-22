@@ -27,6 +27,10 @@ namespace Application.Mappings
 
             CreateMap<Endereco, CadastrarEnderecoDTO>();
 
+            CreateMap<CadastrarEnderecoDTO, Endereco>()
+    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
+
+
 
         }
     }

@@ -133,5 +133,20 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("{clienteid}/RemoverEndereco")]
+
+        public ActionResult RemoverEndereco(Guid clienteid, [FromBody] RemoverEnderecoDTO dto)
+        {
+            try
+            {
+                _Eservice.RemoverEndereco(dto, clienteid);
+                return Ok("Endereco Removido com sucesso!");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

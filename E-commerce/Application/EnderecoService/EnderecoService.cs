@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Application.ClienteExceptions;
+using Application.Dtos;
 
 
 namespace Application.EnderecoService
@@ -49,5 +50,20 @@ namespace Application.EnderecoService
 
         }
 
+        public void RemoverEndereco(RemoverEnderecoDTO dto, Guid clienteid)
+        {
+
+            Cliente? cliente = _repository.BuscarId(clienteid);
+            
+                if (cliente == null)
+                {
+                    throw new ClienteNaoExiste();
+                }
+                else
+                {
+                cliente.RemoverEndereco(dto.Id);
+                }
+            
+        }
     }
 }

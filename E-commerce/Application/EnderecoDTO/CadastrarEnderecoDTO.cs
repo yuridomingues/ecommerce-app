@@ -8,6 +8,7 @@ namespace Application.EnderecoDTO
 {
     public class CadastrarEnderecoDTO
     {
+        public Guid id { get; set; }
         public string? Rua { get;  set; }
 
         public int? Numero { get;  set; }

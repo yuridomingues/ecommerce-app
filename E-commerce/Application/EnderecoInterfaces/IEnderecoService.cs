@@ -12,5 +12,6 @@ namespace Application.EnderecoInterfaces
     public interface IEnderecoService
     {
         void CadastrarEndereco(CadastrarEnderecoDTO dto,Guid clienteid);
+        void RemoverEndereco(RemoverEnderecoDTO dto, Guid clienteid);
     }
 }

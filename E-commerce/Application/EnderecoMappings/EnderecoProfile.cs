@@ -14,6 +14,9 @@ namespace Application.EnderecoMappings
         public EnderecoProfile()
         {
             CreateMap<CadastrarEnderecoDTO, Endereco>();
+            CreateMap<RemoverEnderecoDTO, Endereco>();
+
+
 
         }
     }

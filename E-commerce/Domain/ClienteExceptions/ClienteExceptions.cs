@@ -18,9 +18,9 @@ namespace Domain.ClienteExceptions
             : base("O novo Email tem que ser diferente do antigo") { }
     }
 
-    public class ClienteSemEndereco : Exception
+    public class EnderecoInexistente : Exception
     {
-        public ClienteSemEndereco()
+        public EnderecoInexistente()
             : base("Não existe um Endereco com este ID") { }
     }
 

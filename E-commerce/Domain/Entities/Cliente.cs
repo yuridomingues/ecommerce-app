@@ -79,9 +79,20 @@ namespace Domain.Entities
             }
         }
 
-        public void RemoverEndereco(Endereco endereco)
+        public void RemoverEndereco( Guid enderecoid)
         {
-            _enderecos.Remove(endereco);
+            Endereco? enderecoExistente = BuscarPorId(enderecoid);
+
+            if (enderecoExistente == null)
+            {
+                throw new EnderecoInexistente();
+            }
+            else
+            {
+                _enderecos.Remove(enderecoExistente);
+
+            }
+
         }
 
         public void AtualizarEndereco(
@@ -98,7 +109,7 @@ namespace Domain.Entities
 
             if (endereco == null)
             {
-                throw new ClienteSemEndereco();
+                throw new EnderecoInexistente();
             }
             endereco.AtualizarEndereco(
             novaRua,
