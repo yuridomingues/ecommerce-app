@@ -1,42 +1,46 @@
-namespace Infraestructure.ProdutoRepository
-{
-    using E_commerce.Domain;
-    using System.Collections.Generic;
-    using System.Linq;
+using Domain.Entitities;
+using Domain.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
-    public class ProdutoRepository
+namespace Infrastructure.Repositories
+{
+    public class ProdutoRepository : IProdutoRepository
     {
         private readonly List<Produto> _produtos = new List<Produto>();
+        private int _proximoId = 1;
 
-        public void AdicionarProduto(Produto produto)
+        public void Adicionar(Produto produto)
         {
+            typeof(Produto).GetProperty("Id")
+                ?.SetValue(produto, _proximoId++);
+
             _produtos.Add(produto);
         }
 
-        public Produto ObterProdutoPorId(int id)
+        public Produto ObterPorId(int id)
         {
-            return _produtos.FirstOrDefault(item => item.Id == id);
+            return _produtos.FirstOrDefault(p => p.Id == id);
         }
 
-        public IEnumerable<Produto> ObterTodosProdutos()
+        public IEnumerable<Produto> ObterTodos()
         {
             return _produtos;
         }
 
-        public void AtualizarProduto(Produto produtoAtualizado)
+        public void Atualizar(Produto produto)
         {
-            var produto = ObterProdutoPorId(produtoAtualizado.Id);
-            if (produto != null)
+            var index = _produtos.FindIndex(p => p.Id == produto.Id);
+            if (index != -1)
             {
-                produto.Nome = produtoAtualizado.Nome;
-                produto.Preco = produtoAtualizado.Preco;
-                produto.Estoque = produtoAtualizado.Estoque;
+                _produtos[index] = produto;
             }
         }
 
-        public void RemoverProduto(int id)
+        public void Remover(int id)
         {
-            var produto = ObterProdutoPorId(id);
+            var produto = ObterPorId(id);
             if (produto != null)
             {
                 _produtos.Remove(produto);
