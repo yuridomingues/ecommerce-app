@@ -1,17 +1,25 @@
 ﻿using Application.ClienteExceptions;
 using Application.Dtos;
 using Application.Interfaces;
+using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace Application.Service
 {
     public class ValidacoesClienteService : IValidacoesService
     {
+        private readonly IClienteRepository _repository;
+
+        public ValidacoesClienteService(IClienteRepository repository)
+        {
+            _repository = repository;
+        }
         public void ValidarNome(CadastroClienteDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Nome))
@@ -111,5 +119,49 @@ namespace Application.Service
                 throw new CadastroEmail();
             }
         }
+
+        public Cliente BuscarCpf(string cpf)
+        {
+            Cliente clientecpf =  _repository.BuscarCpf(cpf);
+
+            if (clientecpf == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
+                return clientecpf;
+            }
+          
+            
+        }
+
+        public Cliente BuscarEmail(string email)
+        {
+            Cliente clienteemail = _repository.BuscarEmail(email);
+
+            if (clienteemail == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
+                return clienteemail;
+            }
+        }
+        public void BuscarCpfEmail(string email, string cpf)
+        {
+            Cliente clientecpf = _repository.BuscarCpf(cpf);
+            Cliente clienteemail = _repository.BuscarEmail(email);
+
+            if(clientecpf != null || clienteemail != null)
+            {
+                throw new ClienteExistente();
+            }
+
+
+        }
+       
+
     }
 }

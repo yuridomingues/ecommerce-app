@@ -19,7 +19,7 @@ namespace Domain.Interfaces
         void AlterarEmail(Cliente cliente, string NovoEmail);
         void AlterarSenha(Cliente cliente, string NovaSenha);
 
-        Cliente? BuscarCliente(string email);
+        Cliente? BuscarEmail(string email);
 
         Cliente? BuscarCpf(string cpf);
 

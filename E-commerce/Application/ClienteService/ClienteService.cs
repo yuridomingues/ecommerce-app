@@ -8,6 +8,8 @@ using Application.Interfaces;
 using Application.Dtos;
 using AutoMapper;
 using Domain.Entities;
+using Application.ClienteExceptions;
+using System.Linq.Expressions;
 
 namespace Application.ClienteService
 {
@@ -33,6 +35,8 @@ namespace Application.ClienteService
 
             Cliente cliente = _mapper.Map<Cliente>(dto);
 
+            _validacoes.BuscarCpfEmail(dto.Email, dto.Cpf);
+
             _repository.CadastrarCliente(cliente);
             
         }
@@ -43,25 +47,39 @@ namespace Application.ClienteService
         }
         public void RemoverCliente(RemoverClienteDTO dto)
         {
-            Cliente cliente = _mapper.Map<Cliente>(dto);
+           Cliente clienteBuscado = _validacoes.BuscarEmail(dto.Email);
 
-            _repository.RemoverCliente(cliente);
+            if (clienteBuscado.Senha != dto.Senha)
+            {
+                throw new SenhaIncorreta();
+            }
+
+            _repository.RemoverCliente(clienteBuscado);
         }
         public void AlterarNome(NovoNomeClienteDTO dto)
         {
             _validacoes.ValidarNovoNome(dto);
 
-            Cliente cliente = _mapper.Map<Cliente>(dto);
+            Cliente clienteBuscado = _validacoes.BuscarCpf(dto.Cpf);
 
-            _repository.AlterarNome(cliente, dto.NovoNome);
+            if (clienteBuscado.Senha != dto.Senha)
+            {
+                throw new SenhaIncorreta();
+            }
+
+            _repository.AlterarNome(clienteBuscado, dto.NovoNome);
         }
         public void AlterarSenha(AlterarSenhaDTO dto)
         {
             _validacoes.ValidarNovaSenha(dto);
 
-            Cliente cliente = _mapper.Map<Cliente>(dto);
+            Cliente clienteBuscado = _validacoes.BuscarEmail(dto.Email);
 
-            _repository.AlterarSenha(cliente, dto.NovaSenha);
+            if (clienteBuscado.Senha != dto.Senha)
+            {
+                throw new SenhaIncorreta();
+            }
+            _repository.AlterarSenha(clienteBuscado, dto.NovaSenha);
         }
 
         public void AlterarEmail(AlterarEmailDTO dto)

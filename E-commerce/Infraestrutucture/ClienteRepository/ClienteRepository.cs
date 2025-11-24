@@ -22,18 +22,9 @@ namespace Infraestrutucture.ClienteRepository
 
         public void CadastrarCliente(Cliente cliente)
         {
-            Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
-            Cliente? CpfCadastrado = _db.BuscarCpf(cliente.Cpf);
-
-            if (ClienteCadastrado == null && CpfCadastrado == null)
-            {
-                _db.CadastrarCliente(cliente);
-            }
-            else
-            {
-                throw new ClienteExistente();
-
-            }
+           
+            _db.CadastrarCliente(cliente);
+           
         }
 
         public List<Cliente> ListarClientes()
@@ -43,65 +34,28 @@ namespace Infraestrutucture.ClienteRepository
 
         public void RemoverCliente(Cliente cliente)
         {
-            Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
 
-            if (ClienteCadastrado == null)
-            {
-                throw new ClienteNaoExiste();
-            }
-            if (ClienteCadastrado.Senha != cliente.Senha)
-            {
-                throw new SenhaIncorreta();
-            }
-            else
-            {
-                _db.RemoverCliente(ClienteCadastrado);
+           _db.RemoverCliente(cliente);
 
-            }
+            
         }
         public void AlterarNome(Cliente cliente, string Novonome)
         {
-            Cliente? ClienteCadastrado = _db.BuscarCpf(cliente.Cpf);
+            
+            _db.AlterarNome(cliente, Novonome);
 
-            if (ClienteCadastrado == null)
-            {
-                throw new ClienteNaoExiste();
-            }
-            if (ClienteCadastrado.Senha != cliente.Senha)
-            {
-                throw new SenhaIncorreta();
-            }
-            else
-            {
-                _db.AlterarNome(ClienteCadastrado, Novonome);
-
-            }
+            
 
         }
         public void AlterarSenha(Cliente cliente, string NovaSenha)
         {
-            Cliente? ClienteCadastrado = _db.BuscarCliente(cliente.Email);
 
-            if (ClienteCadastrado == null)
-            {
-                throw new ClienteNaoExiste();
-
-            }
-            if (ClienteCadastrado.Senha != cliente.Senha)
-            {
-                throw new SenhaIncorreta();
-            }
-            else
-            {
-                _db.AlterarSenha(ClienteCadastrado, NovaSenha);
-
-            }
-
+          _db.AlterarSenha(cliente, NovaSenha);
         }
 
         public void AlterarEmail(Cliente cliente, string NovoEmail)
         {
-            Cliente? ClienteCadastrado = ( _db.BuscarCliente(cliente.Email));
+            Cliente? ClienteCadastrado = ( _db.BuscarEmail(cliente.Email));
 
             if (ClienteCadastrado == null)
             {
@@ -140,6 +94,16 @@ namespace Infraestrutucture.ClienteRepository
         public Cliente? BuscarId(Guid id)
         {
             return _db.BuscarId(id);
+        }
+
+        public Cliente? BuscarCpf(string cpf)
+        {
+            return _db.BuscarCpf(cpf);
+        }
+
+        public Cliente? BuscarEmail(string email)
+        {
+            return _db.BuscarEmail(email);
         }
 
        

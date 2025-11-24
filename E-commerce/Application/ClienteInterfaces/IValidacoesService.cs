@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
@@ -19,6 +20,10 @@ namespace Application.Interfaces
         void ValidarNovaSenha(AlterarSenhaDTO dto);
 
         void ValidarNovoEmail(AlterarEmailDTO dto);
+
+        Cliente BuscarEmail(string email);
+        Cliente BuscarCpf(string cpf);
+        void BuscarCpfEmail(string email, string cpf);
 
 
 

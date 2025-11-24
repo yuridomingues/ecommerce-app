@@ -46,7 +46,7 @@ namespace Infraestrutucture.DataBaseCliente
         {
             cliente.AlterarSenha(NovaSenha);
         }
-        public Cliente? BuscarCliente(string email)
+        public Cliente? BuscarEmail(string email)
         {
             return clientes.FirstOrDefault(c => c.Email == email);
         }

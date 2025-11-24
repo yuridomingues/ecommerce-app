@@ -22,6 +22,10 @@ namespace Domain.Interfaces
 
         Cliente? BuscarClienteEspecifico(Cliente cliente);
 
+        Cliente? BuscarCpf(string cpf);
+
+        Cliente? BuscarEmail(string email);
+
         Cliente? BuscarId(Guid id);
 
 

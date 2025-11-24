@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace Application.EnderecoInterfaces
 {
@@ -30,6 +31,7 @@ namespace Application.EnderecoInterfaces
         void ValidarNovoCep(AlterarEnderecoDTO dto);
 
         void ValidarNovoEstado(AlterarEnderecoDTO dto);
+
 
     }
 }

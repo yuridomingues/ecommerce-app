@@ -59,6 +59,11 @@ namespace Application.ClienteExceptions
         public SenhaIncorreta()
             : base("Senha Incorreta") { }
     }
+    public class ClienteExistente : Exception
+    {
+        public ClienteExistente()
+            : base("Esse usuário já está cadastrado") { }
+    }
 
 
 
