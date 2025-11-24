@@ -55,15 +55,46 @@ namespace Application.EnderecoService
 
             Cliente? cliente = _repository.BuscarId(clienteid);
             
-                if (cliente == null)
-                {
-                    throw new ClienteNaoExiste();
-                }
-                else
-                {
+            if (cliente == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
                 cliente.RemoverEndereco(dto.Id);
-                }
+            }
             
+        }
+
+        public void AlterarEndereco(AlterarEnderecoDTO dto, Guid clienteid)
+        {
+
+            _validacoes.ValidarNovaRua(dto);
+            _validacoes.ValidarNovoNumero(dto);
+            _validacoes.ValidarNovoBairro(dto);
+            _validacoes.ValidarNovaCidade(dto);
+            _validacoes.ValidarNovoCep(dto);
+            _validacoes.ValidarNovoEstado(dto);
+            
+            Cliente? cliente = _repository.BuscarId(clienteid);
+
+            if (cliente == null)
+            {
+                throw new ClienteNaoExiste();
+
+            }
+            else
+            {
+                cliente.AtualizarEndereco(dto.Id,
+        dto.NovaRua,
+        dto.NovoNumero,
+        dto.NovoBairro,
+        dto.NovaCidade,
+        dto.NovoCEP,
+        dto.NovoEstado
+    );
+            }
+
         }
     }
 }

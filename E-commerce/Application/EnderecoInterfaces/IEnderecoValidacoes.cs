@@ -19,5 +19,17 @@ namespace Application.EnderecoInterfaces
         void ValidarCep(CadastrarEnderecoDTO dto);
 
         void ValidarEstado(CadastrarEnderecoDTO dto);
+
+        void ValidarNovaRua(AlterarEnderecoDTO dto);
+        void ValidarNovoNumero(AlterarEnderecoDTO dto);
+
+        void ValidarNovoBairro(AlterarEnderecoDTO dto);
+
+        void ValidarNovaCidade(AlterarEnderecoDTO dto);
+
+        void ValidarNovoCep(AlterarEnderecoDTO dto);
+
+        void ValidarNovoEstado(AlterarEnderecoDTO dto);
+
     }
 }

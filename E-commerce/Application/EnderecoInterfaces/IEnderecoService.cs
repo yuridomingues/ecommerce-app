@@ -13,5 +13,8 @@ namespace Application.EnderecoInterfaces
     {
         void CadastrarEndereco(CadastrarEnderecoDTO dto,Guid clienteid);
         void RemoverEndereco(RemoverEnderecoDTO dto, Guid clienteid);
+
+        void AlterarEndereco(AlterarEnderecoDTO dto, Guid clienteid);
+
     }
 }

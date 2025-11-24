@@ -148,5 +148,20 @@ namespace E_commerce.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut("{clienteid}/AlterarEndereco")]
+
+        public ActionResult AlterarEndereco(Guid clienteid, [FromBody] AlterarEnderecoDTO dto)
+        {
+            try
+            {
+                _Eservice.AlterarEndereco(dto, clienteid);
+                return Ok("Endereço alterado com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

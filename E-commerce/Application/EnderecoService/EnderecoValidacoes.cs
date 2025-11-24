@@ -18,7 +18,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-           if (dto.Rua.All(char.IsDigit))
+           if (dto.Rua.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
             {
                 throw new EnderecoInvalido();
             }
@@ -39,7 +39,8 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Bairro.All(char.IsDigit))
+            if (dto.Bairro.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
             {
                 throw new EnderecoInvalido();
             }
@@ -51,7 +52,8 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Cidade.All(char.IsDigit))
+            if (dto.Cidade.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
             {
                 throw new EnderecoInvalido();
             }
@@ -63,7 +65,7 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.CEP.All(char.IsLetter))
+            if (dto.CEP.Any(c => !char.IsDigit(c)))
             {
                 throw new EnderecoInvalido();
             }
@@ -79,10 +81,89 @@ namespace Application.EnderecoService
             {
                 throw new EnderecoVazio();
             }
-            if (dto.Estado.All(char.IsDigit))
+            if (dto.Estado.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
             {
                 throw new EnderecoInvalido();
             }
         }
+
+        public void ValidarNovaRua(AlterarEnderecoDTO dto)
+        {
+            if (string.IsNullOrEmpty(dto.NovaRua))
+            {
+                throw new EnderecoVazio();
+            }
+            if (dto.NovaRua.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+            {
+                throw new EnderecoInvalido();
+            }
+        }
+
+        public void ValidarNovoNumero(AlterarEnderecoDTO dto)
+        {
+            if (dto.NovoNumero == null)
+            {
+                throw new EnderecoVazio();
+            }
+
+        }
+
+        public void ValidarNovoBairro(AlterarEnderecoDTO dto)
+        {
+            if (string.IsNullOrEmpty(dto.NovoBairro))
+            {
+                throw new EnderecoVazio();
+            }
+            if (dto.NovoBairro.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
+            {
+                throw new EnderecoInvalido();
+            }
+        }
+
+        public void ValidarNovaCidade(AlterarEnderecoDTO dto)
+        {
+            if (string.IsNullOrEmpty(dto.NovaCidade))
+            {
+                throw new EnderecoVazio();
+            }
+            if (dto.NovaCidade.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
+            {
+                throw new EnderecoInvalido();
+            }
+        }
+
+        public void ValidarNovoCep(AlterarEnderecoDTO dto)
+        {
+            if (string.IsNullOrEmpty(dto.NovoCEP))
+            {
+                throw new EnderecoVazio();
+            }
+            if (dto.NovoCEP.Any(c => !char.IsDigit(c)))
+            {
+                throw new EnderecoInvalido();
+            }
+            if (dto.NovoCEP.Length != 8)
+            {
+                throw new CepErrado();
+            }
+        }
+
+        public void ValidarNovoEstado(AlterarEnderecoDTO dto)
+        {
+            if (string.IsNullOrEmpty(dto.NovoEstado))
+            {
+                throw new EnderecoVazio();
+            }
+            if (dto.NovoEstado.Any(c => !char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c)))
+
+            {
+                throw new EnderecoInvalido();
+            }
+        }
+
+
     }
 }

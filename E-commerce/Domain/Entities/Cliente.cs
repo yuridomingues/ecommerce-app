@@ -96,28 +96,28 @@ namespace Domain.Entities
         }
 
         public void AtualizarEndereco(
-        Guid enderecoId,
-        string novaRua,
-        int novoNumero,
-        string novoBairro,
-        string novaCidade,
-        string novoCep,
-        string novoEstado
+        Guid EnderecoId,
+        string NovaRua,
+        int NovoNumero,
+        string NovoBairro,
+        string NovaCidade,
+        string NovoCep,
+        string NovoEstado
         )
         {
-            Endereco? endereco = _enderecos.FirstOrDefault(e => e.Id == enderecoId);
+            Endereco? endereco = _enderecos.FirstOrDefault(e => e.Id == EnderecoId);
 
             if (endereco == null)
             {
                 throw new EnderecoInexistente();
             }
             endereco.AtualizarEndereco(
-            novaRua,
-            novoNumero,
-            novoBairro,
-            novaCidade,
-            novoCep,
-            novoEstado);
+            NovaRua,
+            NovoNumero,
+            NovoBairro,
+            NovaCidade,
+            NovoCep,
+            NovoEstado);
 
         }
 
