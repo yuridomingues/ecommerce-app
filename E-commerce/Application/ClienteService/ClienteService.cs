@@ -15,7 +15,7 @@ namespace Application.ClienteService
 {
     public class ClienteService : IClienteService
     {
-        private readonly IClienteRepository  _repository;
+        private readonly IClienteRepository _repository;
         private readonly IValidacoesService _validacoes;
         private readonly IMapper _mapper;
 
@@ -31,14 +31,14 @@ namespace Application.ClienteService
             _validacoes.ValidarEmail(dto);
             _validacoes.ValidarSenha(dto);
             _validacoes.ValidarCpf(dto);
-            
+
 
             Cliente cliente = _mapper.Map<Cliente>(dto);
 
-            _validacoes.BuscarCpfEmail(dto.Email, dto.Cpf);
+            BuscarCpfEmail(dto.Email, dto.Cpf);
 
             _repository.CadastrarCliente(cliente);
-            
+
         }
         public List<ListarClientesDTO> ListarClientes()
         {
@@ -47,7 +47,7 @@ namespace Application.ClienteService
         }
         public void RemoverCliente(RemoverClienteDTO dto)
         {
-           Cliente clienteBuscado = _validacoes.BuscarEmail(dto.Email);
+            Cliente clienteBuscado = BuscarEmail(dto.Email);
 
             if (clienteBuscado.Senha != dto.Senha)
             {
@@ -60,7 +60,7 @@ namespace Application.ClienteService
         {
             _validacoes.ValidarNovoNome(dto);
 
-            Cliente clienteBuscado = _validacoes.BuscarCpf(dto.Cpf);
+            Cliente clienteBuscado = BuscarCpf(dto.Cpf);
 
             if (clienteBuscado.Senha != dto.Senha)
             {
@@ -73,7 +73,7 @@ namespace Application.ClienteService
         {
             _validacoes.ValidarNovaSenha(dto);
 
-            Cliente clienteBuscado = _validacoes.BuscarEmail(dto.Email);
+            Cliente clienteBuscado = BuscarEmail(dto.Email);
 
             if (clienteBuscado.Senha != dto.Senha)
             {
@@ -86,23 +86,69 @@ namespace Application.ClienteService
         {
             _validacoes.ValidarNovoEmail(dto);
 
-            Cliente? cliente = _mapper.Map<Cliente>(dto);
+            Cliente clienteBuscado = BuscarEmail(dto.Email);
 
-            _repository.AlterarEmail(cliente, dto.NovoEmail);
+            if (clienteBuscado.Senha != dto.Senha)
+            {
+                throw new SenhaIncorreta();
+            }
+
+            _repository.AlterarEmail(clienteBuscado, dto.NovoEmail);
         }
 
-        public BuscarClienteSaidaDTO? BuscarClienteEspecifico(BuscarClienteEntradaDTO dto)
+        public BuscarClienteSaidaDTO BuscarClienteEspecifico(BuscarClienteEntradaDTO dto)
         {
-            Cliente clienteentrada = _mapper.Map<Cliente>(dto);
+            Cliente ClienteBuscado = BuscarCpf(dto.Cpf);
 
-
-            Cliente clienteencontrado = _repository.BuscarClienteEspecifico(clienteentrada);
-
-            BuscarClienteSaidaDTO clientesaidaDTO = _mapper.Map<BuscarClienteSaidaDTO>(clienteencontrado);
-
+           BuscarClienteSaidaDTO clientesaidaDTO = _mapper.Map<BuscarClienteSaidaDTO>(ClienteBuscado);
 
             return clientesaidaDTO;
+        }
 
-        } 
+        public Cliente BuscarCpf(string cpf)
+        {
+            Cliente clientecpf = _repository.BuscarCpf(cpf);
+
+            if (clientecpf == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
+                return clientecpf;
+            }
+
+
+        }
+
+        public Cliente BuscarEmail(string email)
+        {
+            Cliente clienteemail = _repository.BuscarEmail(email);
+
+            if (clienteemail == null)
+            {
+                throw new ClienteNaoExiste();
+            }
+            else
+            {
+                return clienteemail;
+            }
+        }
+        public void BuscarCpfEmail(string email, string cpf)
+        {
+            Cliente clientecpf = _repository.BuscarCpf(cpf);
+            Cliente clienteemail = _repository.BuscarEmail(email);
+
+            if (clientecpf != null || clienteemail != null)
+            {
+                throw new ClienteExistente();
+            }
+
+
+        }
+
     }
+
 }
+
+       

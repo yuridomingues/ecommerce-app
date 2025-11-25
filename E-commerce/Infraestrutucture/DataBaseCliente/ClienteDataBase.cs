@@ -7,7 +7,7 @@ using Domain.Interfaces;
 using Domain.Entities;
 using System.Runtime.CompilerServices;
 
-namespace Infraestrutucture.DataBaseCliente
+namespace Infraestrutucture.ClienteDataBase
 {
     public class ClienteDataBase : IClienteDataBase
     {

@@ -8,8 +8,9 @@ using Application.Mappings;
 using Application.Service;
 using Domain.Entities;
 using Domain.Interfaces;
+using Infraestrutucture.ClienteDataBase;
 using Infraestrutucture.ClienteRepository;
-using Infraestrutucture.DataBaseCliente;
+using Infraestrutucture.ClienteDataBase;
 using Microsoft.Extensions.DependencyInjection;
 
 

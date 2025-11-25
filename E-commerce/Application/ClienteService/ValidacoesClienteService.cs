@@ -120,47 +120,7 @@ namespace Application.Service
             }
         }
 
-        public Cliente BuscarCpf(string cpf)
-        {
-            Cliente clientecpf =  _repository.BuscarCpf(cpf);
-
-            if (clientecpf == null)
-            {
-                throw new ClienteNaoExiste();
-            }
-            else
-            {
-                return clientecpf;
-            }
-          
-            
-        }
-
-        public Cliente BuscarEmail(string email)
-        {
-            Cliente clienteemail = _repository.BuscarEmail(email);
-
-            if (clienteemail == null)
-            {
-                throw new ClienteNaoExiste();
-            }
-            else
-            {
-                return clienteemail;
-            }
-        }
-        public void BuscarCpfEmail(string email, string cpf)
-        {
-            Cliente clientecpf = _repository.BuscarCpf(cpf);
-            Cliente clienteemail = _repository.BuscarEmail(email);
-
-            if(clientecpf != null || clienteemail != null)
-            {
-                throw new ClienteExistente();
-            }
-
-
-        }
+       
        
 
     }

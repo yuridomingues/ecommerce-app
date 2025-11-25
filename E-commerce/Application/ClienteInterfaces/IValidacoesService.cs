@@ -21,10 +21,7 @@ namespace Application.Interfaces
 
         void ValidarNovoEmail(AlterarEmailDTO dto);
 
-        Cliente BuscarEmail(string email);
-        Cliente BuscarCpf(string cpf);
-        void BuscarCpfEmail(string email, string cpf);
-
+      
 
 
     }

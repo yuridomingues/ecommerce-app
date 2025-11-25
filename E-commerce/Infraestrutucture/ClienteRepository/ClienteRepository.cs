@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
-using Infraestrutucture.Exceptions;
 
 
 namespace Infraestrutucture.ClienteRepository
@@ -55,41 +54,10 @@ namespace Infraestrutucture.ClienteRepository
 
         public void AlterarEmail(Cliente cliente, string NovoEmail)
         {
-            Cliente? ClienteCadastrado = ( _db.BuscarEmail(cliente.Email));
-
-            if (ClienteCadastrado == null)
-            {
-                throw new ClienteNaoExiste();
-
-            }
-
-            
-             if (ClienteCadastrado.Senha != cliente.Senha)
-            {
-                throw new SenhaIncorreta();
-            }
-            else
-            {
-                _db.AlterarEmail(ClienteCadastrado, NovoEmail);
-            }
-
-
+            _db.AlterarEmail(cliente, NovoEmail);
         }
 
-        public Cliente? BuscarClienteEspecifico(Cliente cliente)
-        {
-            Cliente? ClienteCadastrado = (_db.BuscarCpf(cliente.Cpf));
-
-            if (ClienteCadastrado == null)
-            {
-                throw new ClienteNaoExiste();
-            }
-            else
-            {
-                return ClienteCadastrado;
-
-            }
-        }   
+       
 
         public Cliente? BuscarId(Guid id)
         {
