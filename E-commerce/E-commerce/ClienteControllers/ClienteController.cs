@@ -34,134 +34,149 @@ namespace E_commerce.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
-        }
-        [HttpGet("Listar")]
 
-        public ActionResult ListarClientes()
-        {
-            try
-            {
-               
-                return Ok(_service.ListarClientes());
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
             }
         }
-        [HttpDelete("Excluir")]
+            [HttpGet("Listar")]
 
-        public ActionResult RemoverCliente([FromBody] RemoverClienteDTO dto)
-        {
-            try
+            public ActionResult ListarClientes()
             {
-                _service.RemoverCliente(dto);
-                return Ok("Cliente excluído com sucesso");
-            }
-            catch(Exception ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
-        [HttpPut("AlterarNome")]
-        public ActionResult AlterarNome([FromBody] NovoNomeClienteDTO dto)
-        {
-            try
-            {
-                _service.AlterarNome(dto);
-                return Ok("Nome alterado com sucesso");
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpPut("AlterarSenha")]
+                try
+                {
 
-        public ActionResult AlterarSenha([FromBody] AlterarSenhaDTO dto)
-        {
-            try
-            {
-                _service.AlterarSenha(dto);
-                return Ok("Senha alterada com sucesso");
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpPut("AlterarEmail")]
-        public ActionResult AlterarEmail([FromBody] AlterarEmailDTO dto)
-        {
-            try
-            {
-                _service.AlterarEmail(dto);
-                return Ok("Email Alterado com sucesso");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        [HttpPost("BuscarCliente")]
+                    return Ok(_service.ListarClientes());
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
 
-        public ActionResult BuscarClienteEspecifico([FromBody] BuscarClienteEntradaDTO dto)
-        {
-            try
-            {
-               return Ok (_service.BuscarClienteEspecifico(dto));
-                
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-        
-        [HttpPost("{clienteid}/AdicionarEndereço")]
-        
-        public ActionResult AdicionarEndereco(Guid clienteid, [FromBody] CadastrarEnderecoDTO dto)
-        {
-            try
-            {
-                _Eservice.CadastrarEndereco(dto, clienteid);
-                return Ok("Endereço adicionado ao cliente com sucesso");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+            [HttpDelete("Excluir")]
 
-        [HttpDelete("{clienteid}/RemoverEndereco")]
+            public ActionResult RemoverCliente([FromBody] RemoverClienteDTO dto)
+            {
+                try
+                {
+                    _service.RemoverCliente(dto);
+                    return Ok("Cliente excluído com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return NotFound(ex.Message);
+                }
 
-        public ActionResult RemoverEndereco(Guid clienteid, [FromBody] RemoverEnderecoDTO dto)
-        {
-            try
-            {
-                _Eservice.RemoverEndereco(dto, clienteid);
-                return Ok("Endereco Removido com sucesso!");
             }
-            catch(Exception ex)
+            [HttpPut("AlterarNome")]
+            public ActionResult AlterarNome([FromBody] NovoNomeClienteDTO dto)
             {
-                return BadRequest(ex.Message);
-            }
-        }
+                try
+                {
+                    _service.AlterarNome(dto);
+                    return Ok("Nome alterado com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
 
-        [HttpPut("{clienteid}/AlterarEndereco")]
-
-        public ActionResult AlterarEndereco(Guid clienteid, [FromBody] AlterarEnderecoDTO dto)
-        {
-            try
-            {
-                _Eservice.AlterarEndereco(dto, clienteid);
-                return Ok("Endereço alterado com sucesso");
             }
-            catch (Exception ex)
+            [HttpPut("AlterarSenha")]
+
+            public ActionResult AlterarSenha([FromBody] AlterarSenhaDTO dto)
             {
-                return BadRequest(ex.Message);
+                try
+                {
+                    _service.AlterarSenha(dto);
+                    return Ok("Senha alterada com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+            }
+            [HttpPut("AlterarEmail")]
+            public ActionResult AlterarEmail([FromBody] AlterarEmailDTO dto)
+            {
+                try
+                {
+                    _service.AlterarEmail(dto);
+                    return Ok("Email Alterado com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+            }
+            [HttpPost("BuscarCliente")]
+
+            public ActionResult BuscarClienteEspecifico([FromBody] BuscarClienteEntradaDTO dto)
+            {
+                try
+                {
+                    return Ok(_service.BuscarClienteEspecifico(dto));
+
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+            }
+
+            [HttpPost("{clienteid}/AdicionarEndereço")]
+
+            public ActionResult AdicionarEndereco(Guid clienteid, [FromBody] CadastrarEnderecoDTO dto)
+            {
+                try
+                {
+                    _Eservice.CadastrarEndereco(dto, clienteid);
+                    return Ok("Endereço adicionado ao cliente com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+            }
+
+            [HttpDelete("{clienteid}/RemoverEndereco")]
+
+            public ActionResult RemoverEndereco(Guid clienteid, [FromBody] RemoverEnderecoDTO dto)
+            {
+                try
+                {
+                    _Eservice.RemoverEndereco(dto, clienteid);
+                    return Ok("Endereco Removido com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+
+
+            }
+
+            [HttpPut("{clienteid}/AlterarEndereco")]
+
+            public ActionResult AlterarEndereco(Guid clienteid, [FromBody] AlterarEnderecoDTO dto)
+            {
+                try
+                {
+                    _Eservice.AlterarEndereco(dto, clienteid);
+                    return Ok("Endereço alterado com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+
+
             }
         }
     }
-}
+

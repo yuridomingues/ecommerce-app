@@ -106,13 +106,13 @@ namespace Application.Service
 
         public void ValidarNovoEmail(AlterarEmailDTO dto)
         {
-            if (string.IsNullOrWhiteSpace(dto.Email))
+            if (string.IsNullOrWhiteSpace(dto.NovoEmail))
             {
                 throw new EmailVazio();
             }
             try
             {
-                MailAddress mail = new MailAddress(dto.Email);
+                MailAddress mail = new MailAddress(dto.NovoEmail);
             }
             catch (FormatException)
             {

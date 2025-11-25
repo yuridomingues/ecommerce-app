@@ -24,9 +24,7 @@ namespace Application.Interfaces
 
         BuscarClienteSaidaDTO BuscarClienteEspecifico(BuscarClienteEntradaDTO dto);
 
-        Cliente BuscarEmail(string email);
-        Cliente BuscarCpf(string cpf);
-        void BuscarCpfEmail(string email, string cpf);
+       
 
     }
 }
