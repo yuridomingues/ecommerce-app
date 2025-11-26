@@ -33,7 +33,7 @@ namespace Domain.Entities
 
             if (BuscarProduto != null)
             {
-                item.AdicionarQuantidade(item.Quantidade);                
+                BuscarProduto.AdicionarQuantidade(item.Quantidade);                
             }
             else
             {
