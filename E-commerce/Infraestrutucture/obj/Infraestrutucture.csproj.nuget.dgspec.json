@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {}
+    "C:\\Users\\rezen\\Source\\Repos\\FeatureCarrinho\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
+    "C:\\Users\\rezen\\Source\\Repos\\FeatureCarrinho\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+        "projectUniqueName": "C:\\Users\\rezen\\Source\\Repos\\FeatureCarrinho\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
         "projectName": "Infraestrutucture",
-        "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
+        "projectPath": "C:\\Users\\rezen\\Source\\Repos\\FeatureCarrinho\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
         "packagesPath": "C:\\Users\\rezen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\obj\\",
+        "outputPath": "C:\\Users\\rezen\\Source\\Repos\\FeatureCarrinho\\E-commerce\\Infraestrutucture\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
