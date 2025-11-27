@@ -27,6 +27,8 @@ namespace Domain.Entities
             return itens.FirstOrDefault(i => i.ProdutoId == id);
         }
 
+       
+
         public void AdicionarProduto(ItemCarrinho item)
         {
             ItemCarrinho? BuscarProduto = BuscarIdProduto(item.ProdutoId);
@@ -60,5 +62,30 @@ namespace Domain.Entities
             }
 
         }
+
+        public ItemCarrinho AtualizarQuantidade(int NovaQuantidade, Guid produtoid)
+        {
+            ItemCarrinho? BuscarProduto = BuscarIdProduto(produtoid);
+
+            if (BuscarProduto == null)
+            {
+                throw new CarrinhoSemProduto();
+            }
+            BuscarProduto.AtualizarQuantidade(NovaQuantidade);
+            return BuscarProduto;
+        }
+
+        public void EsvaziarCarrinho()
+        {
+
+            itens.Clear();
+        }
+
+        public decimal CalcularSubTotal()
+        {
+            return itens.Sum(i => i.SubTotal);
+        }
+
+       
     }
 }

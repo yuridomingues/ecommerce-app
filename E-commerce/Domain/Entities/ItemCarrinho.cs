@@ -12,14 +12,16 @@ namespace Domain.Entities
        public Guid ProdutoId { get; private set; }
 
        public int Quantidade { get; private set; }
+       
+       public decimal PrecoUnitario { get; private set; }
 
-       public string Nome { get; private set; }
+       public decimal SubTotal => Quantidade * PrecoUnitario;
 
-       public ItemCarrinho(Guid produtoid, int quantidade, string nome)
+       public ItemCarrinho(Guid produtoid, int quantidade, decimal precounitario)
         {
             ProdutoId = produtoid;
             Quantidade = quantidade;
-            Nome = nome;
+            PrecoUnitario = precounitario;
         }
 
         public void AdicionarQuantidade(int quantidade)
@@ -42,6 +44,17 @@ namespace Domain.Entities
                 throw new QuantidadeMaior();
             }
             Quantidade -= quantidade;
+        }
+
+        public void AtualizarQuantidade(int NovaQuantidade)
+        {
+            if (NovaQuantidade <= 0)
+            {
+                throw new QuantidadeInvalida();
+            }
+           
+
+            Quantidade = NovaQuantidade;
         }
     }
 }

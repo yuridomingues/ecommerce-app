@@ -22,4 +22,5 @@ namespace Domain.ExceptionsCarrinho
         public QuantidadeMaior()
             : base("Você não pode remover uma quantidade maior do que a quantidade de produtos presentes no carrinho") { }
     }
+   
 }
