@@ -18,7 +18,7 @@ public class Pedido
     public bool Status { get; set; } // true = finalziado e false = aberto
 
 
-    public Pedido(Guid clienteId, Endereco endereco, Guid id)
+    public Pedido(Guid clienteId, Endereco endereco)
     {
         ClienteId = clienteId;
         Endereco = endereco;

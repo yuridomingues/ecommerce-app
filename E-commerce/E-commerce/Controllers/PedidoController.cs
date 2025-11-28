@@ -21,45 +21,80 @@ public class PedidoController: ControllerBase
     [HttpPost("criarPedido")]
     public ActionResult CriarPedido([FromBody] PedidoDTO novoPedido)
     {
-        pedidoService.CriarPedido(novoPedido);
-        return Ok(novoPedido);
+        if (novoPedido == null)
+        {
+            return BadRequest("Dados do pedido são obrigatórios");
+        }
+        
+        try
+        {
+            pedidoService.CriarPedido(novoPedido);
+            return Created("", "Pedido criado com sucesso");  
+        }
+        catch(Exception erro)
+        {
+            return StatusCode(500, erro.Message);
+        }
+
     } 
 
 
     [HttpPut("finalizarPedido")]
     public ActionResult FinalizarPedido([FromBody]PedidoDTO pedidoFinalizado)
     {
-        if (pedidoService.BuscarPedido(pedidoFinalizado.Id) == null)
-        {
-            return NotFound("Este pedido não existe");
 
-        }
-        else if(pedidoService.BuscarPedido(pedidoFinalizado.Id).Status == true)
+        try
         {
-            return BadRequest("Pedido já finalizado");
-        }
-        else
-        {
+            var pedido = pedidoService.BuscarPedido(pedidoFinalizado.Id);
+
+            if (pedido == null)
+            {
+                return NotFound("Pedido inexistente");
+            }
+
+            if (pedido.Status == true)
+            {
+                return BadRequest("Pedido já finalizado");
+            }
+
             pedidoService.FinalizarPedido(pedidoFinalizado);
-            return Ok("Pedido entregue.");
-        }
+            return Ok("Pedido entregue com sucesso");
 
+        }
+        catch(Exception erro)
+        {
+            return StatusCode(500, erro.Message);
+        }    
+        
     }
 
 
     [HttpDelete("excluirPedido")]
     public ActionResult ExcluirPedido([FromBody] PedidoDTO pedidoExcluido)
     {
-        if (pedidoService.BuscarPedido(pedidoExcluido.Id) == null)
+        if (pedidoExcluido == null)
         {
-            return NotFound("Este pedido não existe");
+            return BadRequest("Dados do pedido são obrigatórios");
+        }
+        
+        try
+        {
+            if (pedidoService.BuscarPedido(pedidoExcluido.Id) == null)
+            {
+                return NotFound("Este pedido não existe");
 
+            }
+            else
+            {
+                pedidoService.ExcluirPedido(pedidoExcluido);
+                return Ok("Pedido excluído com sucesso");
+            }
         }
-        else
+        catch(Exception erro)
         {
-            pedidoService.ExcluirPedido(pedidoExcluido);
-            return Ok("Pedido excluído com sucesso");
+            return StatusCode(500, erro.Message);
         }
+        
 
     }
 
@@ -67,34 +102,48 @@ public class PedidoController: ControllerBase
     [HttpGet("listarPedidos")]
     public ActionResult ListarPedidos()
     {
-        return Ok(pedidoService.ListarPedidos());
+        try
+        {
+            return Ok(pedidoService.ListarPedidos());
+        }
+        catch(Exception erro)
+        {
+            return StatusCode(500, erro.Message);
+        }
+
     }
 
 
     [HttpPut("alterarEndereco/{id}")]
     public ActionResult AlterarEndereco([FromBody] EnderecoDTO novoEndereco, Guid id)
     {
-        
-        if (pedidoService.BuscarPedido(id) == null)
+        if (novoEndereco == null)
         {
-
-            return NotFound("Pedido inexistente");
-
+            return BadRequest("Dados do endereço são obrigatórios");
         }
-        else if(pedidoService.BuscarPedido(id).Status == true)
-        {
 
-            return BadRequest("Pedido já finalizado");
-
-        }
-        else
+        try
         {
+            var pedido = pedidoService.BuscarPedido(id);
+
+            if (pedido == null)
+            {
+                return NotFound("Pedido inexistente");
+            }
+
+            if (pedido.Status == true)
+            {
+                return BadRequest("Pedido já finalizado");
+            }
 
             pedidoService.AlterarEndereco(novoEndereco, id);
-            return Ok();
+            return Ok("Endereço alterado com sucesso");
 
+        }catch(Exception erro)
+        {
+            return StatusCode(500, erro.Message);
         }
-
+        
     }
 
 }
