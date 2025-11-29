@@ -4,22 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Infrastructure.Repositories
+namespace Infraestrutucture.ProdutoRepository
 {
     public class ProdutoRepository : IProdutoRepository
     {
         private readonly List<Produto> _produtos = new List<Produto>();
-        private int _proximoId = 1;
 
         public void Adicionar(Produto produto)
         {
-            typeof(Produto).GetProperty("Id")
-                ?.SetValue(produto, _proximoId++);
+           
 
             _produtos.Add(produto);
         }
 
-        public Produto ObterPorId(int id)
+        public Produto? ObterPorId(Guid id)
         {
             return _produtos.FirstOrDefault(p => p.Id == id);
         }
@@ -38,7 +36,7 @@ namespace Infrastructure.Repositories
             }
         }
 
-        public void Remover(int id)
+        public void Remover(Guid id)
         {
             var produto = ObterPorId(id);
             if (produto != null)

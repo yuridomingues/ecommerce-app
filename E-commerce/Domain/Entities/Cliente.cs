@@ -20,11 +20,12 @@ namespace Domain.Entities
         public string Cpf { get; private set; }
 
 
+
         private readonly List<Endereco> _enderecos = new();
 
         public IReadOnlyList<Endereco> Enderecos => _enderecos;
 
-
+        
 
         public void DefinirId()
         {

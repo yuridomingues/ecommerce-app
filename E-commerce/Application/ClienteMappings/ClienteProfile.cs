@@ -19,7 +19,7 @@ namespace Application.Mappings
             CreateMap<Cliente, BuscarClienteSaidaDTO>()
     .ForMember(dest => dest.Enderecos, opt => opt.MapFrom(src => src.Enderecos));
 
-          
+            CreateMap<Endereco, EnderecoSaidaDTO>();
 
             CreateMap<CadastrarEnderecoDTO, Endereco>()
     .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));

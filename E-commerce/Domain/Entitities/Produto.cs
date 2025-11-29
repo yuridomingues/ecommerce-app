@@ -2,7 +2,7 @@ namespace Domain.Entitities
 {
     public class Produto
     {
-        public int Id { get; private set; }
+        public Guid Id { get; private set; } = Guid.NewGuid();
         public string Nome { get; private set; }
         public decimal Preco { get; private set; }
         public int Estoque { get; private set; }

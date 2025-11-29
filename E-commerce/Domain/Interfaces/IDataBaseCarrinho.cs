@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IEnderecoRepository
+    public interface IDataBaseCarrinho
     {
-        Cliente? BuscarId(Guid clienteid);
-        void CadastrarEndereco(Cliente cliente, Endereco endereco);
+        Carrinho? BuscarClienteID(Guid clienteid);
+
+        void Salvar(Carrinho carrinho);
     }
 }

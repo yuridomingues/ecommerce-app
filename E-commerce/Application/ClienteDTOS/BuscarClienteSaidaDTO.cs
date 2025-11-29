@@ -18,6 +18,6 @@ namespace Application.Dtos
 
         public string Cpf { get; set; } = string.Empty;
 
-        public List<CadastrarEnderecoDTO> Enderecos { get; set; } = new();
+        public List<EnderecoSaidaDTO> Enderecos { get; set; } = new();
     }
 }

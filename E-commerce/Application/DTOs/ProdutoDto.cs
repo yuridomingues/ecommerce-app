@@ -11,7 +11,7 @@ namespace Application.DTOs
     // Usado para devolver dados (Output)
     public class ProdutoDto
     {
-        public int Id {get; set; }
+        public Guid Id {get; set; }
         public string Nome {get; set;}
         public decimal Preco {get; set; }
         public int Estoque {get; set; }

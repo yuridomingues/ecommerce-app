@@ -3,10 +3,11 @@ using Domain.Interfaces;
 using Application.DTOs;
 using System.Collections.Generic;
 using System.Linq;
+using Application.ProdutoInterface;
 
 namespace Application.Services
 {
-    public class ProdutoService
+    public class ProdutoService : IProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
 
@@ -36,7 +37,7 @@ namespace Application.Services
             });
         }  
 
-        public ProdutoDto ObterPorId(int Id)
+        public ProdutoDto ObterPorId(Guid Id)
         {
             var p = _produtoRepository.ObterPorId(Id);
             if (p == null) return null;
@@ -50,7 +51,7 @@ namespace Application.Services
             };
         }
 
-        public void AtualizarPreco(int Id, decimal novoPreco)
+        public void AtualizarPreco(Guid Id, decimal novoPreco)
         {
             var produto = _produtoRepository.ObterPorId(Id);
             if (produto == null) throw new Exception("Produto não encontrado");
