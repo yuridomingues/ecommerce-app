@@ -21,6 +21,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_commerce.CarrinhoController.CarrinhoController",
+    "Method": "AtualizarQuantidade",
+    "RelativePath": "api/Carrinho/{clienteid}/atualizarquantidade",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Application.CarrinhoDTO.AtualizarQuantidadeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.CarrinhoController.CarrinhoController",
+    "Method": "EsvaziarCarrinho",
+    "RelativePath": "api/Carrinho/{clienteid}/esvaziarcarrinho",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.CarrinhoController.CarrinhoController",
+    "Method": "ListarCliente",
+    "RelativePath": "api/Carrinho/{clienteid}/listarCarrinho",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.CarrinhoController.CarrinhoController",
+    "Method": "RemoverProduto",
+    "RelativePath": "api/Carrinho/{clienteid}/removerproduto",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Application.CarrinhoDTO.RemoverProdutoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_commerce.CarrinhoController.CarrinhoController",
+    "Method": "SubTotal",
+    "RelativePath": "api/Carrinho/{clienteid}/subtotal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_commerce.Controllers.ClienteController",
     "Method": "AdicionarEndereco",
     "RelativePath": "api/Cliente/{clienteid}/AdicionarEndere\u00E7o",

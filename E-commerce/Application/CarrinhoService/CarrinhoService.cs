@@ -25,12 +25,15 @@ namespace Application.CarrinhoService
         private readonly IProdutoRepository _produtoRepository;
         private readonly ICarrinhoRepository _carrinrepository;
         private readonly IMapper _mapper;
+        private readonly IValidarCarrinho _validar;
 
-        public CarrinhoService(IClienteRepository repository, IProdutoRepository produtorepository, ICarrinhoRepository carrinrepository)
+        public CarrinhoService(IClienteRepository repository, IProdutoRepository produtorepository, ICarrinhoRepository carrinrepository, IMapper mapper, IValidarCarrinho validar)
         {
             _repository = repository;
             _produtoRepository = produtorepository;
             _carrinrepository = carrinrepository;
+            _mapper = mapper;
+            _validar = validar;
         }
 
         public void AdicionarProdutoCarrinho(AdicionarProdutoCarrinhoDTO dto, Guid clienteid)
@@ -78,9 +81,72 @@ namespace Application.CarrinhoService
 
         }
 
-     
+        public void RemoverProduto(Guid clienteid, RemoverProdutoDTO dto)
+        {
+            Cliente clienteBuscado = _repository.BuscarId(clienteid);
 
-        
+            if (clienteBuscado == null)
+                throw new ClienteNaoExiste();
+
+            Produto produtoBuscado = _produtoRepository.ObterPorId(dto.produtoid);
+
+            if (produtoBuscado == null)
+                throw new ProdutoNaoExiste();
+
+            if (produtoBuscado.Nome != dto.nome)
+            {
+                throw new ProdutoNaoExiste();
+            }
+            
+            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
+
+            if (carrinho == null)
+            {
+                throw new CarrinhoNaoExiste();
+            }
+
+          
+
+            ItemCarrinho item = new ItemCarrinho(produtoBuscado.Id, dto.quantidade, produtoBuscado.Preco, dto.nome);
+
+            carrinho.RemoverProduto(item);
+
+            _carrinrepository.Salvar(carrinho);
+        }
+
+        public void AtualizarQuantidade(AtualizarQuantidadeDTO dto, Guid clienteid)
+        {
+            var recursos = _validar.ValidarRecursos(dto, clienteid);
+            recursos.Carrinho.AtualizarQuantidade(dto.Novaquantidade, recursos.Produto.Id);
+
+            _carrinrepository.Salvar(recursos.Carrinho);
+        }
+
+        public void EsvaziarCarrinho(Guid clienteid)
+        {
+            (Carrinho carrinho, Cliente cliente) = _validar.ValidarRecursosEsvaziar(clienteid);
+
+            carrinho.EsvaziarCarrinho();
+
+            _carrinrepository.Salvar(carrinho);
+
+        }
+
+        public decimal ObterSubTotal(Guid clienteid)
+        {
+            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
+
+            if (carrinho == null)
+            {
+                return 0m;
+            }
+
+            return carrinho.CalcularSubTotal();
+        }
+
+
+
+
     }
 
 }

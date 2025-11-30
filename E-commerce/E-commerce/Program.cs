@@ -19,6 +19,7 @@ using Application.ProdutoInterface;
 using Application.Services;
 using Infraestrutucture.DataBaseCarrinho;
 using Infraestrutucture.CarrinhoRepository;
+using Application.CarrinhoMappings;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,7 @@ builder.Services.AddSingleton<IClienteService, ClienteService>();
 builder.Services.AddSingleton<IValidacoesService, ValidacoesClienteService>();
 builder.Services.AddAutoMapper(cfg => { }, typeof(ClienteProfile).Assembly);
 builder.Services.AddAutoMapper(cfg => { }, typeof(EnderecoProfile).Assembly);
+builder.Services.AddAutoMapper(cfg => { }, typeof(CarrinhoProfile).Assembly);
 
 builder.Services.AddSingleton<IEnderecoService, EnderecoService>();
 builder.Services.AddSingleton<IEnderecoValidacoes, EnderecoValidacoes>();
@@ -42,6 +44,8 @@ builder.Services.AddSingleton<ICarrinhoService, CarrinhoService>();
 builder.Services.AddSingleton<IProdutoService, ProdutoService>();
 builder.Services.AddSingleton<IDataBaseCarrinho, DataBaseCarrinho>();
 builder.Services.AddSingleton<ICarrinhoRepository, CarrinhoRepository>();
+builder.Services.AddSingleton<IValidarCarrinho, ValidarCarrinho>();
+
 
 
 

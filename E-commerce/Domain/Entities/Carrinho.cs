@@ -78,7 +78,11 @@ namespace Domain.Entities
 
         public void EsvaziarCarrinho()
         {
-
+            if (itens.Count == 0)
+            {
+                throw new CarrinhoJaVazio();
+            }
+            
             itens.Clear();
         }
 

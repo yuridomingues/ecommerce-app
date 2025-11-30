@@ -23,4 +23,11 @@ namespace Domain.ExceptionsCarrinho
             : base("Você não pode remover uma quantidade maior do que a quantidade de produtos presentes no carrinho") { }
     }
 
+    public class CarrinhoJaVazio : Exception 
+    {
+        public CarrinhoJaVazio()
+            :base("Esse carrinho já está vazio") { }
+    }
+
+
 }
