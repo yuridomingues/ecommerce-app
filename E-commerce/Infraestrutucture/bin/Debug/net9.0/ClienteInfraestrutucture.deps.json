@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ClienteInfraestrutucture/1.0.0": {
+        "dependencies": {
+          "ClienteDomain": "1.0.0"
+        },
+        "runtime": {
+          "ClienteInfraestrutucture.dll": {}
+        }
+      },
+      "ClienteDomain/1.0.0": {
+        "runtime": {
+          "ClienteDomain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClienteInfraestrutucture/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClienteDomain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
