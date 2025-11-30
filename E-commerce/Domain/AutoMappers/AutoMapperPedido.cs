@@ -8,5 +8,6 @@ public class AutoMapperPedido : Profile
     public AutoMapperPedido()
     {
         CreateMap<Pedido, PedidoDTO>().ReverseMap();
+        CreateMap<Carrinho, PedidoDTO>();
     }
 }

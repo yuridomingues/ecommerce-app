@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application;
 using Domain;
 using Domain.DTOs;
+using AutoMapper;
 
 namespace E_commerce.Controllers;
     
@@ -19,15 +20,17 @@ public class PedidoController: ControllerBase
     }
 
     [HttpPost("criarPedido")]
-    public ActionResult CriarPedido([FromBody] PedidoDTO novoPedido)
+    public ActionResult CriarPedido([FromBody] Carrinho carrinho)
     {
-        if (novoPedido == null)
+        if (carrinho == null)
         {
-            return BadRequest("Dados do pedido são obrigatórios");
+            return BadRequest("Dados do carrinho são obrigatórios");
         }
         
         try
         {
+            var novoPedido = mapper.Map<PedidoDTO>(carrinho);
+
             pedidoService.CriarPedido(novoPedido);
             return Created("", "Pedido criado com sucesso");  
         }
