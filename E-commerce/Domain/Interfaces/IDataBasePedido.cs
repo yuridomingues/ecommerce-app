@@ -1,4 +1,5 @@
 namespace Domain.Interface;
+using Domain.Entities;
 
 public interface IDataBasePedido
 {

@@ -116,7 +116,7 @@ namespace Application.CarrinhoService
 
             if (carrinho == null)
             {
-                throw new CarrinhoNaoExiste();
+                carrinho = new Carrinho(clienteid);
             }
             return (carrinho, produtoBuscado);
 

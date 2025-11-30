@@ -1,4 +1,5 @@
 namespace Domain.DTOs;
+using Domain.Entities;
 
 public class PedidoDTO
 {

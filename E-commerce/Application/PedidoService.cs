@@ -2,6 +2,7 @@ namespace Application;
 using Domain.Interface;
 using Domain;
 using Domain.DTOs;
+using Domain.Entities;
 using AutoMapper;
 
 public class PedidoService
@@ -108,7 +109,7 @@ public class PedidoService
     }
 
 
-    public void AlterarEndereco(EnderecoDTO novoEndereco, Guid id)
+    public void AlterarEndereco(Domain.DTOs.EnderecoDTO novoEndereco, Guid id)
     {
         if(novoEndereco == null)
         {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application;
 using Domain;
 using Domain.DTOs;
+using Domain.Entities;
 using AutoMapper;
 
 namespace E_commerce.Controllers;
@@ -29,7 +30,12 @@ public class PedidoController: ControllerBase
         
         try
         {
-            var novoPedido = mapper.Map<PedidoDTO>(carrinho);
+            // Implementar conversão de Carrinho para PedidoDTO
+            var novoPedido = new PedidoDTO
+            {
+                ClienteId = carrinho.ClienteId,
+                // Adicionar outras propriedades conforme necessário
+            };
 
             pedidoService.CriarPedido(novoPedido);
             return Created("", "Pedido criado com sucesso");  

@@ -11,7 +11,6 @@ using Application.Service;
 using Domain.Entities;
 using Domain.Interfaces;
 using Infraestrutucture.ClienteDataBase;
-using Infraestrutucture.ClienteDataBase;
 using Infraestrutucture.ClienteRepository;
 using Infraestrutucture.ProdutoRepository;
 using Microsoft.Extensions.DependencyInjection;

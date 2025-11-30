@@ -2,6 +2,7 @@ namespace Infraestrutucture.Repository;
 
 using Domain;
 using Domain.Interface;
+using Domain.Entities;
 using Infraestrutucture.DataBasePedido;
 
 

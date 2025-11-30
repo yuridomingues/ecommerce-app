@@ -1,4 +1,5 @@
 namespace Domain;
+using Domain.Entities;
 
 public class Pedido
 {  

@@ -1,5 +1,6 @@
 using Domain;
 using Domain.Interface;
+using Domain.Entities;
 
 namespace Infraestrutucture.DataBasePedido;
 
