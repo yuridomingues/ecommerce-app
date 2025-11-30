@@ -38,21 +38,7 @@ namespace Application.CarrinhoService
 
         public void AdicionarProdutoCarrinho(AdicionarProdutoCarrinhoDTO dto, Guid clienteid)
         {
-            Cliente? cliente = _repository.BuscarId(clienteid);
-
-            if (cliente == null)
-                throw new ClienteNaoExiste();
-
-            Produto? produto = _produtoRepository.ObterPorId(dto.ProdutoId);
-
-            if (produto == null)
-                throw new ProdutoNaoExiste();
-            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
-
-            if (carrinho == null)
-            {
-                carrinho = new Carrinho(clienteid);
-            }
+            (Carrinho carrinho, Produto produto) = _validar.ValidarRecursosAdicionar(dto, clienteid);
 
             ItemCarrinho item = new ItemCarrinho(produto.Id, dto.Quantidade, produto.Preco, dto.Nome);
 
@@ -83,31 +69,9 @@ namespace Application.CarrinhoService
 
         public void RemoverProduto(Guid clienteid, RemoverProdutoDTO dto)
         {
-            Cliente clienteBuscado = _repository.BuscarId(clienteid);
+            (Carrinho carrinho, Produto produto) = _validar.ValidarRecursosRemover(dto, clienteid);
 
-            if (clienteBuscado == null)
-                throw new ClienteNaoExiste();
-
-            Produto produtoBuscado = _produtoRepository.ObterPorId(dto.produtoid);
-
-            if (produtoBuscado == null)
-                throw new ProdutoNaoExiste();
-
-            if (produtoBuscado.Nome != dto.nome)
-            {
-                throw new ProdutoNaoExiste();
-            }
-            
-            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
-
-            if (carrinho == null)
-            {
-                throw new CarrinhoNaoExiste();
-            }
-
-          
-
-            ItemCarrinho item = new ItemCarrinho(produtoBuscado.Id, dto.quantidade, produtoBuscado.Preco, dto.nome);
+            ItemCarrinho item = new ItemCarrinho(dto.produtoid, dto.quantidade, produto.Preco, dto.nome);
 
             carrinho.RemoverProduto(item);
 

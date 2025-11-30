@@ -45,7 +45,7 @@ namespace Application.CarrinhoService
                 throw new CarrinhoNaoExiste();
             }
 
-           
+
 
             return (carrinho, produtoBuscado);
 
@@ -66,5 +66,60 @@ namespace Application.CarrinhoService
             }
 
             return (carrinho, clienteBuscado);
-    }    }
+   }    
+
+         public (Carrinho Carrinho, Produto Produto) ValidarRecursosRemover(RemoverProdutoDTO dto, Guid clienteid)
+         {
+            Cliente clienteBuscado = _repository.BuscarId(clienteid);
+
+            if (clienteBuscado == null)
+                throw new ClienteNaoExiste();
+
+            Produto produtoBuscado = _produtoRepository.ObterPorId(dto.produtoid);
+
+            if (produtoBuscado == null)
+                throw new ProdutoNaoExiste();
+
+            if(produtoBuscado.Nome != dto.nome)
+            {
+                throw new ProdutoNaoExiste();
+            }
+
+            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
+
+            if (carrinho == null)
+            {
+                throw new CarrinhoNaoExiste();
+            }
+            return (carrinho, produtoBuscado);
+
+         }
+
+        public (Carrinho Carrinho, Produto Produto) ValidarRecursosAdicionar(AdicionarProdutoCarrinhoDTO dto, Guid clienteid)
+        {
+            Cliente clienteBuscado = _repository.BuscarId(clienteid);
+
+            if (clienteBuscado == null)
+                throw new ClienteNaoExiste();
+
+            Produto produtoBuscado = _produtoRepository.ObterPorId(dto.ProdutoId);
+
+            if (produtoBuscado == null)
+                throw new ProdutoNaoExiste();
+
+            if (produtoBuscado.Nome != dto.Nome)
+            {
+                throw new ProdutoNaoExiste();
+            }
+
+            Carrinho? carrinho = _carrinrepository.BuscarClienteId(clienteid);
+
+            if (carrinho == null)
+            {
+                throw new CarrinhoNaoExiste();
+            }
+            return (carrinho, produtoBuscado);
+
+        }
+    }
 }

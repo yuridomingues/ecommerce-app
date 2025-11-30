@@ -14,5 +14,9 @@ namespace Application.CarrinhoInterfaces
         (Carrinho Carrinho, Produto Produto)  ValidarRecursos(AtualizarQuantidadeDTO dto, Guid clienteid);
 
         (Carrinho Carrinho, Cliente cliente) ValidarRecursosEsvaziar(Guid clienteid);
+
+        (Carrinho Carrinho, Produto Produto) ValidarRecursosRemover(RemoverProdutoDTO dto, Guid clienteid);
+
+        (Carrinho Carrinho, Produto Produto) ValidarRecursosAdicionar(AdicionarProdutoCarrinhoDTO dto, Guid clienteid);
     }
 }

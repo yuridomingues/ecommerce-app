@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{7730CF65-6DF9-4FC6-ABD4-134BAC5F5CA9}|E-commerce\\E-commerce.csproj|solutionrelative:e-commerce\\carrinhocontroller\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\clienteservice\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\clienteservice\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\carrinhointerfaces\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\carrinhointerfaces\\icarrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\carrinhointerfaces\\ivalidarcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\carrinhointerfaces\\ivalidarcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\carrinhoservice\\carrinhoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +17,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\entities\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\interfaces\\icarrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\icarrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\entities\\itemcarrinho .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\itemcarrinho .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\clienteservice\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\clienteservice\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\carrinhointerfaces\\ivalidarcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|solutionrelative:application\\carrinhointerfaces\\ivalidarcarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BEB18C4-C1C2-47E2-BBE2-55ADD366DC8F}|Application\\Application.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\application\\carrinhodto\\listarcarrinhodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\entitities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\entities\\itemcarrinho .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\itemcarrinho .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7730CF65-6DF9-4FC6-ABD4-134BAC5F5CA9}|E-commerce\\E-commerce.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\e-commerce\\clientecontrollers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7730CF65-6DF9-4FC6-ABD4-134BAC5F5CA9}|E-commerce\\E-commerce.csproj|solutionrelative:e-commerce\\clientecontrollers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -85,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\infraestrutucture\\databasecarrinho\\databasecarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6258B003-927D-481C-8C29-D4997D61D28F}|Infraestrutucture\\Infraestrutucture.csproj|solutionrelative:infraestrutucture\\databasecarrinho\\databasecarrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\interfaces\\icarrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\icarrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3AD4ECD-1804-4F65-A321-0CF10B407E87}|Domain\\Domain.csproj|c:\\users\\rezen\\source\\repos\\ecommerce-app\\e-commerce\\domain\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -254,7 +254,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -266,38 +266,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarrinhoService.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\CarrinhoService.cs",
-              "RelativeDocumentMoniker": "Application\\CarrinhoService\\CarrinhoService.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\CarrinhoService.cs*",
-              "RelativeToolTip": "Application\\CarrinhoService\\CarrinhoService.cs*",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAAHwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T19:02:55.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IValidarCarrinho.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
-              "RelativeDocumentMoniker": "Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\IValidarCarrinho.cs*",
-              "RelativeToolTip": "Application\\CarrinhoInterfaces\\IValidarCarrinho.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T13:23:26.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Carrinho.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\Carrinho.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Carrinho.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\Carrinho.cs*",
-              "RelativeToolTip": "Domain\\Entities\\Carrinho.cs*",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\Carrinho.cs",
+              "RelativeToolTip": "Domain\\Entities\\Carrinho.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAAAFUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T18:51:27.203Z",
@@ -311,27 +285,66 @@
               "RelativeDocumentMoniker": "E-commerce\\CarrinhoController\\CarrinhoController.cs",
               "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\CarrinhoController\\CarrinhoController.cs*",
               "RelativeToolTip": "E-commerce\\CarrinhoController\\CarrinhoController.cs*",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAAFYAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAGUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-29T13:42:52.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ItemCarrinho .cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\ItemCarrinho .cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ItemCarrinho .cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\ItemCarrinho .cs",
+              "RelativeToolTip": "Domain\\Entities\\ItemCarrinho .cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T18:52:54.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICarrinhoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\ICarrinhoRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\ICarrinhoRepository.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\ICarrinhoRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\ICarrinhoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:51:25.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CarrinhoService.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\CarrinhoService.cs",
+              "RelativeDocumentMoniker": "Application\\CarrinhoService\\CarrinhoService.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\CarrinhoService.cs*",
+              "RelativeToolTip": "Application\\CarrinhoService\\CarrinhoService.cs*",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T19:02:55.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ICarrinhoService.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\ICarrinhoService.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoInterfaces\\ICarrinhoService.cs",
               "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\ICarrinhoService.cs*",
               "RelativeToolTip": "Application\\CarrinhoInterfaces\\ICarrinhoService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T19:12:54.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ClienteService.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\ClienteService\\ClienteService.cs",
               "RelativeDocumentMoniker": "Application\\ClienteService\\ClienteService.cs",
@@ -344,7 +357,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "IValidarCarrinho.cs",
+              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
+              "RelativeDocumentMoniker": "Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
+              "RelativeToolTip": "Application\\CarrinhoInterfaces\\IValidarCarrinho.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T13:23:26.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ListarCarrinhoDTO.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoDTO\\ListarCarrinhoDTO.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoDTO\\ListarCarrinhoDTO.cs",
@@ -357,12 +383,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ValidarCarrinho.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\ValidarCarrinho.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoService\\ValidarCarrinho.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\ValidarCarrinho.cs*",
-              "RelativeToolTip": "Application\\CarrinhoService\\ValidarCarrinho.cs*",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoService\\ValidarCarrinho.cs",
+              "RelativeToolTip": "Application\\CarrinhoService\\ValidarCarrinho.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAADUAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-30T13:18:55.551Z",
@@ -370,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ValidacoesClienteService.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\ClienteService\\ValidacoesClienteService.cs",
               "RelativeDocumentMoniker": "Application\\ClienteService\\ValidacoesClienteService.cs",
@@ -383,12 +409,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CarrinhoExceptions.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs",
               "RelativeDocumentMoniker": "Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs*",
-              "RelativeToolTip": "Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs*",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs",
+              "RelativeToolTip": "Domain\\CarrinhoExceptions\\CarrinhoExceptions.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAABwAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T18:54:15.501Z",
@@ -396,12 +422,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CarrinhoExceptions.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoExceptions\\CarrinhoExceptions.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoExceptions\\CarrinhoExceptions.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoExceptions\\CarrinhoExceptions.cs*",
-              "RelativeToolTip": "Application\\CarrinhoExceptions\\CarrinhoExceptions.cs*",
+              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoExceptions\\CarrinhoExceptions.cs",
+              "RelativeToolTip": "Application\\CarrinhoExceptions\\CarrinhoExceptions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-29T13:13:05.194Z",
@@ -409,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AtualizarQuantidadeDTO.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoDTO\\AtualizarQuantidadeDTO.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoDTO\\AtualizarQuantidadeDTO.cs",
@@ -422,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\Program.cs",
               "RelativeDocumentMoniker": "E-commerce\\Program.cs",
@@ -435,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "AdicionarProdutoCarrinhoDTO.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoDTO\\AdicionarProdutoCarrinhoDTO.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoDTO\\AdicionarProdutoCarrinhoDTO.cs",
@@ -448,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CarrinhoProfile.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoMappings\\CarrinhoProfile.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoMappings\\CarrinhoProfile.cs",
@@ -461,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "RemoverProdutoDTO.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Application\\CarrinhoDTO\\RemoverProdutoDTO.cs",
               "RelativeDocumentMoniker": "Application\\CarrinhoDTO\\RemoverProdutoDTO.cs",
@@ -474,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entitities\\Produto.cs",
               "RelativeDocumentMoniker": "Domain\\Entitities\\Produto.cs",
@@ -487,19 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ItemCarrinho .cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\ItemCarrinho .cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\ItemCarrinho .cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Entities\\ItemCarrinho .cs",
-              "RelativeToolTip": "Domain\\Entities\\ItemCarrinho .cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T18:52:54.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\E-commerce\\ClienteControllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "E-commerce\\ClienteControllers\\ClienteController.cs",
@@ -511,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "DataBaseCarrinho.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\DataBaseCarrinho\\DataBaseCarrinho.cs",
               "RelativeDocumentMoniker": "Infraestrutucture\\DataBaseCarrinho\\DataBaseCarrinho.cs",
@@ -535,19 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ICarrinhoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\ICarrinhoRepository.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\ICarrinhoRepository.cs",
-              "ToolTip": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Interfaces\\ICarrinhoRepository.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\ICarrinhoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-29T18:51:25.007Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CarrinhoRepository.cs",
               "DocumentMoniker": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Infraestrutucture\\CarrinhoRepository\\CarrinhoRepository.cs",
               "RelativeDocumentMoniker": "Infraestrutucture\\CarrinhoRepository\\CarrinhoRepository.cs",
