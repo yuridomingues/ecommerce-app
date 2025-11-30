@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "gHBnggEcW2w=",
+=======
+  "dgSpecHash": "3vagcjKRgLA=",
+>>>>>>> BranchDoArthur
   "success": true,
   "projectFilePath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Infraestrutucture\\Infraestrutucture.csproj",
   "expectedPackageFiles": [

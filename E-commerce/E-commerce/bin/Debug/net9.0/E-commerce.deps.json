@@ -10,6 +10,10 @@
         "dependencies": {
           "Application": "1.0.0",
           "AutoMapper": "15.1.0",
+<<<<<<< HEAD
+=======
+          "Domain": "1.0.0",
+>>>>>>> BranchDoArthur
           "Infraestrutucture": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.10"
         },
@@ -106,8 +110,13 @@
       },
       "Application/1.0.0": {
         "dependencies": {
+<<<<<<< HEAD
           "Domain": "1.0.0",
           "Infraestrutucture": "1.0.0"
+=======
+          "AutoMapper": "15.1.0",
+          "Domain": "1.0.0"
+>>>>>>> BranchDoArthur
         },
         "runtime": {
           "Application.dll": {
@@ -117,9 +126,12 @@
         }
       },
       "Domain/1.0.0": {
+<<<<<<< HEAD
         "dependencies": {
           "AutoMapper": "15.1.0"
         },
+=======
+>>>>>>> BranchDoArthur
         "runtime": {
           "Domain.dll": {
             "assemblyVersion": "1.0.0.0",

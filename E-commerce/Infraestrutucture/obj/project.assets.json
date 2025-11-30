@@ -2,6 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0": {
+<<<<<<< HEAD
       "AutoMapper/13.0.1": {
         "type": "package",
         "dependencies": {
@@ -92,6 +93,11 @@
         "dependencies": {
           "AutoMapper": "13.0.1"
         },
+=======
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+>>>>>>> BranchDoArthur
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -102,6 +108,7 @@
     }
   },
   "libraries": {
+<<<<<<< HEAD
     "AutoMapper/13.0.1": {
       "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
       "type": "package",
@@ -213,6 +220,8 @@
         "useSharedDesignerContext.txt"
       ]
     },
+=======
+>>>>>>> BranchDoArthur
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -251,8 +260,13 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+=======
+            "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\rezen\\source\\repos\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+>>>>>>> BranchDoArthur
             }
           }
         }
@@ -288,7 +302,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+>>>>>>> BranchDoArthur
       }
     }
   }
