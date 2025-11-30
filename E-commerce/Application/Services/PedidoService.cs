@@ -1,7 +1,8 @@
 namespace Application;
-using Domain.Interface;
 using Domain;
+using Domain.Interface;
 using Application.DTOs;
+using Domain.DTOs;
 using Domain.Entities;
 using AutoMapper;
 
@@ -18,7 +19,7 @@ public class PedidoService
     }
 
 
-    public void CriarPedido(PedidoDTO novoPedido)
+    public void CriarPedido(Domain.DTOs.PedidoDTO novoPedido)
     {
         if(novoPedido == null)
         {
@@ -31,7 +32,7 @@ public class PedidoService
     }
 
 
-    public void FinalizarPedido(PedidoDTO pedidoFinalizado)
+    public void FinalizarPedido(Domain.DTOs.PedidoDTO pedidoFinalizado)
     {
         if(pedidoFinalizado == null)
         {
@@ -54,7 +55,7 @@ public class PedidoService
     }
 
 
-    public void ExcluirPedido(PedidoDTO pedidoExcluido)
+    public void ExcluirPedido(Domain.DTOs.PedidoDTO pedidoExcluido)
     {
         if(pedidoExcluido == null)
         {
@@ -77,20 +78,20 @@ public class PedidoService
     }
 
 
-    public List<PedidoDTO> ListarPedidos()
+    public List<Domain.DTOs.PedidoDTO> ListarPedidos()
     {
         var pedidos = pedidoRepository.ListarPedidos();
 
         if(pedidos == null)
         {
-            return new List<PedidoDTO>();
+            return new List<Domain.DTOs.PedidoDTO>();
         }
 
-        return mapper.Map<List<PedidoDTO>>(pedidos);
+        return mapper.Map<List<Domain.DTOs.PedidoDTO>>(pedidos);
     }
 
 
-    public PedidoDTO BuscarPedido(Guid id)
+    public Domain.DTOs.PedidoDTO BuscarPedido(Guid id)
     {
         if (id == Guid.Empty)
         {
@@ -105,7 +106,7 @@ public class PedidoService
         }
 
 
-        return mapper.Map<PedidoDTO>(pedido); 
+        return mapper.Map<Domain.DTOs.PedidoDTO>(pedido); 
     }
 
 

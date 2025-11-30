@@ -1,24 +1,21 @@
 using Application.CarrinhoInterfaces;
-using Application.CarrinhoService;
-using Application.ClienteService;
-using Application.Dtos;
-using Application.EnderecoInterfaces;
-using Application.EnderecoMappings;
-using Application.EnderecoService;
+using Application.Services;
 using Application.Interfaces;
 using Application.Mappings;
+using Application.EnderecoInterfaces;
+using Application.EnderecoMappings;
+using Application.CarrinhoMappings;
+using Application.ProdutoInterface;
 using Application.Service;
-using Domain.Entities;
 using Domain.Interfaces;
 using Infraestrutucture.ClienteDataBase;
 using Infraestrutucture.ClienteRepository;
 using Infraestrutucture.ProdutoRepository;
-using Microsoft.Extensions.DependencyInjection;
-using Application.ProdutoInterface;
-using Application.Services;
 using Infraestrutucture.DataBaseCarrinho;
 using Infraestrutucture.CarrinhoRepository;
-using Application.CarrinhoMappings;
+using Application.ClienteService;
+using Application.EnderecoService;
+using Application.CarrinhoService;
 
 
 var builder = WebApplication.CreateBuilder(args);
