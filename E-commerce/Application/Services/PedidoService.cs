@@ -1,7 +1,7 @@
 namespace Application;
 using Domain.Interface;
 using Domain;
-using Domain.DTOs;
+using Application.DTOs;
 using Domain.Entities;
 using AutoMapper;
 

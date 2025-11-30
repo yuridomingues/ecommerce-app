@@ -30,11 +30,10 @@ public class PedidoController: ControllerBase
         
         try
         {
-            // Implementar conversão de Carrinho para PedidoDTO
+            
             var novoPedido = new PedidoDTO
             {
                 ClienteId = carrinho.ClienteId,
-                // Adicionar outras propriedades conforme necessário
             };
 
             pedidoService.CriarPedido(novoPedido);

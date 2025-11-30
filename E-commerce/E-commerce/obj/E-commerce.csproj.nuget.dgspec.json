@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj": {}
+    "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj": {}
   },
   "projects": {
     "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Application\\Application.csproj": {
@@ -142,14 +142,14 @@
         }
       }
     },
-    "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj": {
+    "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
+        "projectUniqueName": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
         "projectName": "E-commerce",
-        "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
+        "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\E-commerce.csproj",
         "packagesPath": "C:\\Users\\dudsl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\obj\\",
+        "outputPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\E-commerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dudsl\\AppData\\Roaming\\NuGet\\NuGet.Config",
