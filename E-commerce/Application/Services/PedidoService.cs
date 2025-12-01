@@ -126,6 +126,23 @@ public class PedidoService
         return mapper.Map<Domain.DTOs.PedidoDTO>(pedido); 
     }
 
+    public Pedido BuscarPedidoEntidade(Guid id)
+    {
+        if (id == Guid.Empty)
+        {
+            throw new ArgumentException("Id inválido");
+        }
+
+        var pedido = pedidoRepository.BuscarPedido(id);
+
+        if(pedido == null)
+        {
+            throw new InvalidOperationException("Pedido não encontrado");
+        }
+
+        return pedido;
+    }
+
 
     public void AlterarEndereco(Domain.DTOs.EnderecoDTO novoEndereco, Guid id)
     {
@@ -154,6 +171,16 @@ public class PedidoService
         var endereco = mapper.Map<Endereco>(novoEndereco);
 
         pedidoRepository.AlterarEndereco(endereco, id);
+    }
+
+    public void AtualizarPedido(Pedido pedido)
+    {
+        if(pedido == null)
+        {
+            throw new ArgumentNullException(nameof(pedido));
+        }
+
+        pedidoRepository.AtualizarPedido(pedido);
     }
 
 

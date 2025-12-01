@@ -15,4 +15,6 @@ public interface IPedidoRepository
     
     public void AlterarEndereco(Endereco endereco, Guid id);
 
+    public void AtualizarPedido(Pedido pedido);
+
 }

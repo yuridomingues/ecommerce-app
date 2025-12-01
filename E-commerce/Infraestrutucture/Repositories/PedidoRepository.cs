@@ -107,4 +107,12 @@ public class PedidoRepository : IPedidoRepository
         pedido.AlterarEndereco(endereco);
     }
 
+    public void AtualizarPedido(Pedido pedido)
+    {
+        if (pedido == null)
+        {
+            throw new ArgumentNullException(nameof(pedido));
+        }
+    }
+
 }

@@ -4,6 +4,7 @@ using Domain;
 using Domain.DTOs;
 using Domain.Entities;
 using AutoMapper;
+using Domain.Services;
 
 namespace E_commerce.Controllers;
     
@@ -141,6 +142,48 @@ public class PedidoController: ControllerBase
             return StatusCode(500, new { error = erro.Message });
         }
         
+    }
+
+    [HttpPut("{id}/pagamento")]
+    public ActionResult DefinirPagamento(Guid id, [FromBody] DefinirPagamentoDTO dto)
+    {
+        try
+        {
+            var pedido = pedidoService.BuscarPedidoEntidade(id);
+
+            if (pedido == null)
+            {
+                return NotFound(new { error = "Pedido inexistente" });
+            }
+
+            if (pedido.Status == true)
+            {
+                return BadRequest(new { error = "Pedido já finalizado" });
+            }
+
+            decimal valorTotal = pedido.SubTotal;
+
+            Pagamento pagamento = dto.TipoPagamento.ToLower() switch
+            {
+                "pix" => new PagamentoPix(valorTotal, dto.ChavePix ?? throw new ArgumentException("ChavePix é obrigatória")),
+                "cartao" => new PagamentoCartao(valorTotal, dto.NumeroCartao ?? throw new ArgumentException("NumeroCartao é obrigatório"), dto.Parcelas ?? 1),
+                _ => throw new ArgumentException("Tipo de pagamento inválido. Use 'pix' ou 'cartao'")
+            };
+
+            pedido.DefinirPagamento(pagamento);
+            pedidoService.AtualizarPedido(pedido);
+
+            return Ok(new { 
+                mensagem = "Pagamento definido com sucesso",
+                tipoPagamento = pagamento.ObterDescricao(),
+                taxas = pagamento.CalcularTaxas(),
+                valorTotal = pagamento.ObterValorTotal()
+            });
+        }
+        catch (Exception erro)
+        {
+            return BadRequest(new { error = erro.Message });
+        }
     }
 
 }
