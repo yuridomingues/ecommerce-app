@@ -24,11 +24,11 @@ namespace E_commerce.CarrinhoController
             try
             {
                 _service.AdicionarProdutoCarrinho(dto, clienteid);
-                return Ok("Produto adicionado ao carrinho com sucesso.");
+                return Ok(new { mensagem = "Produto adicionado ao carrinho com sucesso." });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
 
             }
         }
@@ -43,7 +43,7 @@ namespace E_commerce.CarrinhoController
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
 
@@ -54,11 +54,11 @@ namespace E_commerce.CarrinhoController
             try
             {
                 _service.RemoverProduto(clienteid, dto);
-                return Ok("Item Removido com sucesso");
+                return Ok(new { mensagem = "Item Removido com sucesso" });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
         [HttpPut("{clienteid}/atualizarquantidade")]
@@ -67,11 +67,11 @@ namespace E_commerce.CarrinhoController
             try
             {
                 _service.AtualizarQuantidade(dto, clienteid);
-                return Ok("Quantidade de itens atualizada");
+                return Ok(new { mensagem = "Quantidade de itens atualizada" });
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
         [HttpPut("{clienteid}/esvaziarcarrinho")]
@@ -80,11 +80,11 @@ namespace E_commerce.CarrinhoController
             try
             {
                 _service.EsvaziarCarrinho(clienteid);
-                return Ok("Carrinho vazio");
+                return Ok(new { mensagem = "Carrinho vazio" });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
 
@@ -99,7 +99,7 @@ namespace E_commerce.CarrinhoController
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
     }

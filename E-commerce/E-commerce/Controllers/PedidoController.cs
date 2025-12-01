@@ -26,11 +26,11 @@ public class PedidoController: ControllerBase
         try
         {
             pedidoService.CriarPedido(clienteId, enderecoDTO);
-            return Ok("Pedido criado com sucesso");
+            return Ok(new { mensagem = "Pedido criado com sucesso" });
         }
         catch (Exception erro)
         {
-            return StatusCode(500, erro.Message);
+            return StatusCode(500, new { error = erro.Message });
         }
 
     }
@@ -46,21 +46,21 @@ public class PedidoController: ControllerBase
 
             if (pedido == null)
             {
-                return NotFound("Pedido inexistente");
+                return NotFound(new { error = "Pedido inexistente" });
             }
 
             if (pedido.Status == true)
             {
-                return BadRequest("Pedido já finalizado");
+                return BadRequest(new { error = "Pedido já finalizado" });
             }
 
             pedidoService.FinalizarPedido(pedidoFinalizado);
-            return Ok("Pedido entregue com sucesso");
+            return Ok(new { mensagem = "Pedido entregue com sucesso" });
 
         }
         catch(Exception erro)
         {
-            return StatusCode(500, erro.Message);
+            return StatusCode(500, new { error = erro.Message });
         }    
         
     }
@@ -71,25 +71,25 @@ public class PedidoController: ControllerBase
     {
         if (pedidoExcluido == null)
         {
-            return BadRequest("Dados do pedido são obrigatórios");
+            return BadRequest(new { error = "Dados do pedido são obrigatórios" });
         }
         
         try
         {
             if (pedidoService.BuscarPedido(pedidoExcluido.Id) == null)
             {
-                return NotFound("Este pedido não existe");
+                return NotFound(new { error = "Este pedido não existe" });
 
             }
             else
             {
                 pedidoService.ExcluirPedido(pedidoExcluido);
-                return Ok("Pedido excluído com sucesso");
+                return Ok(new { mensagem = "Pedido excluído com sucesso" });
             }
         }
         catch(Exception erro)
         {
-            return StatusCode(500, erro.Message);
+            return StatusCode(500, new { error = erro.Message });
         }
         
 
@@ -105,7 +105,7 @@ public class PedidoController: ControllerBase
         }
         catch(Exception erro)
         {
-            return StatusCode(500, erro.Message);
+            return StatusCode(500, new { error = erro.Message });
         }
 
     }
@@ -116,7 +116,7 @@ public class PedidoController: ControllerBase
     {
         if (novoEndereco == null)
         {
-            return BadRequest("Dados do endereço são obrigatórios");
+            return BadRequest(new { error = "Dados do endereço são obrigatórios" });
         }
 
         try
@@ -125,20 +125,20 @@ public class PedidoController: ControllerBase
 
             if (pedido == null)
             {
-                return NotFound("Pedido inexistente");
+                return NotFound(new { error = "Pedido inexistente" });
             }
 
             if (pedido.Status == true)
             {
-                return BadRequest("Pedido já finalizado");
+                return BadRequest(new { error = "Pedido já finalizado" });
             }
 
             pedidoService.AlterarEndereco(novoEndereco, id);
-            return Ok("Endereço alterado com sucesso");
+            return Ok(new { mensagem = "Endereço alterado com sucesso" });
 
         }catch(Exception erro)
         {
-            return StatusCode(500, erro.Message);
+            return StatusCode(500, new { error = erro.Message });
         }
         
     }

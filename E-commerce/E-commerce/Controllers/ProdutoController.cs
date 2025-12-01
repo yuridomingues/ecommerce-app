@@ -22,11 +22,11 @@ namespace API.Controllers
             try
             {
                 _service.CadastrarProduto(dto);
-                return Ok("Produto cadastrado com sucesso");
+                return Ok(new { mensagem = "Produto cadastrado com sucesso" });
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
 
@@ -42,11 +42,11 @@ namespace API.Controllers
             try
             {
                 _service.AtualizarPreco(id, novoPreco);
-                return Ok("Preço atualizado.");
+                return Ok(new { mensagem = "Preço atualizado." });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
             }
         }
     }

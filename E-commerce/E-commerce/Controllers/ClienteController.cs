@@ -29,11 +29,11 @@ namespace E_commerce.Controllers
             try
             {
                 _service.CadastrarCliente(dto);
-                return Ok("Conta Cadastrada com sucesso!");
+                return Ok(new { mensagem = "Conta Cadastrada com sucesso!" });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new { error = ex.Message });
 
             }
         }
@@ -48,7 +48,7 @@ namespace E_commerce.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -59,11 +59,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _service.RemoverCliente(dto);
-                    return Ok("Cliente excluído com sucesso");
+                    return Ok(new { mensagem = "Cliente excluído com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return NotFound(ex.Message);
+                    return NotFound(new { error = ex.Message });
                 }
 
             }
@@ -73,11 +73,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _service.AlterarNome(dto);
-                    return Ok("Nome alterado com sucesso");
+                    return Ok(new { mensagem = "Nome alterado com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -88,11 +88,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _service.AlterarSenha(dto);
-                    return Ok("Senha alterada com sucesso");
+                    return Ok(new { mensagem = "Senha alterada com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -102,11 +102,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _service.AlterarEmail(dto);
-                    return Ok("Email Alterado com sucesso");
+                    return Ok(new { mensagem = "Email Alterado com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -121,7 +121,7 @@ namespace E_commerce.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -133,11 +133,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _Eservice.CadastrarEndereco(dto, clienteid);
-                    return Ok("Endereço adicionado ao cliente com sucesso");
+                    return Ok(new { mensagem = "Endereço adicionado ao cliente com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
             }
@@ -149,11 +149,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _Eservice.RemoverEndereco(dto, clienteid);
-                    return Ok("Endereco Removido com sucesso!");
+                    return Ok(new { mensagem = "Endereco Removido com sucesso!" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
 
@@ -167,11 +167,11 @@ namespace E_commerce.Controllers
                 try
                 {
                     _Eservice.AlterarEndereco(dto, clienteid);
-                    return Ok("Endereço alterado com sucesso");
+                    return Ok(new { mensagem = "Endereço alterado com sucesso" });
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(new { error = ex.Message });
                 }
 
 
