@@ -3,7 +3,7 @@
 API REST desenvolvida em C# .NET 9.0 para gerenciamento de e-commerce com implementação de padrões de projeto e princípios de orientação a objetos.
 
 **Disciplina**: Programação Orientada a Objetos  
-**Avaliação**: AV2  
+**Avaliação**: AV2
 **Integrantes da Equipe**:
 - Arthur Rezende de Oliveira - 06010228
 - Eduardo Leal Ferreira Silva - 06013706
