@@ -1,0 +1,772 @@
+{
+	"info": {
+		"name": "E-commerce API - AV2",
+		"description": "Coleção completa de testes para o sistema e-commerce.\n\n⚠️ INSTRUÇÕES DE USO:\n1. Execute os requests na ORDEM (de cima para baixo)\n2. Após cadastrar produtos, execute 'Listar Produtos' para capturar os IDs automaticamente\n3. Após cadastrar clientes, execute 'Listar Clientes' para capturar os IDs automaticamente\n4. As variáveis {{produtoId}} e {{clienteId}} serão preenchidas automaticamente!\n\n🎯 ORDEM SUGERIDA:\n1. Produtos → Cadastrar todos os produtos\n2. Produtos → Listar Produtos (captura IDs)\n3. Clientes → Cadastrar clientes\n4. Clientes → Listar Clientes (captura IDs)\n5. Carrinho → Adicionar produtos\n6. Pedidos → Criar pedido",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Cadastrar Produto - Notebook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Notebook Dell Inspiron\",\n  \"preco\": 3500.00,\n  \"estoque\": 10\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Produto - Mouse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Mouse Logitech MX Master\",\n  \"preco\": 450.00,\n  \"estoque\": 25\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Produto - Teclado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Teclado Mecânico Keychron K2\",\n  \"preco\": 650.00,\n  \"estoque\": 15\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Captura automaticamente o ID do primeiro produto",
+									"const response = pm.response.json();",
+									"if (response && response.length > 0) {",
+									"    pm.environment.set('produtoId', response[0].id);",
+									"    console.log('✅ produtoId capturado:', response[0].id);",
+									"    console.log('Produto:', response[0].nome);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Preço do Produto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "3200.00"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos/{{produtoId}}/preco",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos",
+								"{{produtoId}}",
+								"preco"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Cadastrar Cliente - Yuri San",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Yuri San\",\n  \"email\": \"yuri.san@email.com\",\n  \"senha\": \"SenhaForte@123\",\n  \"confirmarSenha\": \"SenhaForte@123\",\n  \"cpf\": \"12345678900\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/Cadastrar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"Cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Cliente - Ana Hir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Ana Hir\",\n  \"email\": \"ana.hir@email.com\",\n  \"senha\": \"SenhaForte@456\",\n  \"confirmarSenha\": \"SenhaForte@456\",\n  \"cpf\": \"98765432100\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/Cadastrar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"Cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Captura automaticamente o ID do primeiro cliente",
+									"const response = pm.response.json();",
+									"if (response && response.length > 0) {",
+									"    pm.environment.set('clienteId', response[0].id);",
+									"    console.log('✅ clienteId capturado:', response[0].id);",
+									"    console.log('Cliente:', response[0].nome);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/Listar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"Listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Nome do Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"12345678900\",\n  \"senha\": \"SenhaForte@123\",\n  \"novoNome\": \"Yuri San Domingues\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/AlterarNome",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"AlterarNome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Email do Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"yuri.san@email.com\",\n  \"novoEmail\": \"yuri.novo@email.com\",\n  \"senha\": \"SenhaForte@123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/AlterarEmail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"AlterarEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Senha do Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"yuri.novo@email.com\",\n  \"senha\": \"SenhaForte@123\",\n  \"novaSenha\": \"NovaSenhaForte@789\",\n  \"confirmarNovaSenha\": \"NovaSenhaForte@789\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Cliente/AlterarSenha",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Cliente",
+								"AlterarSenha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrinho",
+			"item": [
+				{
+					"name": "Adicionar Produto ao Carrinho",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"produtoId\": \"{{produtoId}}\",\n  \"quantidade\": 2,\n  \"nome\": \"Notebook Dell Inspiron\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/AdicionarProdutoCarrinho",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"AdicionarProdutoCarrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carrinho",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/listarCarrinho",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"listarCarrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Quantidade",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"produtoId\": \"{{produtoId}}\",\n  \"novaQuantidade\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/atualizarquantidade",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"atualizarquantidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter SubTotal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/subtotal",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"subtotal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Produto do Carrinho",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"produtoid\": \"{{produtoId}}\",\n  \"quantidade\": 2,\n  \"nome\": \"Notebook Dell Inspiron\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/removerproduto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"removerproduto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Esvaziar Carrinho",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/esvaziarcarrinho",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"esvaziarcarrinho"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rua\": \"Rua das Flores\",\n  \"numero\": 123,\n  \"bairro\": \"Centro\",\n  \"cidade\": \"São Paulo\",\n  \"cep\": \"01000-000\",\n  \"estado\": \"SP\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/criarPedido/{{clienteId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"criarPedido",
+								"{{clienteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pedidos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Captura automaticamente o ID do primeiro pedido",
+									"const response = pm.response.json();",
+									"if (response && response.length > 0) {",
+									"    pm.environment.set('pedidoId', response[0].id);",
+									"    console.log('✅ pedidoId capturado:', response[0].id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/listarPedidos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"listarPedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Definir Pagamento - PIX",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Captura automaticamente o ID do pedido criado",
+									"if (pm.response.code === 200) {",
+									"    console.log('✅ Pagamento PIX definido com sucesso');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tipoPagamento\": \"pix\",\n  \"chavePix\": \"yuri.san@email.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/{{pedidoId}}/pagamento",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"{{pedidoId}}",
+								"pagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Definir Pagamento - Cartão",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tipoPagamento\": \"cartao\",\n  \"numeroCartao\": \"1234567890123456\",\n  \"parcelas\": 3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/{{pedidoId}}/pagamento",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"{{pedidoId}}",
+								"pagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finalizar Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{pedidoId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/finalizarPedido",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"finalizarPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{pedidoId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Pedido/excluirPedido",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Pedido",
+								"excluirPedido"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testes de Validação",
+			"item": [
+				{
+					"name": "❌ Produto com Preço Negativo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Produto Teste\",\n  \"preco\": -100.00,\n  \"estoque\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "❌ Adicionar Quantidade Zero ao Carrinho",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"produtoId\": \"{{produtoId}}\",\n  \"quantidade\": 0\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Carrinho/{{clienteId}}/AdicionarProdutoCarrinho",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Carrinho",
+								"{{clienteId}}",
+								"AdicionarProdutoCarrinho"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5090",
+			"type": "string"
+		},
+		{
+			"key": "clienteId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "produtoId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "pedidoId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
