@@ -506,8 +506,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
-              "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+            "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
             }
           }
         }

@@ -20,31 +20,20 @@ public class PedidoController: ControllerBase
         this.pedidoService = pedidoService;
     }
 
-    [HttpPost("criarPedido")]
-    public ActionResult CriarPedido([FromBody] Carrinho carrinho)
+    [HttpPost("criarPedido/{clienteId}")]
+    public ActionResult CriarPedido(Guid clienteId, [FromBody] EnderecoDTO enderecoDTO)
     {
-        if (carrinho == null)
-        {
-            return BadRequest("Dados do carrinho são obrigatórios");
-        }
-        
         try
         {
-            
-            var novoPedido = new PedidoDTO
-            {
-                ClienteId = carrinho.ClienteId,
-            };
-
-            pedidoService.CriarPedido(novoPedido);
-            return Created("", "Pedido criado com sucesso");  
+            pedidoService.CriarPedido(clienteId, enderecoDTO);
+            return Ok("Pedido criado com sucesso");
         }
-        catch(Exception erro)
+        catch (Exception erro)
         {
             return StatusCode(500, erro.Message);
         }
 
-    } 
+    }
 
 
     [HttpPut("finalizarPedido")]

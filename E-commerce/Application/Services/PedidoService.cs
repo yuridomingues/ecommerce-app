@@ -1,34 +1,45 @@
 namespace Application;
 using Domain;
 using Domain.Interface;
-using Application.DTOs;
+using Domain.Interfaces;
 using Domain.DTOs;
 using Domain.Entities;
 using AutoMapper;
+
 
 public class PedidoService
 {
     
     private readonly IPedidoRepository pedidoRepository;
+
+    private readonly ICarrinhoRepository carrinhoRepository;
     private readonly IMapper mapper;
 
-    public PedidoService(IPedidoRepository pedidoRepository, IMapper mapper)
+    public PedidoService(IPedidoRepository pedidoRepository, ICarrinhoRepository carrinhoRepository, IMapper mapper)
     {
         this.pedidoRepository = pedidoRepository;
+        this.carrinhoRepository = carrinhoRepository;
         this.mapper = mapper;
     }
 
 
-    public void CriarPedido(Domain.DTOs.PedidoDTO novoPedido)
+    public void CriarPedido(Guid clienteId, Domain.DTOs.EnderecoDTO enderecoDTO)
     {
-        if(novoPedido == null)
+        Carrinho carrinho = carrinhoRepository.BuscarClienteId(clienteId);
+
+        if(carrinho == null)
         {
-            throw new ArgumentNullException(nameof(novoPedido));
+            throw new InvalidOperationException("Carrinho inexistente");
         }
 
-        var pedido = mapper.Map<Pedido>(novoPedido);
+        if(carrinho.Item.Any())
+        {
+            throw new InvalidOperationException("Carrinho vazio");
+        }
 
-        pedidoRepository.CriarPedido(pedido);
+        Endereco endereco = mapper.Map<Endereco>(enderecoDTO);
+
+        pedidoRepository.CriarPedido(carrinho, endereco);
     }
 
 

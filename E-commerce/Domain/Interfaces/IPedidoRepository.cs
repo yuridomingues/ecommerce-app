@@ -3,7 +3,7 @@ using Domain.Entities;
 
 public interface IPedidoRepository
 {
-    public void CriarPedido(Pedido pedido);
+    public void CriarPedido(Carrinho carrinho, Endereco endereco);
 
     public void FinalizarPedido(Pedido pedido);
 

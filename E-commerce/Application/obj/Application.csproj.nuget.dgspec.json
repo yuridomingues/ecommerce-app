@@ -28,8 +28,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
-                "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
+              "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
+    "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\dudsl\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\dudsl\\Documents\\GitHub\\ecommerce-app\\E-commerce\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dudsl\\AppData\\Roaming\\NuGet\\NuGet.Config",

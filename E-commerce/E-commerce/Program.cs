@@ -8,14 +8,18 @@ using Application.CarrinhoMappings;
 using Application.ProdutoInterface;
 using Application.Service;
 using Domain.Interfaces;
+using Domain.Interface;
 using Infraestrutucture.ClienteDataBase;
 using Infraestrutucture.ClienteRepository;
 using Infraestrutucture.ProdutoRepository;
 using Infraestrutucture.DataBaseCarrinho;
 using Infraestrutucture.CarrinhoRepository;
+using Infraestrutucture.DataBasePedido;
+using Infraestrutucture.Repository;
 using Application.ClienteService;
 using Application.EnderecoService;
 using Application.CarrinhoService;
+using Application;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +45,11 @@ builder.Services.AddSingleton<IProdutoService, ProdutoService>();
 builder.Services.AddSingleton<IDataBaseCarrinho, DataBaseCarrinho>();
 builder.Services.AddSingleton<ICarrinhoRepository, CarrinhoRepository>();
 builder.Services.AddSingleton<IValidarCarrinho, ValidarCarrinho>();
+
+// Pedido services
+builder.Services.AddSingleton<IDataBasePedido, DataBasePedido>();
+builder.Services.AddSingleton<IPedidoRepository, PedidoRepository>();
+builder.Services.AddSingleton<PedidoService>();
 
 
 

@@ -4,34 +4,46 @@ using Domain;
 using Domain.Interface;
 using Domain.Entities;
 using Infraestrutucture.DataBasePedido;
-
+using Domain.Interfaces;
 
 public class PedidoRepository : IPedidoRepository
 {
 
     private IDataBasePedido dataBasePedido;
 
-    public PedidoRepository(IDataBasePedido databasePedido)
+    private ICarrinhoRepository carrinhoRepository;
+
+    public PedidoRepository(IDataBasePedido databasePedido, ICarrinhoRepository carrinhoRepository)
     {
         this.dataBasePedido = databasePedido;
+        this.carrinhoRepository = carrinhoRepository;
     }
 
 
-    public void CriarPedido(Pedido pedido)
+    public void CriarPedido(Carrinho carrinho, Endereco endereco)
     {
 
-        if(pedido == null)
-        {
-            throw new Exception("Pedido não pode ser nulo");
-        }
-
-        if(pedido.Id != Guid.Empty)
-        {
-            throw new Exception("Pedido já possui ID definido");
-        }
-
+        Pedido pedido = new Pedido(carrinho.ClienteId, endereco);
         pedido.DefinirId();
+
+        foreach(var itemCarrinho in carrinho.Item)
+        {
+            var itemPedido = new ItemPedido(
+                itemCarrinho.ProdutoId,
+                itemCarrinho.Nome,
+                itemCarrinho.Quantidade,
+                itemCarrinho.PrecoUnitario
+            );
+            pedido.Itens.Add(itemPedido);
+        }
+
+        pedido.SubTotal = carrinho.CalcularSubTotal();
+
         dataBasePedido.CadastrarPedido(pedido);
+
+        carrinho.EsvaziarCarrinho();
+        carrinhoRepository.Salvar(carrinho);
+
     }
 
 
