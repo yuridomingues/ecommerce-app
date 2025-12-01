@@ -20,6 +20,7 @@ using Application.ClienteService;
 using Application.EnderecoService;
 using Application.CarrinhoService;
 using Application;
+using Domain.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +50,7 @@ builder.Services.AddSingleton<IValidarCarrinho, ValidarCarrinho>();
 // Pedido services
 builder.Services.AddSingleton<IDataBasePedido, DataBasePedido>();
 builder.Services.AddSingleton<IPedidoRepository, PedidoRepository>();
+builder.Services.AddSingleton<ICalculadoraFrete, FreteExpresso>();
 builder.Services.AddSingleton<PedidoService>();
 
 

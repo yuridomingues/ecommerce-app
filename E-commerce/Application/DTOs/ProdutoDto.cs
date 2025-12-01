@@ -3,7 +3,7 @@ namespace Application.DTOs
     // Usado para receber dados (Input)
     public class CriarProdutoDto
     {
-        public string Nome {get; set;}
+        public string Nome {get; set;} = string.Empty;
         public decimal Preco {get; set; }
         public int EstoqueInicial {get; set; }
     }
@@ -12,7 +12,7 @@ namespace Application.DTOs
     public class ProdutoDto
     {
         public Guid Id {get; set; }
-        public string Nome {get; set;}
+        public string Nome {get; set;} = string.Empty;
         public decimal Preco {get; set; }
         public int Estoque {get; set; }
     }

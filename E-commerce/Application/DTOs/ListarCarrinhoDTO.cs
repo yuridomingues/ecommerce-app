@@ -9,7 +9,7 @@ namespace Application.CarrinhoDTO
     public class ListarCarrinhoDTO
     {
 
-       public string Nome { get; set; }
+       public string Nome { get; set; } = string.Empty;
 
        public int Quantidade { get; set; }
 

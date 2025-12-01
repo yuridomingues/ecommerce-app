@@ -37,7 +37,7 @@ public class PedidoRepository : IPedidoRepository
             pedido.Itens.Add(itemPedido);
         }
 
-        pedido.SubTotal = carrinho.CalcularSubTotal();
+        pedido.DefinirSubTotal(carrinho.CalcularSubTotal());
 
         dataBasePedido.CadastrarPedido(pedido);
 

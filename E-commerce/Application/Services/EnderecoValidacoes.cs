@@ -102,9 +102,9 @@ namespace Application.EnderecoService
 
         public void ValidarNovoNumero(AlterarEnderecoDTO dto)
         {
-            if (dto.NovoNumero == null)
+            if (dto.NovoNumero <= 0)
             {
-                throw new EnderecoVazio();
+                throw new ArgumentException("O número do endereço deve ser maior que zero.");
             }
 
         }

@@ -7,7 +7,10 @@ namespace Domain.Entitities
         public decimal Preco { get; private set; }
         public int Estoque { get; private set; }
 
-        private Produto() {}
+        private Produto() 
+        {
+            Nome = string.Empty; // valor padrão para evitar warning
+        }
 
         public Produto(string nome, decimal preco, int estoqueInicial)
         {

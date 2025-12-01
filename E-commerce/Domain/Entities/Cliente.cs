@@ -11,13 +11,13 @@ namespace Domain.Entities
     {
         public Guid Id { get; private set; }
 
-        public string Nome { get; private set; } 
+        public string Nome { get; private set; } = string.Empty;
 
-        public string Email { get; private set; } 
+        public string Email { get; private set; } = string.Empty;
 
-        public string Senha { get; private set; } 
+        public string Senha { get; private set; } = string.Empty;
 
-        public string Cpf { get; private set; }
+        public string Cpf { get; private set; } = string.Empty;
 
 
 

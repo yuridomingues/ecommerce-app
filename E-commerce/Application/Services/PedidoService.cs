@@ -14,30 +14,36 @@ public class PedidoService
 
     private readonly ICarrinhoRepository carrinhoRepository;
     private readonly IMapper mapper;
+    private readonly ICalculadoraFrete calculadoraFrete;
 
-    public PedidoService(IPedidoRepository pedidoRepository, ICarrinhoRepository carrinhoRepository, IMapper mapper)
+    public PedidoService(IPedidoRepository pedidoRepository, ICarrinhoRepository carrinhoRepository, IMapper mapper, ICalculadoraFrete calculadoraFrete)
     {
         this.pedidoRepository = pedidoRepository;
         this.carrinhoRepository = carrinhoRepository;
         this.mapper = mapper;
+        this.calculadoraFrete = calculadoraFrete;
     }
 
 
     public void CriarPedido(Guid clienteId, Domain.DTOs.EnderecoDTO enderecoDTO)
     {
-        Carrinho carrinho = carrinhoRepository.BuscarClienteId(clienteId);
+        Carrinho? carrinho = carrinhoRepository.BuscarClienteId(clienteId);
 
         if(carrinho == null)
         {
             throw new InvalidOperationException("Carrinho inexistente");
         }
 
-        if(carrinho.Item.Any())
+        if(!carrinho.Item.Any())
         {
             throw new InvalidOperationException("Carrinho vazio");
         }
 
         Endereco endereco = mapper.Map<Endereco>(enderecoDTO);
+
+        // Calcular frete usando estratégia injetada
+        decimal pesoTotal = carrinho.Item.Sum(item => item.Quantidade * 0.5m); // assumindo 0.5kg por item
+        decimal valorFrete = calculadoraFrete.CalcularFrete(pesoTotal, enderecoDTO.CEP ?? "");
 
         pedidoRepository.CriarPedido(carrinho, endereco);
     }

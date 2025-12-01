@@ -12,6 +12,6 @@ namespace Application.CarrinhoDTO
 
         public int quantidade { get; set; }
 
-        public string nome { get; set; }
+        public string nome { get; set; } = string.Empty;
     }
 }
