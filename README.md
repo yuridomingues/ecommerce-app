@@ -1,219 +1,118 @@
-# Sistema E-commerce - AV2
+# Sistema E-commerce
 
-Sistema de e-commerce desenvolvido em C# .NET 9.0 aplicando conceitos de Programação Orientada a Objetos.
+API REST desenvolvida em C# .NET 9.0 para gerenciamento de e-commerce com implementação de padrões de projeto e princípios de orientação a objetos.
 
-**Equipe**: [Estou esperando me mandarem para eu colocar aqui]  
 **Disciplina**: Programação Orientada a Objetos  
 **Avaliação**: AV2
 
----
+## Funcionalidades
 
-## 📋 Sobre o Projeto
+O sistema permite:
+- Gestão de clientes (cadastro, atualização, remoção)
+- Gerenciamento de produtos e estoque
+- Operações de carrinho de compras
+- Criação e finalização de pedidos
+- Múltiplos métodos de pagamento (PIX, Cartão)
+- Cálculo automático de frete
 
-Sistema completo de e-commerce que permite gerenciamento de clientes, produtos, carrinho de compras e pedidos, implementando padrões de design e boas práticas de POO.
+## Critérios de Avaliação Implementados
 
-### Funcionalidades
+### 1. Modelagem de Classes Coerente (1,0 ponto)
 
-- **Gestão de Clientes**: Cadastro, alteração de dados (nome, email, senha), listagem e remoção
-- **Gestão de Produtos**: Cadastro, atualização de preço e estoque
-- **Carrinho de Compras**: Adicionar/remover produtos, atualizar quantidades, calcular subtotal
-- **Pedidos**: Criação, finalização com diferentes formas de pagamento, cálculo automático de frete
-- **Endereços**: Cadastro e gerenciamento de múltiplos endereços por cliente
+Classes principais: Produto, ItemCarrinho, Carrinho, Pedido, Cliente, Endereco.
 
----
+Localização: `/E-commerce/Domain/Entities/`
 
-## 🎯 Critérios AV2 Implementados
+### 2. Diagrama UML com Multiplicidades (1,0 ponto)
 
-### ✅ 1. Modelagem de Classes Coerente com o Domínio (1,0 ponto)
+Diagrama completo implementado em Mermaid incluindo:
+- Multiplicidades (1, 0..1, 0..*, 1..*)
+- Herança (Pagamento → PagamentoPix, PagamentoCartao)
+- Interfaces (ICalculadoraFrete, IDesconto)
+- Composições (Carrinho *-- ItemCarrinho)
 
-**Classes principais implementadas**:
+Ver seção: Diagrama de Classes UML
 
-- **`Produto`**: Id, Nome, Preco, Estoque + métodos de atualização e validação
-- **`ItemCarrinho`**: ProdutoId, Quantidade, PrecoUnitario, SubTotal
-- **`Carrinho`**: Composição com ItemCarrinho, métodos de gerenciamento
-- **`Pedido`**: ClienteId, Endereco, Itens, ValorFrete, SubTotal, Status, Pagamento
-- **`Cliente`**: Nome, Email, Senha, Cpf, lista de Enderecos
-- **`Endereco`**: Rua, Numero, Bairro, Cidade, CEP, Estado
+### 4. Herança e Polimorfismo (1,0 ponto)
 
-**Localização**: `/E-commerce/Domain/Entities/`
-
----
-
-### ✅ 2. Diagrama UML com Multiplicidades (1,0 ponto)
-
-Diagrama completo em Mermaid mostrando:
-
-- **Multiplicidades**: `1`, `0..1`, `0..*`, `1..*`
-- **Herança**: `Pagamento` → `PagamentoPix`, `PagamentoCartao`
-- **Interfaces**: `ICalculadoraFrete`, `IDesconto`
-- **Composições**: `Carrinho *-- ItemCarrinho`, `Pedido *-- ItemPedido`
-
-**Ver seção**: [Diagrama de Classes UML](#diagrama-de-classes-uml)
-
----
-
-### ✅ 3. Alinhamento Diagrama/Código (1,0 ponto)
-
-Todas as classes do diagrama UML correspondem exatamente ao código implementado:
-
-| Classe no UML | Arquivo no Código | Status |
-|---------------|-------------------|--------|
-| Cliente | Domain/Entities/Cliente.cs | ✅ |
-| Produto | Domain/Entities/Produto.cs | ✅ |
-| Carrinho | Domain/Entities/Carrinho.cs | ✅ |
-| Pedido | Domain/Entities/Pedido.cs | ✅ |
-| Pagamento (abstract) | Domain/Entities/Pagamento.cs | ✅ |
-| PagamentoPix | Domain/Entities/PagamentoPix.cs | ✅ |
-| PagamentoCartao | Domain/Entities/PagamentoCartao.cs | ✅ |
-| ICalculadoraFrete | Domain/Interfaces/ICalculadoraFrete.cs | ✅ |
-| IDesconto | Domain/Interfaces/IDesconto.cs | ✅ |
-
----
-
-### ✅ 4. Herança e Polimorfismo (1,0 ponto)
-
-**Hierarquia polimórfica implementada: Pagamento**
+Hierarquia polimórfica implementada:
 
 ```csharp
-// Classe abstrata base
 public abstract class Pagamento
 {
     protected Guid Id { get; private set; }
     protected decimal Valor { get; private set; }
     
-    public abstract string ObterDescricao();
-    public abstract decimal CalcularTaxas(); // ← Polimorfismo
+    public abstract decimal CalcularTaxas(); // Implementação polimórfica
     
     public decimal ObterValorTotal()
     {
-        return Valor + CalcularTaxas(); // Chama implementação específica
+        return Valor + CalcularTaxas();
     }
 }
 
-// Implementação PIX - sem taxa
 public class PagamentoPix : Pagamento
 {
     public override decimal CalcularTaxas() => 0m;
 }
 
-// Implementação Cartão - 3% de taxa
 public class PagamentoCartao : Pagamento
 {
     public override decimal CalcularTaxas() => ObterValor() * 0.03m;
 }
 ```
 
-**Benefício**: Elimina condicionais do tipo `if (tipoPagamento == "Pix")`. O comportamento é determinado automaticamente pela classe concreta.
+Elimina condicionais. O comportamento é determinado pela classe concreta em runtime.
 
----
+### 5. Encapsulamento e Coesão (1,0 ponto)
 
-### ✅ 5. Encapsulamento e Coesão (1,0 ponto)
-
-**Propriedades encapsuladas com validação**:
+Propriedades com setter privado e métodos públicos validados:
 
 ```csharp
-// Pedido.cs
-public decimal ValorFrete { get; private set; } // ← private set
+public decimal ValorFrete { get; private set; }
 
-public void DefinirValorFrete(decimal valorFrete) // ← Método público COM validação
+public void DefinirValorFrete(decimal valorFrete)
 {
     if (valorFrete < 0)
         throw new ArgumentException("O valor do frete não pode ser negativo.");
     ValorFrete = valorFrete;
 }
-
-public Pagamento? Pagamento { get; private set; }
-
-public void DefinirPagamento(Pagamento pagamento)
-{
-    if (Status)
-        throw new InvalidOperationException("Não é possível alterar o pagamento de um pedido finalizado.");
-    if (pagamento == null)
-        throw new ArgumentNullException(nameof(pagamento));
-    Pagamento = pagamento;
-}
 ```
 
-**Características**:
-- Todas as propriedades com `private set`
-- Métodos públicos para modificação controlada
-- Validações em todos os pontos de entrada
-- Classes com responsabilidade única
+### 6. Tratamento de Exceções (1,0 ponto)
 
----
-
-### ✅ 6. Tratamento de Exceções (1,0 ponto)
-
-**Exceções específicas do domínio**:
+Validações em construtores, métodos de negócio e controllers:
 
 ```csharp
-// Validação em construtor
-public PagamentoPix(decimal valor, string chavePix) : base(valor)
-{
-    if (string.IsNullOrWhiteSpace(chavePix))
-        throw new ArgumentException("A chave PIX não pode ser vazia.");
-    ChavePix = chavePix;
-}
-
-// Validação de regra de negócio
 public void FinalizarPedido()
 {
     if (Itens == null || Itens.Count <= 0)
         throw new InvalidOperationException("Não é possível finalizar um pedido sem itens.");
     
     if (Pagamento == null)
-        throw new InvalidOperationException("Não é possível finalizar um pedido sem forma de pagamento definida.");
+        throw new InvalidOperationException("Não é possível finalizar um pedido sem forma de pagamento.");
     
     Status = true;
 }
-
-// Try/catch nos controllers
-[HttpPost("Cadastrar")]
-public ActionResult CadastrarCliente([FromBody] CadastroClienteDto dto)
-{
-    try
-    {
-        _service.CadastrarCliente(dto);
-        return Ok("Conta Cadastrada com sucesso!");
-    }
-    catch (Exception ex)
-    {
-        return BadRequest(ex.Message); // Mensagem descritiva
-    }
-}
 ```
 
----
+### 7. Baixo Acoplamento e Alta Coesão (1,0 ponto)
 
-### ✅ 7. Baixo Acoplamento e Alta Coesão (1,0 ponto)
-
-**Arquitetura em camadas**:
+Arquitetura em camadas com Dependency Injection:
 
 ```
-Domain/
-  Entities/          → Estado e regras internas (Produto, Pedido, Cliente)
-  Interfaces/        → Contratos (ICalculadoraFrete, IDesconto)
-  Services/          → Estratégias (FreteExpresso, DescontoPorcentagem)
-
-Application/
-  Services/          → Lógica de negócio (PedidoService, CarrinhoService)
-  DTOs/              → Transferência de dados
-  Interfaces/        → Contratos de serviços
-
-Infrastructure/
-  Repositories/      → Acesso a dados
-  Database/          → Armazenamento em memória
-
-E-commerce/
-  Controllers/       → Endpoints da API
+Domain/         → Entidades e regras de negócio
+Application/    → Lógica de aplicação e DTOs
+Infrastructure/ → Repositórios e acesso a dados
+E-commerce/     → Controllers (API)
 ```
 
-**Injeção de Dependências**:
+Exemplo de DI:
 
 ```csharp
 public class PedidoService
 {
-    private readonly ICalculadoraFrete calculadoraFrete; // ← Depende de interface
+    private readonly ICalculadoraFrete calculadoraFrete;
     
     public PedidoService(..., ICalculadoraFrete calculadoraFrete)
     {
@@ -222,37 +121,23 @@ public class PedidoService
     
     public void CriarPedido(Guid clienteId, EnderecoDTO enderecoDTO)
     {
-        // Usa interface, não implementação concreta
         decimal valorFrete = calculadoraFrete.CalcularFrete(pesoTotal, enderecoDTO.CEP ?? "");
     }
 }
 ```
 
----
+### 8. Padrões DTO e Service (1,0 ponto)
 
-### ✅ 8. Padrões DTO e Service (1,0 ponto)
+DTOs: CadastroClienteDto, AdicionarProdutoCarrinhoDTO, PedidoDTO, EnderecoDTO, etc.  
+Services: ClienteService, CarrinhoService, PedidoService, ProdutoService
 
-**DTOs implementados** (20+ classes):
-- `CadastroClienteDto`, `NovoNomeClienteDTO`, `AlterarSenhaDTO`
-- `AdicionarProdutoCarrinhoDTO`, `AtualizarQuantidadeDTO`
-- `PedidoDTO`, `EnderecoDTO`, `ListarCarrinhoDTO`
-- `ProdutoDto`, `BuscarClienteSaidaDTO`
-
-**Services implementados**:
-- `ClienteService` → CadastrarCliente, AlterarNome, AlterarSenha, RemoverCliente
-- `CarrinhoService` → AdicionarProdutoCarrinho, RemoverProduto, EsvaziarCarrinho
-- `PedidoService` → CriarPedido, FinalizarPedido, ExcluirPedido
-- `ProdutoService` → CadastrarProduto, AtualizarPreco, ListarTodos
-
-**Localização**: 
+Localização:
 - DTOs: `/E-commerce/Application/DTOs/`
 - Services: `/E-commerce/Application/Services/`
 
----
+### 9. Regras Extensíveis (Strategy Pattern) (1,0 ponto)
 
-### ✅ 9. Regras Extensíveis (Strategy Pattern) (1,0 ponto)
-
-**Interface ICalculadoraFrete**:
+Interfaces que permitem adicionar novos comportamentos sem modificar código existente:
 
 ```csharp
 public interface ICalculadoraFrete
@@ -268,75 +153,28 @@ public class FreteExpresso : ICalculadoraFrete
         return pesoTotal * TaxaPorKg;
     }
 }
-
-public class FreteEconomico : ICalculadoraFrete
-{
-    private const decimal TaxaPorKg = 8.0m;
-    public decimal CalcularFrete(decimal pesoTotal, string cepDestino)
-    {
-        return pesoTotal * TaxaPorKg;
-    }
-}
 ```
 
-**Interface IDesconto**:
+Para adicionar "FreteInternacional", basta criar nova classe implementando ICalculadoraFrete.
+
+### 10. Visibilidade no UML e Código (1,0 ponto)
+
+Notação UML: `+` (public), `-` (private), `#` (protected)
+
+Correspondência no código:
 
 ```csharp
-public interface IDesconto
-{
-    decimal Aplicar(decimal valorOriginal);
-}
-
-public class DescontoPorcentagem : IDesconto
-{
-    private readonly decimal _percentual;
-    
-    public decimal Aplicar(decimal valorOriginal)
-    {
-        decimal desconto = valorOriginal * (_percentual / 100);
-        return valorOriginal - desconto;
-    }
-}
-
-public class DescontoValorFixo : IDesconto
-{
-    private readonly decimal _valor;
-    
-    public decimal Aplicar(decimal valorOriginal)
-    {
-        return Math.Max(0, valorOriginal - _valor);
-    }
-}
-```
-
-**Extensibilidade**: Para adicionar nova estratégia de frete (ex: "FreteInternacional"), basta criar uma classe implementando `ICalculadoraFrete` - **ZERO modificações no código existente**.
-
----
-
-### ✅ 10. Visibilidade no UML e Código (1,0 ponto)
-
-**No Diagrama UML**:
-- `+` para membros públicos
-- `-` para membros privados
-- `#` para membros protegidos
-
-**No Código** (correspondência exata):
-
-```csharp
-public abstract class Pagamento  // abstract no UML
+public abstract class Pagamento
 {
     protected Guid Id { get; private set; }      // # no UML
     protected decimal Valor { get; private set; } // # no UML
     
     public abstract string ObterDescricao();     // + no UML
-    public abstract decimal CalcularTaxas();     // + no UML
 }
 
 public class Produto
 {
-    public Guid Id { get; private set; }         // - no UML (private set)
-    public string Nome { get; private set; }     // - no UML
-    public decimal Preco { get; private set; }   // - no UML
+    public Guid Id { get; private set; }         // - no UML (setter privado)
     
     public void AtualizarPreco(decimal novoPreco) // + no UML
     {
@@ -352,119 +190,34 @@ public class Produto
 }
 ```
 
-**Verificação**: Todos os membros possuem modificadores explícitos (`public`, `private`, `protected`). Sem uso de `var` em membros públicos.
+## Como Executar
 
----
-
-## 📊 Resultado Final
-
-| Critério | Pontuação |
-|----------|-----------|
-| 1. Modelagem de classes | ✅ 1,0 |
-| 2. Diagrama UML | ✅ 1,0 |
-| 3. Alinhamento diagrama/código | ✅ 1,0 |
-| 4. Herança e polimorfismo | ✅ 1,0 |
-| 5. Encapsulamento | ✅ 1,0 |
-| 6. Tratamento de exceções | ✅ 1,0 |
-| 7. Baixo acoplamento | ✅ 1,0 |
-| 8. Padrões DTO/Service | ✅ 1,0 |
-| 9. Regras extensíveis | ✅ 1,0 |
-| 10. Visibilidade UML/código | ✅ 1,0 |
-| **TOTAL** | **10,0** |
-
----
-
-## 🚀 Como Executar
-
-### Requisitos
+Requisitos:
 - .NET SDK 9.0 ou superior
 
-### Passos
-
-1. **Clonar o repositório**:
-   ```bash
-   git clone <url-do-repositorio>
-   cd ecommerce-app
-   ```
-
-2. **Compilar**:
-   ```bash
-   cd E-commerce
-   dotnet build
-   ```
-
-3. **Executar**:
-   ```bash
-   cd E-commerce
-   dotnet run --project E-commerce.csproj
-   ```
-
-4. **Acessar**: `http://localhost:5090`
-
----
-
-## 🧪 Testando a API
-
-### Cadastrar Produto
+Passos:
 
 ```bash
-curl -X POST http://localhost:5090/api/Produtos \
-  -H "Content-Type: application/json" \
-  -d '{
-    "nome": "Notebook Dell",
-    "preco": 3500.00,
-    "estoque": 10
-  }'
+cd E-commerce
+dotnet build
+cd E-commerce
+dotnet run --project E-commerce.csproj
 ```
 
-### Listar Produtos
+Aplicação rodará em `http://localhost:5090`
 
-```bash
-curl http://localhost:5090/api/Produtos
-```
+## Testando via Postman
 
-### Cadastrar Cliente
+Collection completa disponível em: `/E-commerce-API.postman_collection.json`
 
-```bash
-curl -X POST http://localhost:5090/api/Cliente/Cadastrar \
-  -H "Content-Type: application/json" \
-  -d '{
-    "nome": "João Silva",
-    "email": "joao@email.com",
-    "senha": "senha123",
-    "cpf": "12345678900"
-  }'
-```
+A collection inclui 23 requests com exemplos de:
+- Cadastro de clientes e produtos
+- Operações de carrinho
+- Criação de pedidos
+- Definição de pagamento (PIX/Cartão)
+- Finalização de pedidos
 
-### Adicionar ao Carrinho
-
-```bash
-curl -X POST http://localhost:5090/api/Carrinho/{clienteId}/AdicionarProdutoCarrinho \
-  -H "Content-Type: application/json" \
-  -d '{
-    "produtoId": "guid-do-produto",
-    "quantidade": 2
-  }'
-```
-
-### Criar Pedido
-
-```bash
-curl -X POST http://localhost:5090/api/Pedido/criarPedido/{clienteId} \
-  -H "Content-Type: application/json" \
-  -d '{
-    "rua": "Rua das Flores",
-    "numero": 123,
-    "bairro": "Centro",
-    "cidade": "São Paulo",
-    "cep": "01000-000",
-    "estado": "SP"
-  }'
-```
-
----
-
-## 📐 Diagrama de Classes UML
+## Diagrama de Classes UML
 
 ```mermaid
 classDiagram
@@ -633,101 +386,42 @@ classDiagram
     IDesconto <|.. DescontoValorFixo : implementa
 ```
 
-### Legenda
+Legenda:
+- Multiplicidades: `1` (um), `0..1` (opcional), `0..*` (zero ou mais), `1..*` (um ou mais)
+- Visibilidade: `+` (public), `-` (private), `#` (protected)
+- Relacionamentos: `--` (associação), `*--` (composição), `-->` (dependência), `<|--` (herança), `<|..` (implementação)
 
-**Multiplicidades**:
-- `1` — exatamente um
-- `0..1` — zero ou um (opcional)
-- `0..*` — zero ou mais
-- `1..*` — um ou mais
-
-**Visibilidade**:
-- `+` — public
-- `-` — private
-- `#` — protected
-
-**Relacionamentos**:
-- `--` — Associação
-- `*--` — Composição (parte integrante)
-- `-->` — Dependência
-- `<|--` — Herança
-- `<|..` — Implementação de interface
-
----
-
-## 🏗️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 E-commerce/
 ├── Domain/
-│   ├── Entities/              # Entidades do domínio
-│   │   ├── Cliente.cs
-│   │   ├── Produto.cs
-│   │   ├── Carrinho.cs
-│   │   ├── ItemCarrinho.cs
-│   │   ├── Pedido.cs
-│   │   ├── ItemPedido.cs
-│   │   ├── Endereco.cs
-│   │   ├── Pagamento.cs       # Classe abstrata
-│   │   ├── PagamentoPix.cs
-│   │   └── PagamentoCartao.cs
-│   ├── Interfaces/            # Contratos
-│   │   ├── ICalculadoraFrete.cs
-│   │   └── IDesconto.cs
-│   └── Services/              # Implementações de estratégias
-│       ├── FreteExpresso.cs
-│       ├── FreteEconomico.cs
-│       ├── DescontoPorcentagem.cs
-│       └── DescontoValorFixo.cs
+│   ├── Entities/              # Cliente, Produto, Carrinho, Pedido, Pagamento
+│   ├── Interfaces/            # ICalculadoraFrete, IDesconto
+│   └── Services/              # FreteExpresso, DescontoPorcentagem
 ├── Application/
-│   ├── Services/              # Lógica de negócio
-│   │   ├── ClienteService.cs
-│   │   ├── ProdutoService.cs
-│   │   ├── CarrinhoService.cs
-│   │   └── PedidoService.cs
+│   ├── Services/              # ClienteService, ProdutoService, CarrinhoService, PedidoService
 │   ├── DTOs/                  # Data Transfer Objects
 │   └── Interfaces/            # Contratos de serviços
 ├── Infrastructure/
-│   ├── Repositories/          # Acesso a dados
+│   ├── Repositories/          # Implementação de acesso a dados
 │   └── Database/              # Armazenamento em memória
 └── E-commerce/
-    ├── Controllers/           # Endpoints da API
-    └── Program.cs             # Configuração e DI
+    ├── Controllers/           # ClienteController, ProdutoController, CarrinhoController, PedidoController
+    └── Program.cs             # Configuração da aplicação e DI
 ```
 
----
+## Tecnologias
 
-## 🛠️ Tecnologias Utilizadas
+- C# .NET 9.0
+- ASP.NET Core
+- AutoMapper
+- Dependency Injection
 
-- **C# .NET 9.0** - Framework principal
-- **ASP.NET Core** - Web API
-- **AutoMapper** - Mapeamento de objetos
-- **Dependency Injection** - Inversão de controle
+## Decisões de Design
 
----
+**Strategy Pattern para Frete**: Permite adicionar novas estratégias sem modificar código existente (Open/Closed Principle).
 
-## 📝 Decisões de Design
+**Herança para Pagamento**: Cada tipo de pagamento conhece suas regras de taxa, eliminando condicionais.
 
-### Por que Strategy Pattern para Frete?
-
-Permite adicionar novas estratégias de cálculo de frete sem modificar código existente. Exemplo: adicionar "FreteInternacional" requer apenas criar nova classe implementando `ICalculadoraFrete`.
-
-### Por que Herança para Pagamento?
-
-Elimina condicionais espalhadas pelo código. Cada tipo de pagamento conhece suas próprias regras de taxa, seguindo o princípio Open/Closed (aberto para extensão, fechado para modificação).
-
-### Por que Encapsulamento com private set?
-
-Garante que mudanças de estado passem por validações. Exemplo: não é possível alterar `ValorFrete` diretamente sem validar se o valor é negativo.
-
----
-
-## 👥 Equipe
-
-[Estou esperando eles me enviarem para eu colocar aqui]
-
----
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina de Programação Orientada a Objetos
+**Encapsulamento com private set**: Garante que mudanças de estado passem por validações obrigatórias.
