@@ -1,17 +1,26 @@
-using Application.ClienteService;
-using Application.Dtos;
-using Application.EnderecoInterfaces;
-using Application.EnderecoMappings;
-using Application.EnderecoService;
+using Application.CarrinhoInterfaces;
+using Application.Services;
 using Application.Interfaces;
 using Application.Mappings;
+using Application.EnderecoInterfaces;
+using Application.EnderecoMappings;
+using Application.CarrinhoMappings;
+using Application.ProdutoInterface;
 using Application.Service;
-using Domain.Entities;
 using Domain.Interfaces;
+using Domain.Interface;
 using Infraestrutucture.ClienteDataBase;
 using Infraestrutucture.ClienteRepository;
-using Infraestrutucture.ClienteDataBase;
-using Microsoft.Extensions.DependencyInjection;
+using Infraestrutucture.ProdutoRepository;
+using Infraestrutucture.DataBaseCarrinho;
+using Infraestrutucture.CarrinhoRepository;
+using Infraestrutucture.DataBasePedido;
+using Infraestrutucture.Repository;
+using Application.ClienteService;
+using Application.EnderecoService;
+using Application.CarrinhoService;
+using Application;
+using Domain.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,14 +31,34 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 builder.Services.AddSingleton<IClienteDataBase, ClienteDataBase>();
-builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
-builder.Services.AddScoped<IClienteService, ClienteService>();
-builder.Services.AddScoped<IValidacoesService, ValidacoesClienteService>();
+builder.Services.AddSingleton<IClienteRepository, ClienteRepository>();
+builder.Services.AddSingleton<IClienteService, ClienteService>();
+builder.Services.AddSingleton<IValidacoesService, ValidacoesClienteService>();
 builder.Services.AddAutoMapper(cfg => { }, typeof(ClienteProfile).Assembly);
 builder.Services.AddAutoMapper(cfg => { }, typeof(EnderecoProfile).Assembly);
+builder.Services.AddAutoMapper(cfg => { }, typeof(CarrinhoProfile).Assembly);
 
-builder.Services.AddScoped<IEnderecoService, EnderecoService>();
-builder.Services.AddScoped<IEnderecoValidacoes, EnderecoValidacoes>();
+builder.Services.AddSingleton<IEnderecoService, EnderecoService>();
+builder.Services.AddSingleton<IEnderecoValidacoes, EnderecoValidacoes>();
+builder.Services.AddSingleton<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddSingleton<ICarrinhoService, CarrinhoService>();
+builder.Services.AddSingleton<IProdutoService, ProdutoService>();
+builder.Services.AddSingleton<IDataBaseCarrinho, DataBaseCarrinho>();
+builder.Services.AddSingleton<ICarrinhoRepository, CarrinhoRepository>();
+builder.Services.AddSingleton<IValidarCarrinho, ValidarCarrinho>();
+
+// Pedido services
+builder.Services.AddSingleton<IDataBasePedido, DataBasePedido>();
+builder.Services.AddSingleton<IPedidoRepository, PedidoRepository>();
+builder.Services.AddSingleton<ICalculadoraFrete, FreteExpresso>();
+builder.Services.AddSingleton<PedidoService>();
+
+
+
+
+
+
+
 
 
 
