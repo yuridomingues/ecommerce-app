@@ -19,7 +19,7 @@ namespace E_commerce.CarrinhoController
             _service = service;
         }
         [HttpPost("{clienteid}/AdicionarProdutoCarrinho")]
-        public ActionResult CadastrarCliente(Guid clienteid, [FromBody] AdicionarProdutoCarrinhoDTO dto)
+        public ActionResult AdicionarProduto(Guid clienteid, [FromBody] AdicionarProdutoCarrinhoDTO dto)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace E_commerce.CarrinhoController
 
         [HttpGet("{clienteid}/listarCarrinho")]
 
-        public ActionResult ListarCliente([FromRoute] Guid clienteid)
+        public ActionResult ListarCarrinho([FromRoute] Guid clienteid)
         {
             try
             {
