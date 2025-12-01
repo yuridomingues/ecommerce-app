@@ -229,11 +229,11 @@ A collection inclui 23 requests com exemplos de:
 ```mermaid
 classDiagram
     class Cliente {
-        -Guid Id
-        -string Nome
-        -string Email
-        -string Senha
-        -string Cpf
+        +Guid Id
+        +string Nome
+        +string Email
+        +string Senha
+        +string Cpf
         -List~Endereco~ _enderecos
         +IReadOnlyList~Endereco~ Enderecos
         +void DefinirId()
@@ -245,21 +245,21 @@ classDiagram
     }
     
     class Endereco {
-        -Guid Id
-        -string Rua
-        -int Numero
-        -string Bairro
-        -string Cidade
-        -string CEP
-        -string Estado
+        +Guid Id
+        +string Rua
+        +int Numero
+        +string Bairro
+        +string Cidade
+        +string CEP
+        +string Estado
         +void AtualizarEndereco(string NovaRua, int NovoNumero, string NovoBairro, string NovaCidade, string NovoCep, string NovoEstado)
     }
     
     class Produto {
-        -Guid Id
-        -string Nome
-        -decimal Preco
-        -int Estoque
+        +Guid Id
+        +string Nome
+        +decimal Preco
+        +int Estoque
         +void AtualizarPreco(decimal novoPreco)
         +void AdicionarEstoque(int quantidade)
         +void RemoverEstoque(int quantidade)
@@ -269,9 +269,9 @@ classDiagram
     }
     
     class Carrinho {
-        -Guid Id
-        -Guid ClienteId
-        -List~ItemCarrinho~ itens
+        +Guid Id
+        +Guid ClienteId
+        +List~ItemCarrinho~ itens
         +IReadOnlyList~ItemCarrinho~ Item
         +ItemCarrinho BuscarIdProduto(Guid id)
         +void AdicionarProduto(ItemCarrinho item)
@@ -282,10 +282,10 @@ classDiagram
     }
     
     class ItemCarrinho {
-        -Guid ProdutoId
-        -int Quantidade
-        -string Nome
-        -decimal PrecoUnitario
+        +Guid ProdutoId
+        +int Quantidade
+        +string Nome
+        +decimal PrecoUnitario
         +decimal SubTotal
         +void AdicionarQuantidade(int quantidade)
         +void RemoverQuantidade(int quantidade)
@@ -293,14 +293,14 @@ classDiagram
     }
     
     class Pedido {
-        -Guid Id
-        -Guid ClienteId
-        -Endereco Endereco
-        -List~ItemPedido~ Itens
-        -decimal ValorFrete
-        -decimal SubTotal
-        -bool Status
-        -Pagamento Pagamento
+        +Guid Id
+        +Guid ClienteId
+        +Endereco Endereco
+        +List~ItemPedido~ Itens
+        +decimal ValorFrete
+        +decimal SubTotal
+        +bool Status
+        +Pagamento Pagamento
         +void DefinirId()
         +void FinalizarPedido()
         +void AlterarEndereco(Endereco novoEndereco)
@@ -310,12 +310,12 @@ classDiagram
     }
     
     class ItemPedido {
-        -Guid Id
-        -Guid PedidoId
-        -Guid ProdutoId
-        -string NomeProduto
-        -int Quantidade
-        -decimal PrecoUnitario
+        +Guid Id
+        +Guid PedidoId
+        +Guid ProdutoId
+        +string NomeProduto
+        +int Quantidade
+        +decimal PrecoUnitario
     }
     
     class Pagamento {
@@ -330,14 +330,14 @@ classDiagram
     }
     
     class PagamentoPix {
-        -string ChavePix
+        +string ChavePix
         +string ObterDescricao()
         +decimal CalcularTaxas()
     }
     
     class PagamentoCartao {
-        -string NumeroCartao
-        -int Parcelas
+        +string NumeroCartao
+        +int Parcelas
         +string ObterDescricao()
         +decimal CalcularTaxas()
     }
@@ -379,8 +379,8 @@ classDiagram
     ItemCarrinho "1" --> "1" Produto : referencia
     
     Pedido "1" *-- "1..*" ItemPedido : contém
-    Pedido "1" --> "1" Endereco : entrega em
-    Pedido "1" --> "1" Pagamento : possui
+    Pedido "1" --> "0..1" Endereco : entrega em
+    Pedido "1" --> "0..1" Pagamento : possui
     ItemPedido "1" --> "1" Produto : referencia
     
     Pagamento <|-- PagamentoPix : herda
