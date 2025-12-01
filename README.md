@@ -3,14 +3,14 @@
 API REST desenvolvida em C# .NET 9.0 para gerenciamento de e-commerce com implementação de padrões de projeto e princípios de orientação a objetos.
 
 **Disciplina**: Programação Orientada a Objetos  
-**Avaliação**: AV2
-**Integrantes da Equipe**: 
-Pedro Freitas da Costa Santos - 06009656
-Luna Ferreira de Mattos - 06009983
-Eduardo Leal Ferreira Silva - 06013706
-Arthur Rezende de Oliveira - 06010228
-Pedro Henrique Alves da Silva - 06003335
-Yuri Domingues Santos - 06010142
+**Avaliação**: AV2  
+**Integrantes da Equipe**:
+- Arthur Rezende de Oliveira - 06010228
+- Eduardo Leal Ferreira Silva - 06013706
+- Luna Ferreira de Mattos - 06009983
+- Pedro Freitas da Costa Santos - 06009656
+- Pedro Henrique Alves da Silva - 06003335
+- Yuri Domingues Santos - 06010142
 
 ## Funcionalidades
 
